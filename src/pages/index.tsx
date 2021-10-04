@@ -14,9 +14,9 @@ export const Index = (): JSX.Element => {
         {web3 && (
           <>
             <h1 className="text-3xl font-bold text-blueGray-50">{address}</h1>
-            <h1 className="text-3xl font-bold text-blueGray-50">
-              {ens ?? "could not find ens"}
-            </h1>
+            {ens && (
+              <h1 className="text-3xl font-bold text-blueGray-50">{ens}</h1>
+            )}
           </>
         )}
         <WalletConnect className="p-3 text-white rounded-lg border">
