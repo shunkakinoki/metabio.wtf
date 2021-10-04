@@ -31,12 +31,6 @@ export const WalletConnect: FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({
     connectWallet();
   }, [connectWallet, web3Modal?.cachedProvider]);
 
-  useEffect(() => {
-    if (!web3) return;
-
-    web3.getSigner().getAddress().then(setUserAddress);
-  }, [setUserAddress, web3]);
-
   const disconnectWallet = () => {
     web3Modal.clearCachedProvider();
     setWeb3(null);
