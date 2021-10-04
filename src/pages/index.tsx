@@ -1,12 +1,12 @@
-import { WalletConect } from "@/components/WalletConect/WalletConect";
+import { WalletConnect } from "@/components/WalletConnect/WalletConnect";
 
 export const Index = (): JSX.Element => {
   return (
     <body className="flex justify-center items-center h-screen bg-black">
       <div className="text-center">
-        <WalletConect className="p-3 text-white rounded-lg border">
+        <WalletConnect className="p-3 text-white rounded-lg border">
           Connect Wallet
-        </WalletConect>
+        </WalletConnect>
       </div>
     </body>
   );

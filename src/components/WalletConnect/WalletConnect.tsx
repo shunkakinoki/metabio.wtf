@@ -8,7 +8,7 @@ import { useWeb3 } from "@/hooks/useWeb3/useWeb3";
 import { useWeb3Modal } from "@/hooks/useWeb3Modal/useWeb3Modal";
 import { formatAddressShort } from "@/lib/utils";
 
-export const WalletConect: FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({
+export const WalletConnect: FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({
   children,
   ...props
 }) => {
