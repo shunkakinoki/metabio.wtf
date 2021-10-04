@@ -1,29 +1,10 @@
-import { WalletConnect } from "@/components/WalletConnect/WalletConnect";
-import { useAddressTruncated } from "@/hooks/useAddressTruncated";
-import { useEns } from "@/hooks/useEns";
-import { useWeb3 } from "@/hooks/useWeb3";
+import { HomeHero } from "@/components/HomeHero";
 
 export const Index = (): JSX.Element => {
-  const address = useAddressTruncated();
-  const { ens } = useEns();
-  const { web3 } = useWeb3();
-
   return (
-    <body className="flex justify-center items-center h-screen bg-black">
-      <div className="text-center">
-        {web3 && (
-          <>
-            <h1 className="text-3xl font-bold text-blueGray-50">{address}</h1>
-            {ens && (
-              <h1 className="text-3xl font-bold text-blueGray-50">{ens}</h1>
-            )}
-          </>
-        )}
-        <WalletConnect className="p-3 text-white rounded-lg border">
-          Connect Wallet
-        </WalletConnect>
-      </div>
-    </body>
+    <div className="flex flex-col h-screen bg-blueGray-100">
+      <HomeHero />
+    </div>
   );
 };
 
