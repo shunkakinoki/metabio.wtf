@@ -1,6 +1,6 @@
 import { providers } from "ethers";
 
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import type { ButtonHTMLAttributes, FC } from "react";
 
 import { useUserAddress } from "@/hooks/useUserAddress";
@@ -16,26 +16,26 @@ export const WalletConect: FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({
   const { userAddress, setUserAddress } = useUserAddress();
   const web3Modal = useWeb3Modal();
 
-  useEffect(() => {
-    if (!web3Modal.cachedProvider) return;
-
-    connectWallet();
-  }, []);
-
-  useEffect(() => {
-    if (!web3) return;
-
-    web3.getSigner().getAddress().then(setUserAddress);
-  }, [web3]);
-
-  const connectWallet = () => {
+  const connectWallet = useCallback(() => {
     return web3Modal
       .connect()
       .then(provider => {
         return new providers.Web3Provider(provider);
       })
       .then(setWeb3);
-  };
+  }, [setWeb3, web3Modal]);
+
+  useEffect(() => {
+    if (!web3Modal.cachedProvider) return;
+
+    connectWallet();
+  }, [connectWallet, web3Modal?.cachedProvider]);
+
+  useEffect(() => {
+    if (!web3) return;
+
+    web3.getSigner().getAddress().then(setUserAddress);
+  }, [setUserAddress, web3]);
 
   const disconnectWallet = () => {
     web3Modal.clearCachedProvider();
