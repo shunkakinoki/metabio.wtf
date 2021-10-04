@@ -1,0 +1,49 @@
+{
+  "name": "@sentrei/template",
+  "version": "1.0.0",
+  "private": false,
+  "description": "",
+  "homepage": "https://template.sentrei.com",
+  "bugs": {
+    "url": "https://github.com/sentrei/template/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sentrei/template.git"
+  },
+  "license": "MIT",
+  "author": "Sentrei, Inc.",
+  "scripts": {
+    "dev": "next dev",
+    "eslint:cmd": "eslint --config .eslintrc.js --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
+    "eslint:fix": "yarn run eslint:cmd . --fix",
+    "eslint:lint": "yarn run eslint:cmd .",
+    "fix": "concurrently 'yarn:*:fix'",
+    "lint": "concurrently 'yarn:*:lint'",
+    "multi-semantic-release": "multi-semantic-release --sequential-init",
+    "multi-semantic-release:check": "multi-semantic-release --dry-run --sequential-init",
+    "ncu:check": "ncu --deep -p yarn",
+    "ncu:upgrade": "ncu --deep -u -p yarn",
+    "npm-package-json:lint": "npmPkgJsonLint .",
+    "prepare": "husky install",
+    "prepublishOnly": "pinst --disable",
+    "prettier:cmd": "prettier --ignore-unknown",
+    "prettier:fix": "yarn run prettier:cmd --write .",
+    "prettier:lint": "yarn run prettier:cmd --check .",
+    "postpublish": "pinst --enable",
+    "release": "semantic-release",
+    "release:check": "semantic-release --dry-run",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@sentrei/next": "^1.13.0",
+    "@sentrei/postcss": "^1.4.3",
+    "@sentrei/tailwindcss": "^1.5.0"
+  },
+  "devDependencies": {
+    "@sentrei/kit": "^1.0.0"
+  },
+  "npmpackagejsonlint": {
+    "extends": "@sentrei/npm-package-json-lint-config"
+  }
+}

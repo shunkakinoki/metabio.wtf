@@ -1,0 +1,16 @@
+name: Chatops
+on:
+  issue_comment:
+    types: [created]
+jobs:
+  chatops:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v2
+      - uses: peter-evans/slash-command-dispatch@v2
+        with:
+          token: ${{ secrets.BOT_TOKEN }}
+          reaction-token: ${{ secrets.GITHUB_TOKEN }}
+          reactions: true
+          config-from-file: .github/chatops.json
