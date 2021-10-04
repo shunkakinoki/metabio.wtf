@@ -1,5 +1,5 @@
 {
-  "name": "@sentrei/template",
+  "name": "@sentrei/metabio-wtf",
   "version": "1.0.0",
   "private": false,
   "description": "",
@@ -36,12 +36,12 @@
     "start": "next start"
   },
   "dependencies": {
-    "@sentrei/next": "^1.13.0",
+    "@sentrei/next": "^1.13.1",
     "@sentrei/postcss": "^1.4.3",
     "@sentrei/tailwindcss": "^1.5.0"
   },
   "devDependencies": {
-    "@sentrei/kit": "^1.0.0"
+    "@sentrei/kit": "^1.0.1"
   },
   "npmpackagejsonlint": {
     "extends": "@sentrei/npm-package-json-lint-config"

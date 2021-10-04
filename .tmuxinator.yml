@@ -1,0 +1,7 @@
+name: metabio-wtf
+root: ~/ghq/github.com/sentrei/metabio-wtf
+attach: true
+windows:
+  - zsh: shell
+  - zsh: shell
+  - zsh: shell
