@@ -25,7 +25,9 @@ export const WalletConnect: FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({
   }, [setWeb3, web3Modal]);
 
   useEffect(() => {
-    if (!web3Modal.cachedProvider) return;
+    if (!web3Modal.cachedProvider) {
+      return;
+    }
 
     connectWallet();
   }, [connectWallet, web3Modal?.cachedProvider]);
