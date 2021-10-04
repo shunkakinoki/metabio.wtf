@@ -6,7 +6,6 @@ import type { ButtonHTMLAttributes, FC } from "react";
 import { useUserAddress } from "@/hooks/useUserAddress";
 import { useWeb3 } from "@/hooks/useWeb3/useWeb3";
 import { useWeb3Modal } from "@/hooks/useWeb3Modal/useWeb3Modal";
-import { formatAddressShort } from "@/lib/utils";
 
 export const WalletConnect: FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({
   children,
@@ -39,7 +38,7 @@ export const WalletConnect: FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({
 
   return (
     <button onClick={web3 ? disconnectWallet : connectWallet} {...props}>
-      {userAddress ? formatAddressShort(userAddress) : children}
+      {userAddress ? "Disconnect" : children}
     </button>
   );
 };

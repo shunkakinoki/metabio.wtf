@@ -4,7 +4,9 @@ import Web3Modal from "web3modal";
 
 export const useWeb3Modal = (): Web3Modal => {
   return useMemo<Web3Modal>(() => {
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined") {
+      return;
+    }
 
     return new Web3Modal({
       cacheProvider: true,
