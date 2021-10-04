@@ -1,1 +1,0 @@
-export { useTruncatedAddress } from "./useTruncatedAddress";

@@ -1,8 +1,9 @@
 import { WalletConnect } from "@/components/WalletConnect/WalletConnect";
-import { useTruncatedAddress } from "@/hooks/useTruncatedAddress";
+import { useAddressTruncated } from "@/hooks/useAddressTruncated";
 
 export const Index = (): JSX.Element => {
-  const address = useTruncatedAddress();
+  const address = useAddressTruncated();
+
   return (
     <body className="flex justify-center items-center h-screen bg-black">
       <div className="text-center">
