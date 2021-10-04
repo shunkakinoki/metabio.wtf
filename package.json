@@ -38,7 +38,10 @@
   "dependencies": {
     "@sentrei/next": "^1.13.1",
     "@sentrei/postcss": "^1.4.3",
-    "@sentrei/tailwindcss": "^1.5.0"
+    "@sentrei/tailwindcss": "^1.5.0",
+    "@walletconnect/web3-provider": "^1.6.5",
+    "ethers": "^5.4.7",
+    "web3modal": "^1.9.4"
   },
   "devDependencies": {
     "@sentrei/kit": "^1.0.1"
