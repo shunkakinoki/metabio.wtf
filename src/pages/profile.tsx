@@ -1,3 +1,4 @@
+import { Gallery } from "@/components/Gallery";
 import { ProfileHero } from "@/components/ProfileHero";
 import { WalletConnect } from "@/components/WalletConnect/WalletConnect";
 import { useAddressTruncated } from "@/hooks/useAddressTruncated";
@@ -13,6 +14,7 @@ export const Profile = (): JSX.Element => {
       <WalletConnect className="p-3 text-white rounded-lg border">
         Connect Wallet
       </WalletConnect>
+      <Gallery />
     </div>
   );
 };

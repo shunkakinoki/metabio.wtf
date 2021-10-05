@@ -4,7 +4,7 @@ import type { AppProps } from "next/app";
 import { useEffect } from "react";
 import { RecoilRoot } from "recoil";
 
-import "tailwindcss/tailwind.css";
+import "@/styles/index.css";
 import "aos/dist/aos.css";
 
 const CustomApp = ({ Component, pageProps }: AppProps): JSX.Element => {
