@@ -26,7 +26,6 @@ export const resolvePoaps = async (address: string): Promise<any[]> => {
       { method: "POST", body: JSON.stringify({ query, variables }) },
     );
     const { data } = await result.json();
-    console.log(data);
     if (!data.accounts[0].tokens) {
       throw new Error(`Could not resolve ${address} via Poap.`);
     }
