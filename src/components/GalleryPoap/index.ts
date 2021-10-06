@@ -1,0 +1,1 @@
+export { GalleryPoap } from "./GalleryPoap";
