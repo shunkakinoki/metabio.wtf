@@ -22,14 +22,12 @@ export const resolveEnsAddress = async (
       { method: "POST", body: JSON.stringify({ query, variables }) },
     );
     const { data } = await result.json();
-    console.log(data);
     if (!data.domains.length) {
       throw new Error(`Could not resolve ${ensAddress} via ENS.`);
     }
     const address = data.domains[0].name;
     return address;
   } catch (error) {
-    console.log(error);
     return null;
   }
 };
