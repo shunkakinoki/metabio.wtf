@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@sentrei/next": "^1.13.1",
-    "@sentrei/postcss": "^1.4.3",
+    "@sentrei/postcss": "^1.4.5",
     "@sentrei/tailwindcss": "^1.5.0",
     "@walletconnect/web3-provider": "^1.6.5",
     "aos": "^2.3.4",
