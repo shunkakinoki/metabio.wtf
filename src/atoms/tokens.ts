@@ -1,6 +1,8 @@
 import { atom } from "recoil";
 
-export const tokensAtom = atom<any[]>({
+import type { Token } from "@/types/token";
+
+export const tokensAtom = atom<Token[]>({
   default: null,
   key: "tokens",
 });
