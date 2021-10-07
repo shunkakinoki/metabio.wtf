@@ -2,6 +2,7 @@ import { GalleryMirror } from "@/components/GalleryMirror";
 import { GalleryNFT } from "@/components/GalleryNFT";
 import { GalleryPoap } from "@/components/GalleryPoap";
 import { GallerySnapshot } from "@/components/GallerySnapshot";
+import { GalleryToken } from "@/components/GalleryToken";
 import { ProfileHero } from "@/components/ProfileHero";
 import { WalletConnect } from "@/components/WalletConnect/WalletConnect";
 import { useAddressTruncated } from "@/hooks/useAddressTruncated";
@@ -21,6 +22,7 @@ export const Profile = (): JSX.Element => {
       <GalleryPoap />
       <GalleryMirror />
       <GallerySnapshot />
+      <GalleryToken />
     </div>
   );
 };

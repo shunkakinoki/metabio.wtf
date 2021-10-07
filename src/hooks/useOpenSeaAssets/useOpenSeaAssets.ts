@@ -1,12 +1,15 @@
-import { useRecoilState } from "recoil";
+import { useRecoilValue, useRecoilState } from "recoil";
 import useSWR from "swr";
 
+import { addressAtom } from "@/atoms/address";
 import { web3ProviderAtom } from "@/atoms/web3Provider";
 import { fetcher } from "@/libs/fetcher";
 import type { OpenseaAsset } from "@/types/opensea";
 
-export const useOpenSeaAssets = (address: string | null, offset = 0) => {
-  const [web3Provider] = useRecoilState(web3ProviderAtom);
+export const useOpenSeaAssets = (offset = 0) => {
+  const address = useRecoilValue(addressAtom);
+  const web3Provider = useRecoilState(web3ProviderAtom);
+
   const key = `https://api.opensea.io/api/v1/assets?owner=${address}&limit=50&offset=${offset}`;
 
   const { data, error, mutate } = useSWR<{ assets: OpenseaAsset[] }>(
