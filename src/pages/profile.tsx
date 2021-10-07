@@ -1,3 +1,4 @@
+import { GalleryMirror } from "@/components/GalleryMirror";
 import { GalleryNFT } from "@/components/GalleryNFT";
 import { GalleryPoap } from "@/components/GalleryPoap";
 import { GallerySnapshot } from "@/components/GallerySnapshot";
@@ -18,6 +19,7 @@ export const Profile = (): JSX.Element => {
       </WalletConnect>
       <GalleryNFT />
       <GalleryPoap />
+      <GalleryMirror />
       <GallerySnapshot />
     </div>
   );
