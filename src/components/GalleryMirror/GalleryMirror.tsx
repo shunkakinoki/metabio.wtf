@@ -11,7 +11,6 @@ export const GalleryMirror = () => {
 
   return (
     <Gallery>
-      {" "}
       {mirrorArticles &&
         mirrorArticles.map((article, index) => {
           return (
