@@ -1,6 +1,13 @@
 import { atom } from "recoil";
 
-export const mirrorAtom = atom<any[]>({
+export const mirrorProfileAtom = atom<any[]>({
   default: [],
-  key: "mirror",
+  key: "mirrorProfile",
+});
+
+export const mirrorArticlesAtom = atom<{
+  [x: string]: any;
+}>({
+  default: [],
+  key: "mirrorArticles",
 });

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useRecoilValue, useRecoilState } from "recoil";
 
 import { addressAtom } from "@/atoms/address";
-import { mirrorAtom } from "@/atoms/mirror";
+import { mirrorProfileAtom } from "@/atoms/mirror";
 
 export const resolveMirrorProfile = async (address: string): Promise<any[]> => {
   const query = `
@@ -26,7 +26,6 @@ export const resolveMirrorProfile = async (address: string): Promise<any[]> => {
       body: JSON.stringify({ query, variables }),
     });
     const { data } = await result.json();
-    console.log(data);
     if (!data.accounts[0].tokens) {
       throw new Error(`Could not resolve ${address} via Mirror.`);
     }
@@ -39,7 +38,7 @@ export const resolveMirrorProfile = async (address: string): Promise<any[]> => {
 
 export const useMirrorProfile = () => {
   const address = useRecoilValue(addressAtom);
-  const [mirrorProfile, setMirrorProfile] = useRecoilState(mirrorAtom);
+  const [mirrorProfile, setMirrorProfile] = useRecoilState(mirrorProfileAtom);
 
   useEffect(() => {
     if (!address) {
