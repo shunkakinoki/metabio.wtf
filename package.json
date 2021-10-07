@@ -47,7 +47,7 @@
     "web3modal": "^1.9.4"
   },
   "devDependencies": {
-    "@sentrei/kit": "^1.0.1",
+    "@sentrei/kit": "^1.0.7",
     "@shunkakinoki/eslint-config": "^1.1.22"
   },
   "npmpackagejsonlint": {
