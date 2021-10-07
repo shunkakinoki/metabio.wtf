@@ -154,14 +154,7 @@
     core-js-pure "^3.16.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@7.15.3":
-  version "7.15.3"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.15.3.tgz#2e1c2880ca118e5b2f9988322bd8a7656a32502b"
-  integrity sha512-OvwMLqNXkCXSz1kSm58sEsNuhqOx/fKpnUnKnFB5v8uDda5bLNEHNgKPvhDN6IU0LDcnHQ90LlJ0Q6jnyBSIBA==
-  dependencies:
-    regenerator-runtime "^0.13.4"
-
-"@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.14.0", "@babel/runtime@^7.5.5":
+"@babel/runtime@7.15.4", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.14.0", "@babel/runtime@^7.5.5":
   version "7.15.4"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.15.4.tgz#fd17d16bfdf878e6dd02d19753a39fa8a8d9c84a"
   integrity sha512-99catp6bHCaxr4sJ/DbTGgHS4+Rs2RVd2g7iOap6SLGPDknRK9ztKNsE/Fg6QhSeh1FGE5f6gHGQmvvn3I3xhw==
@@ -855,17 +848,17 @@
     require_optional "^1.0.1"
     typeorm "^0.2.30"
 
-"@next/bundle-analyzer@^11.1.3-canary.41":
-  version "11.1.3-canary.41"
-  resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-11.1.3-canary.41.tgz#95db9aab8d921d2f94d4dda654a096530c05bab6"
-  integrity sha512-aSZof/B7pPoDQyXeGxS9+MRoyHKl3+NxH6cs60FEy8bEu1nLD1JgP6j7hPb4xDZIP0Se+S4x7QnMGt3TQncogA==
+"@next/bundle-analyzer@^11.1.3-canary.49":
+  version "11.1.3-canary.50"
+  resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-11.1.3-canary.50.tgz#f89404c42eef71ad4dfba23d50b9b8a57bf5a497"
+  integrity sha512-fbJayUaWjLJaz8cNIlNyc47gaZDaeDHPlyN6si6/ejL0AeEjx8aT0ezkmpULokb9w/fbBMNh24y5p16BMZnCMg==
   dependencies:
     webpack-bundle-analyzer "4.3.0"
 
-"@next/env@11.1.3-canary.41":
-  version "11.1.3-canary.41"
-  resolved "https://registry.yarnpkg.com/@next/env/-/env-11.1.3-canary.41.tgz#ad8e5d2b8ba99fc6db6a24db8d8abe7de4a2b007"
-  integrity sha512-JlzHa9xQ6Vhpg1C5+u2DgwHGJ/TH7Z03yEHkwbEWCOpTJDg/moO/MhpmzposIU1ybWJAERGg5bS6Sw1wnjUdmQ==
+"@next/env@11.1.3-canary.50":
+  version "11.1.3-canary.50"
+  resolved "https://registry.yarnpkg.com/@next/env/-/env-11.1.3-canary.50.tgz#7a59148a2065af6b21228ae167ded3c3c12bd139"
+  integrity sha512-kSgJ+1Ld1cmIrNyNjg6FQNsp6ao9mobEHPPtxwID6YPoeo0bLrZ4c1kFqoqGeLopU0KVbEhOjSFfqkRH6/fgHw==
 
 "@next/eslint-plugin-next@11.1.3-canary.41":
   version "11.1.3-canary.41"
@@ -881,15 +874,15 @@
   dependencies:
     glob "7.1.7"
 
-"@next/polyfill-module@11.1.3-canary.41":
-  version "11.1.3-canary.41"
-  resolved "https://registry.yarnpkg.com/@next/polyfill-module/-/polyfill-module-11.1.3-canary.41.tgz#57f5e212867330b6597141a57f3fd8c5fd241f3c"
-  integrity sha512-u11k4mTEfDEa/lesmOCv1Wb7AHxMfMiBP6i3i+ZrxI5ipwHqhqYaHFZMaM5SUZ8b9jDC5wbwHDVzajTvPMMZpA==
+"@next/polyfill-module@11.1.3-canary.50":
+  version "11.1.3-canary.50"
+  resolved "https://registry.yarnpkg.com/@next/polyfill-module/-/polyfill-module-11.1.3-canary.50.tgz#b4afb5f9ff7b3c998e52fc810856cc02e226aa3c"
+  integrity sha512-Q+h9o7d/qp/uzu57E8ng8Cv9YOJ3+p31cFYOogbkRHwYTyB3lYs3NU30HX/XgUjLt2NaIhfTPcMuXScps4tC/g==
 
-"@next/react-dev-overlay@11.1.3-canary.41":
-  version "11.1.3-canary.41"
-  resolved "https://registry.yarnpkg.com/@next/react-dev-overlay/-/react-dev-overlay-11.1.3-canary.41.tgz#f4af161a8095631466a881e2030e46b99178d294"
-  integrity sha512-l8Kd0RWVvzgYcARoBFZlj+JK9glKr91jzApPpp0etU5ROwUCF0qRUXDXZn2jmcKuCVVf0tFi+5e+F5eqxydaAg==
+"@next/react-dev-overlay@11.1.3-canary.50":
+  version "11.1.3-canary.50"
+  resolved "https://registry.yarnpkg.com/@next/react-dev-overlay/-/react-dev-overlay-11.1.3-canary.50.tgz#d7e046157eca85f6268444ec0a0b25141596b9e2"
+  integrity sha512-xu6UDSGE/cZOtMGAmZw5Bvsj6G1dxDoe1stT3CcNVmkNxoCuGcq64xa48i9bB75GP7fBsznoxj/woNlPfyYrsQ==
   dependencies:
     "@babel/code-frame" "7.12.11"
     anser "1.4.9"
@@ -903,30 +896,30 @@
     stacktrace-parser "0.1.10"
     strip-ansi "6.0.0"
 
-"@next/react-refresh-utils@11.1.3-canary.41":
-  version "11.1.3-canary.41"
-  resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-11.1.3-canary.41.tgz#67e707b3f9c24937632e7854ec2698dc80da440b"
-  integrity sha512-U9a7MJYTbCOBoeXYdaQQ8GY4kK7ujRgnUEoETi35z2CPZsGVqccfnpisE84zqfRmyYvqe5dkc3t0uUdWYIti7w==
+"@next/react-refresh-utils@11.1.3-canary.50":
+  version "11.1.3-canary.50"
+  resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-11.1.3-canary.50.tgz#da018c47506ce01544b91ba05a2d5c80c8cb6499"
+  integrity sha512-FbEgQLTNXT6hQQMYsKY2HQ4WjOk1ObVBEFns8FE0iuqS2jhxIhPtWhyu09nX9GZkVb7Km7UKwD7UY36QvJTeOg==
 
-"@next/swc-darwin-arm64@11.1.3-canary.41":
-  version "11.1.3-canary.41"
-  resolved "https://registry.yarnpkg.com/@next/swc-darwin-arm64/-/swc-darwin-arm64-11.1.3-canary.41.tgz#58b94043426548937fceaddfa2b5a7847c4767ee"
-  integrity sha512-RENfmMXsJYmq87WqpttV50WcSjACwN/mGVZTtPEwwQo5CMIvfQ07sOcrRPF1qYldgSMcRI5V+eAA237ZZkjHvg==
+"@next/swc-darwin-arm64@11.1.3-canary.50":
+  version "11.1.3-canary.50"
+  resolved "https://registry.yarnpkg.com/@next/swc-darwin-arm64/-/swc-darwin-arm64-11.1.3-canary.50.tgz#f8e62bf1e2ef4a0419c22305d368d404b086ed04"
+  integrity sha512-CRGS64umLZb8TsXKQZP5XqrwJQBpmALVb07QicRWIXvT9GrYxWn0MfUk55g8nDjeAztU3SLEGd/EJWmBS4hulg==
 
-"@next/swc-darwin-x64@11.1.3-canary.41":
-  version "11.1.3-canary.41"
-  resolved "https://registry.yarnpkg.com/@next/swc-darwin-x64/-/swc-darwin-x64-11.1.3-canary.41.tgz#f7eab55f45a6bfea548f88a8c724a6f2b7edec23"
-  integrity sha512-gg5gGNShshKOZy5BKFgGYrwyogiRQdrYcRg8Pzq5XL6UKAwPgO8U5fVAJxKeoL+hw4V1dRvMApn7DVjEkmJz3A==
+"@next/swc-darwin-x64@11.1.3-canary.50":
+  version "11.1.3-canary.50"
+  resolved "https://registry.yarnpkg.com/@next/swc-darwin-x64/-/swc-darwin-x64-11.1.3-canary.50.tgz#c3328b23d89180a22b230c4577ab06d80a0696f3"
+  integrity sha512-GeSesO8TkHRDOsTo0E6/EAcBslNH3nWvaCKFxTwtvKQpy3xx3Eb0DwzEU4pjYSkP1ZZZct++dcnRBff6f8wQsg==
 
-"@next/swc-linux-x64-gnu@11.1.3-canary.41":
-  version "11.1.3-canary.41"
-  resolved "https://registry.yarnpkg.com/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-11.1.3-canary.41.tgz#959b7fd818ba2c845e2c402b74f373b737a25011"
-  integrity sha512-lAtStywEC8hY5YmCAQoMo/COTmSr+n8lwTnx6tPfHtTEUXL/or+3GkzoZrcUmbHBViGDlnCI5X9JbuDNlVLKCQ==
+"@next/swc-linux-x64-gnu@11.1.3-canary.50":
+  version "11.1.3-canary.50"
+  resolved "https://registry.yarnpkg.com/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-11.1.3-canary.50.tgz#aa46555d7898e6183c2aada1f75a53a0ee78ed89"
+  integrity sha512-jeBYQXAqJUyCzoz4SLm3vQnbnXiRD3QkEHrGCVuVCFKqjSioMwry0y7VSZI9YUnvYIhdq8W7hpkfrsWMXDjrEA==
 
-"@next/swc-win32-x64-msvc@11.1.3-canary.41":
-  version "11.1.3-canary.41"
-  resolved "https://registry.yarnpkg.com/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-11.1.3-canary.41.tgz#b126fcefd2d23d4e732d99cc6486b1975a1a2742"
-  integrity sha512-ljM5T5b8r9NRV+b+GEUYnKRBnhvv5e97un1s04zsmvjnl6fdxUBR7uzGTlKS+VUr0bmsB/62HO/evCsbWQ253w==
+"@next/swc-win32-x64-msvc@11.1.3-canary.50":
+  version "11.1.3-canary.50"
+  resolved "https://registry.yarnpkg.com/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-11.1.3-canary.50.tgz#0ebc6d627ce1ab4c75f3ee0921abba98de9d2f08"
+  integrity sha512-GW0SFGLOzsddCU++OxYdDNu8OKp1n/h0VPvizfXhZqJCp7bTjHGlU4wbru+XgllLfapl2UugpK5TnRdMwOBg5w==
 
 "@node-rs/helper@1.2.1":
   version "1.2.1"
@@ -1491,25 +1484,25 @@
   dependencies:
     lint-staged "^11.1.2"
 
-"@sentrei/next@^1.13.1":
-  version "1.13.1"
-  resolved "https://registry.yarnpkg.com/@sentrei/next/-/next-1.13.1.tgz#9f0748477bf46ee6d8c5528c7295d39eec590ff2"
-  integrity sha512-fS70jq7JcJ9WVe0+ZyCamPxwC6mH0385O6Ac6kKIZmgzH0YuYX5v/d9F+L0gYS4w7biAaOPwqyxFJedEaLK0pA==
+"@sentrei/next@^1.13.5":
+  version "1.13.5"
+  resolved "https://registry.yarnpkg.com/@sentrei/next/-/next-1.13.5.tgz#92284dd0b8b6128b922a622dfb8131a2203b98a8"
+  integrity sha512-U4p9pvXirhVbZ+Gr/DZaQ8NBZl4Mvk5RQ3U8fBcJuRqSlPfn1yAbpGhDRLK5fURdzDtsJ+dyySCbfdOfVHHEiw==
   dependencies:
     "@headlessui/react" "^1.4.1"
     "@heroicons/react" "^1.0.4"
     "@next-auth/prisma-adapter" "^0.5.4"
-    "@next/bundle-analyzer" "^11.1.3-canary.41"
-    "@sentry/nextjs" "^6.13.2"
+    "@next/bundle-analyzer" "^11.1.3-canary.49"
+    "@sentry/nextjs" "^6.13.3"
     "@types/react" "^17.0.27"
     "@types/react-dom" "^17.0.9"
     clsx "^1.1.1"
     critters "^0.0.10"
-    next "^11.1.3-canary.41"
+    next "^11.1.3-canary.49"
     next-auth "^3.29.0"
     next-compose-plugins "^2.2.1"
     next-seo "^4.28.1"
-    next-sitemap "^1.6.173"
+    next-sitemap "^1.6.179"
     next-themes "^0.0.15"
     next-translate "^1.1.0"
     react "^17.0.2"
@@ -1581,14 +1574,14 @@
   dependencies:
     typescript "^4.3.5"
 
-"@sentry/browser@6.13.2":
-  version "6.13.2"
-  resolved "https://registry.yarnpkg.com/@sentry/browser/-/browser-6.13.2.tgz#8b731ecf8c3cdd92a4b6893a26f975fd5844056d"
-  integrity sha512-bkFXK4vAp2UX/4rQY0pj2Iky55Gnwr79CtveoeeMshoLy5iDgZ8gvnLNAz7om4B9OQk1u7NzLEa4IXAmHTUyag==
+"@sentry/browser@6.13.3":
+  version "6.13.3"
+  resolved "https://registry.yarnpkg.com/@sentry/browser/-/browser-6.13.3.tgz#d4511791b1e484ad48785eba3bce291fdf115c1e"
+  integrity sha512-jwlpsk2/u1cofvfYsjmqcnx50JJtf/T6HTgdW+ih8+rqWC5ABEZf4IiB/H+KAyjJ3wVzCOugMq5irL83XDCfqQ==
   dependencies:
-    "@sentry/core" "6.13.2"
-    "@sentry/types" "6.13.2"
-    "@sentry/utils" "6.13.2"
+    "@sentry/core" "6.13.3"
+    "@sentry/types" "6.13.3"
+    "@sentry/utils" "6.13.3"
     tslib "^1.9.3"
 
 "@sentry/cli@^1.68.0":
@@ -1603,108 +1596,108 @@
     progress "^2.0.3"
     proxy-from-env "^1.1.0"
 
-"@sentry/core@6.13.2":
-  version "6.13.2"
-  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-6.13.2.tgz#2ce164f81667aa89cd116f807d772b4718434583"
-  integrity sha512-snXNNFLwlS7yYxKTX4DBXebvJK+6ikBWN6noQ1CHowvM3ReFBlrdrs0Z0SsSFEzXm2S4q7f6HHbm66GSQZ/8FQ==
+"@sentry/core@6.13.3":
+  version "6.13.3"
+  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-6.13.3.tgz#5cbbb995128e793ebebcbf1d3b7514e0e5e8b221"
+  integrity sha512-obm3SjgCk8A7nB37b2AU1eq1q7gMoJRrGMv9VRIyfcG0Wlz/5lJ9O3ohUk+YZaaVfZMxXn6hFtsBiOWmlv7IIA==
   dependencies:
-    "@sentry/hub" "6.13.2"
-    "@sentry/minimal" "6.13.2"
-    "@sentry/types" "6.13.2"
-    "@sentry/utils" "6.13.2"
+    "@sentry/hub" "6.13.3"
+    "@sentry/minimal" "6.13.3"
+    "@sentry/types" "6.13.3"
+    "@sentry/utils" "6.13.3"
     tslib "^1.9.3"
 
-"@sentry/hub@6.13.2":
-  version "6.13.2"
-  resolved "https://registry.yarnpkg.com/@sentry/hub/-/hub-6.13.2.tgz#ebc66fd55c96c7686a53ffd3521b6a63f883bb79"
-  integrity sha512-sppSuJdNMiMC/vFm/dQowCBh11uTrmvks00fc190YWgxHshodJwXMdpc+pN61VSOmy2QA4MbQ5aMAgHzPzel3A==
+"@sentry/hub@6.13.3":
+  version "6.13.3"
+  resolved "https://registry.yarnpkg.com/@sentry/hub/-/hub-6.13.3.tgz#cc09623a69b5343315fdb61c7fdd0be74b72299f"
+  integrity sha512-eYppBVqvhs5cvm33snW2sxfcw6G20/74RbBn+E4WDo15hozis89kU7ZCJDOPkXuag3v1h9igns/kM6PNBb41dw==
   dependencies:
-    "@sentry/types" "6.13.2"
-    "@sentry/utils" "6.13.2"
+    "@sentry/types" "6.13.3"
+    "@sentry/utils" "6.13.3"
     tslib "^1.9.3"
 
-"@sentry/integrations@6.13.2":
-  version "6.13.2"
-  resolved "https://registry.yarnpkg.com/@sentry/integrations/-/integrations-6.13.2.tgz#906f2dd920439e5886f479a6da57f9c5d928f656"
-  integrity sha512-CzxMtNr4nkZbifD0Rb6tXwqfqm+fWKl4IQTaFrJ92VNdgihBMVWYmflRqkMkGh1iFN8bVPpXrGyplY5tFN+2kA==
+"@sentry/integrations@6.13.3":
+  version "6.13.3"
+  resolved "https://registry.yarnpkg.com/@sentry/integrations/-/integrations-6.13.3.tgz#9d80229de6e815c53fa52ca2422a0d13820b8d4e"
+  integrity sha512-iC8LkbBTxlRo9FNxRqFfEm85FrELltc3E9gFsFSBkCnf7S/3nDCDW+mJX92KpRk97Wqid6/JwlXttKz8lsdF2A==
   dependencies:
-    "@sentry/types" "6.13.2"
-    "@sentry/utils" "6.13.2"
+    "@sentry/types" "6.13.3"
+    "@sentry/utils" "6.13.3"
     localforage "^1.8.1"
     tslib "^1.9.3"
 
-"@sentry/minimal@6.13.2":
-  version "6.13.2"
-  resolved "https://registry.yarnpkg.com/@sentry/minimal/-/minimal-6.13.2.tgz#de3ecc62b9463bf56ccdbcf4c75f7ea1aeeebc11"
-  integrity sha512-6iJfEvHzzpGBHDfLxSHcGObh73XU1OSQKWjuhDOe7UQDyI4BQmTfcXAC+Fr8sm8C/tIsmpVi/XJhs8cubFdSMw==
+"@sentry/minimal@6.13.3":
+  version "6.13.3"
+  resolved "https://registry.yarnpkg.com/@sentry/minimal/-/minimal-6.13.3.tgz#a675a79bcc830142e4f95e6198a2efde2cd3901e"
+  integrity sha512-63MlYYRni3fs5Bh8XBAfVZ+ctDdWg0fapSTP1ydIC37fKvbE+5zhyUqwrEKBIiclEApg1VKX7bkKxVdu/vsFdw==
   dependencies:
-    "@sentry/hub" "6.13.2"
-    "@sentry/types" "6.13.2"
+    "@sentry/hub" "6.13.3"
+    "@sentry/types" "6.13.3"
     tslib "^1.9.3"
 
-"@sentry/nextjs@^6.13.2":
-  version "6.13.2"
-  resolved "https://registry.yarnpkg.com/@sentry/nextjs/-/nextjs-6.13.2.tgz#edcd6c42e9dd11d3a8195a14ff122526c26e0e46"
-  integrity sha512-GDdvF9ksQHVhUOcC9/8AG43CTGFDi4G8FP7JbMjP6S9xrQi75pw0F/LQuV4tBeO8mv8cXCWxul8C06LQ4VnGag==
+"@sentry/nextjs@^6.13.3":
+  version "6.13.3"
+  resolved "https://registry.yarnpkg.com/@sentry/nextjs/-/nextjs-6.13.3.tgz#03ae3e1ad0f6cd3fa66fdb644f89aa173b6db247"
+  integrity sha512-Om9jdOX9TSOyfEcogF5v6r3SpNJMeMdeeE4RON3Aui6W3dfV/vpt60rMVliVyAHlWSAfbYzkcFaWm1at76/JEg==
   dependencies:
-    "@sentry/core" "6.13.2"
-    "@sentry/integrations" "6.13.2"
-    "@sentry/node" "6.13.2"
-    "@sentry/react" "6.13.2"
-    "@sentry/tracing" "6.13.2"
-    "@sentry/utils" "6.13.2"
+    "@sentry/core" "6.13.3"
+    "@sentry/integrations" "6.13.3"
+    "@sentry/node" "6.13.3"
+    "@sentry/react" "6.13.3"
+    "@sentry/tracing" "6.13.3"
+    "@sentry/utils" "6.13.3"
     "@sentry/webpack-plugin" "1.17.1"
     tslib "^1.9.3"
 
-"@sentry/node@6.13.2":
-  version "6.13.2"
-  resolved "https://registry.yarnpkg.com/@sentry/node/-/node-6.13.2.tgz#6f5ee51eacad19b59e6ffb70b2d0e14396fd6233"
-  integrity sha512-0Vw22amG143MTiNaSny66YGU3+uW7HxyGI9TLGE7aJY1nNmC0DE+OgqQYGBRCrrPu+VFXRDxrOg9b15A1gKqjA==
+"@sentry/node@6.13.3":
+  version "6.13.3"
+  resolved "https://registry.yarnpkg.com/@sentry/node/-/node-6.13.3.tgz#94c646c31fd240ab68ee8b85aa663e65eb499d06"
+  integrity sha512-ZeZSw+TcPcf4e0j7iEqNMtoVmz+WFW/TEoGokXIwysZqSgchKdAXDHqn+CqUqFan7d76JcJmzztAUK2JruQ2Kg==
   dependencies:
-    "@sentry/core" "6.13.2"
-    "@sentry/hub" "6.13.2"
-    "@sentry/tracing" "6.13.2"
-    "@sentry/types" "6.13.2"
-    "@sentry/utils" "6.13.2"
+    "@sentry/core" "6.13.3"
+    "@sentry/hub" "6.13.3"
+    "@sentry/tracing" "6.13.3"
+    "@sentry/types" "6.13.3"
+    "@sentry/utils" "6.13.3"
     cookie "^0.4.1"
     https-proxy-agent "^5.0.0"
     lru_map "^0.3.3"
     tslib "^1.9.3"
 
-"@sentry/react@6.13.2":
-  version "6.13.2"
-  resolved "https://registry.yarnpkg.com/@sentry/react/-/react-6.13.2.tgz#481f1549b1509b4d94eb943934ebeba6430a1a8f"
-  integrity sha512-aLkWyn697LTcmK1PPnUg5UJcyBUPoI68motqgBY53SIYDAwOeYNUQt2aanDuOTY5aE2PdnJwU48klA8vuYkoRQ==
+"@sentry/react@6.13.3":
+  version "6.13.3"
+  resolved "https://registry.yarnpkg.com/@sentry/react/-/react-6.13.3.tgz#f9607e0a60d52efd0baa96a14e694b6059f9379a"
+  integrity sha512-fdfmD9XNpGDwdkeLyd+iq+kqtNeghpH3wiez2rD81ZBvrn70uKaO2/yYDE71AXC6fUOwQuJmdfAuqBcNJkYIEw==
   dependencies:
-    "@sentry/browser" "6.13.2"
-    "@sentry/minimal" "6.13.2"
-    "@sentry/types" "6.13.2"
-    "@sentry/utils" "6.13.2"
+    "@sentry/browser" "6.13.3"
+    "@sentry/minimal" "6.13.3"
+    "@sentry/types" "6.13.3"
+    "@sentry/utils" "6.13.3"
     hoist-non-react-statics "^3.3.2"
     tslib "^1.9.3"
 
-"@sentry/tracing@6.13.2":
-  version "6.13.2"
-  resolved "https://registry.yarnpkg.com/@sentry/tracing/-/tracing-6.13.2.tgz#512389ba459f48ae75e14f1528ab062dc46e4956"
-  integrity sha512-bHJz+C/nd6biWTNcYAu91JeRilsvVgaye4POkdzWSmD0XoLWHVMrpCQobGpXe7onkp2noU3YQjhqgtBqPHtnpw==
+"@sentry/tracing@6.13.3":
+  version "6.13.3"
+  resolved "https://registry.yarnpkg.com/@sentry/tracing/-/tracing-6.13.3.tgz#ca657d4afa99c50f15e638fe38405bac33e780ee"
+  integrity sha512-yyOFIhqlprPM0g4f35Icear3eZk2mwyYcGEzljJfY2iU6pJwj1lzia5PfSwiCW7jFGMmlBJNhOAIpfhlliZi8Q==
   dependencies:
-    "@sentry/hub" "6.13.2"
-    "@sentry/minimal" "6.13.2"
-    "@sentry/types" "6.13.2"
-    "@sentry/utils" "6.13.2"
+    "@sentry/hub" "6.13.3"
+    "@sentry/minimal" "6.13.3"
+    "@sentry/types" "6.13.3"
+    "@sentry/utils" "6.13.3"
     tslib "^1.9.3"
 
-"@sentry/types@6.13.2":
-  version "6.13.2"
-  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-6.13.2.tgz#8388d5b92ea8608936e7aae842801dc90e0184e6"
-  integrity sha512-6WjGj/VjjN8LZDtqJH5ikeB1o39rO1gYS6anBxiS3d0sXNBb3Ux0pNNDFoBxQpOhmdDHXYS57MEptX9EV82gmg==
+"@sentry/types@6.13.3":
+  version "6.13.3"
+  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-6.13.3.tgz#63ad5b6735b0dfd90b3a256a9f8e77b93f0f66b2"
+  integrity sha512-Vrz5CdhaTRSvCQjSyIFIaV9PodjAVFkzJkTRxyY7P77RcegMsRSsG1yzlvCtA99zG9+e6MfoJOgbOCwuZids5A==
 
-"@sentry/utils@6.13.2":
-  version "6.13.2"
-  resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-6.13.2.tgz#fb8010e7b67cc8c084d8067d64ef25289269cda5"
-  integrity sha512-foF4PbxqPMWNbuqdXkdoOmKm3quu3PP7Q7j/0pXkri4DtCuvF/lKY92mbY0V9rHS/phCoj+3/Se5JvM2ymh2/w==
+"@sentry/utils@6.13.3":
+  version "6.13.3"
+  resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-6.13.3.tgz#188754d40afe693c3fcae410f9322531588a9926"
+  integrity sha512-zYFuFH3MaYtBZTeJ4Yajg7pDf0pM3MWs3+9k5my9Fd+eqNcl7dYQYJbT9gyC0HXK1QI4CAMNNlHNl4YXhF91ag==
   dependencies:
-    "@sentry/types" "6.13.2"
+    "@sentry/types" "6.13.3"
     tslib "^1.9.3"
 
 "@sentry/webpack-plugin@1.17.1":
@@ -7951,10 +7944,10 @@ next-seo@^4.28.1:
   resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-4.28.1.tgz#c98ee559c8ab7196c62d0f6903afd7a8cde47a03"
   integrity sha512-WZgwdM+UhpNF3A37zFllzmPhnOVJ9vYeYlc0n3Z/kYfz/QQgy8NEdncNNggS9dU4JD8xriaCcyknhy5OsrFsJw==
 
-next-sitemap@^1.6.173:
-  version "1.6.173"
-  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-1.6.173.tgz#a61e8891c6a655333d52d5fa0e2e8dc9c61e99da"
-  integrity sha512-wRLMQ4M03bNElt6BqFBPrqt+5q+qgD5/VFnJ9aYFvfYehkQb/kPbQh74FY7chG2VNn8ZYLydOfTBKsH7PW/X9g==
+next-sitemap@^1.6.179:
+  version "1.6.179"
+  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-1.6.179.tgz#8f5adc4686e4f0242c6908806c0babf7d9728af3"
+  integrity sha512-j8vGSjAE5PFw/BZNzmwoFKU9DmNGMDA1TiyxmO65gUU3Fx0/PKAiRZgAIt9kzyeC3ElgadytXurzCeYpFK+gpg==
   dependencies:
     "@corex/deepmerge" "^2.6.34"
     matcher "^4.0.0"
@@ -7970,17 +7963,17 @@ next-translate@^1.1.0:
   resolved "https://registry.yarnpkg.com/next-translate/-/next-translate-1.1.0.tgz#a5a041a1e83ab5bb5b9afe8a305c0bb5ebbe9d7a"
   integrity sha512-2fTgGJgHvOEKlxuyibchvKAo5uQy7BA2GAcC21LUaUxBDyLqZUKqOJDvdow75jsy3S1preR3zymzx8Is8fenbw==
 
-next@^11.1.3-canary.41:
-  version "11.1.3-canary.41"
-  resolved "https://registry.yarnpkg.com/next/-/next-11.1.3-canary.41.tgz#a7b71ce4754d3b290fc00e438f66d94f71cad9f2"
-  integrity sha512-3ovkkgt4EGVv+I5oQLb9ytZAv0+HU5bOKlmhN3+zLclTH0YGX01Kayjd1iHokgsQ44GIifcvrWHnnne3SpGGmQ==
+next@^11.1.3-canary.49:
+  version "11.1.3-canary.50"
+  resolved "https://registry.yarnpkg.com/next/-/next-11.1.3-canary.50.tgz#85cf52bfbf397c73cbae0502587899aa56a87ba6"
+  integrity sha512-2+2N1DZuOKWyM+7lteAWO3zvAoHGzTGnmZajkVy0QoLGj8UcOSj9nVHQcXxNtAlSb4alfQRlgqzBek+FYSjvwQ==
   dependencies:
-    "@babel/runtime" "7.15.3"
+    "@babel/runtime" "7.15.4"
     "@hapi/accept" "5.0.2"
-    "@next/env" "11.1.3-canary.41"
-    "@next/polyfill-module" "11.1.3-canary.41"
-    "@next/react-dev-overlay" "11.1.3-canary.41"
-    "@next/react-refresh-utils" "11.1.3-canary.41"
+    "@next/env" "11.1.3-canary.50"
+    "@next/polyfill-module" "11.1.3-canary.50"
+    "@next/react-dev-overlay" "11.1.3-canary.50"
+    "@next/react-refresh-utils" "11.1.3-canary.50"
     "@node-rs/helper" "1.2.1"
     assert "2.0.0"
     browserify-zlib "0.2.0"
@@ -8007,7 +8000,6 @@ next@^11.1.3-canary.41:
     os-browserify "0.3.0"
     p-limit "3.1.0"
     path-browserify "1.0.1"
-    pnp-webpack-plugin "1.6.4"
     postcss "8.2.15"
     process "0.11.10"
     querystring-es3 "0.2.1"
@@ -8025,10 +8017,10 @@ next@^11.1.3-canary.41:
     vm-browserify "1.1.2"
     watchpack "2.1.1"
   optionalDependencies:
-    "@next/swc-darwin-arm64" "11.1.3-canary.41"
-    "@next/swc-darwin-x64" "11.1.3-canary.41"
-    "@next/swc-linux-x64-gnu" "11.1.3-canary.41"
-    "@next/swc-win32-x64-msvc" "11.1.3-canary.41"
+    "@next/swc-darwin-arm64" "11.1.3-canary.50"
+    "@next/swc-darwin-x64" "11.1.3-canary.50"
+    "@next/swc-linux-x64-gnu" "11.1.3-canary.50"
+    "@next/swc-win32-x64-msvc" "11.1.3-canary.50"
 
 node-addon-api@^2.0.0:
   version "2.0.2"
@@ -8950,13 +8942,6 @@ pngjs@^3.3.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-3.4.0.tgz#99ca7d725965fb655814eaf65f38f12bbdbf555f"
   integrity sha512-NCrCHhWmnQklfH4MtJMRjZ2a8c80qXeMlQMv2uVp9ISJMTt562SbGd6n2oq0PaPgKm7Z6pL9E2UlLIhC+SHL3w==
-
-pnp-webpack-plugin@1.6.4:
-  version "1.6.4"
-  resolved "https://registry.yarnpkg.com/pnp-webpack-plugin/-/pnp-webpack-plugin-1.6.4.tgz#c9711ac4dc48a685dabafc86f8b6dd9f8df84149"
-  integrity sha512-7Wjy+9E3WwLOEL30D+m8TSTF7qJJUJLONBnwQp0518siuMxUQUbgZwssaFX+QKlZkjHZcw/IpZCt/H0srrntSg==
-  dependencies:
-    ts-pnp "^1.1.6"
 
 portfinder@^1.0.26:
   version "1.0.28"
@@ -10969,11 +10954,6 @@ ts-node@^9:
     make-error "^1.1.1"
     source-map-support "^0.5.17"
     yn "3.1.1"
-
-ts-pnp@^1.1.6:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.2.0.tgz#a500ad084b0798f1c3071af391e65912c86bca92"
-  integrity sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
 
 tsconfig-paths@^3.11.0, tsconfig-paths@^3.9.0:
   version "3.11.0"
