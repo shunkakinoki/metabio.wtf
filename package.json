@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@sentrei/kit": "^1.0.1",
-    "@shunkakinoki/eslint-config": "^1.1.22"
+    "@shunkakinoki/eslint-config": "^1.1.23"
   },
   "npmpackagejsonlint": {
     "extends": "@sentrei/npm-package-json-lint-config"
