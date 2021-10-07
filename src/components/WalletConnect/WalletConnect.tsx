@@ -1,6 +1,5 @@
 import { providers } from "ethers";
 
-import { useRouter } from "next/router";
 import { useCallback, useEffect } from "react";
 import type { ButtonHTMLAttributes, FC } from "react";
 
@@ -17,7 +16,6 @@ export const WalletConnect: FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({
   const { address, setAddress } = useAddress();
   const { setEns } = useEns();
   const web3Modal = useWeb3Modal();
-  const router = useRouter();
 
   const connectWallet = useCallback(() => {
     return web3Modal
@@ -27,16 +25,6 @@ export const WalletConnect: FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({
       })
       .then(setWeb3Provider);
   }, [setWeb3Provider, web3Modal]);
-
-  useEffect(() => {
-    if (web3Provider && address) {
-      router.push("/profile");
-    }
-    if (!address) {
-      router.push("/");
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [address]);
 
   useEffect(() => {
     if (!web3Modal.cachedProvider) {

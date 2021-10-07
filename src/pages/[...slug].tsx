@@ -5,6 +5,10 @@ import type {
   GetStaticPropsContext,
 } from "next";
 
+import { SWRConfig } from "swr";
+
+import { GalleryScreen } from "@/components/GalleryScreen";
+
 import { resolveEnsName } from "@/libs/ens";
 
 export interface Props {
@@ -58,10 +62,9 @@ export const PageId = ({
   ensName,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
-    <>
-      <h1 className="text-white">{address}</h1>
-      <h1 className="text-white">{ensName}</h1>
-    </>
+    <SWRConfig value={{}}>
+      <GalleryScreen />
+    </SWRConfig>
   );
 };
 
