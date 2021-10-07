@@ -39,7 +39,7 @@
     "@sentrei/next": "^1.13.1",
     "@sentrei/postcss": "^1.4.3",
     "@sentrei/tailwindcss": "^1.5.0",
-    "@walletconnect/web3-provider": "^1.6.5",
+    "@walletconnect/web3-provider": "^1.6.6",
     "aos": "^2.3.4",
     "ethers": "^5.4.7",
     "web3modal": "^1.9.4"
