@@ -1560,12 +1560,12 @@
     "@semantic-release/git" "^10.0.0"
     semantic-release "^18.0.0"
 
-"@sentrei/tailwindcss@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@sentrei/tailwindcss/-/tailwindcss-1.5.0.tgz#0a351e636eb1f23de29bbce275c54fc3f9bd5f4b"
-  integrity sha512-PIn+UDe+Fl6xq5OSkaCGamAI2tgZtSmHvab3efHT3jDUQVqXS1pYhQeOQ7IN4ELJJ4jH9tXr7oFtmqRP+DQ9tg==
+"@sentrei/tailwindcss@^1.5.1":
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@sentrei/tailwindcss/-/tailwindcss-1.5.1.tgz#814056c9afb31ff7af4d946da4710e27541cd36d"
+  integrity sha512-IQIaQ6VjUq//nat0ozuD25uOUIG8XBqRSEED0qdBz65ROS4Lxmb/Poih+oXYLkFpT9NcFuMs6YApyC6oTZeWcw==
   dependencies:
-    "@tailwindcss/aspect-ratio" "^0.2.2"
+    "@tailwindcss/aspect-ratio" "^0.3.0"
     "@tailwindcss/forms" "^0.3.4"
     "@tailwindcss/line-clamp" "^0.2.2"
     "@tailwindcss/typography" "^0.4.1"
@@ -1750,10 +1750,10 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@tailwindcss/aspect-ratio@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@tailwindcss/aspect-ratio/-/aspect-ratio-0.2.2.tgz#68819ac65bc91c1833fec1f4af5cc3bfb3f25922"
-  integrity sha512-yjvYH1qKQapYUVz0rCRAQ29KlKuiDsWJF/0d24lpTPWtTKBimcKWHiAMjZOILbnRd25PogILsbOyFFVOjFd6Ow==
+"@tailwindcss/aspect-ratio@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/aspect-ratio/-/aspect-ratio-0.3.0.tgz#f779ab3f07cac848fb844122d6662ba6560010b8"
+  integrity sha512-DMgWskNJR6FNPLbQ8Xoq/PKV/9DfNKh5dvKB+SM8x7lVl4+pnxlZ3Ns4+yGmurA/ze708HrnCG1tXk85HolJmw==
 
 "@tailwindcss/forms@^0.3.4":
   version "0.3.4"
