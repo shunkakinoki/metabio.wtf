@@ -1,6 +1,8 @@
 import { atom } from "recoil";
 
-export const poapAtom = atom<any[]>({
+import type { Poap } from "@/types/poap";
+
+export const poapAtom = atom<Poap[]>({
   default: [],
   key: "poap",
 });

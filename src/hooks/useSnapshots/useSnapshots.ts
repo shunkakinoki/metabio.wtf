@@ -3,8 +3,11 @@ import { useRecoilValue, useRecoilState } from "recoil";
 
 import { addressAtom } from "@/atoms/address";
 import { snapshotAtom } from "@/atoms/snapshot";
+import type { Snapshot } from "@/types/snapshot";
 
-export const resolveSnapshots = async (address: string): Promise<any[]> => {
+export const resolveSnapshots = async (
+  address: string,
+): Promise<Snapshot[]> => {
   const query = `
   query lookup($address: String!) {
     votes(where: { voter: $address }) {
@@ -23,10 +26,11 @@ export const resolveSnapshots = async (address: string): Promise<any[]> => {
       body: JSON.stringify({ query, variables }),
     });
     const { data } = await result.json();
+
     if (!data.votes[0]) {
       throw new Error(`Could not resolve ${address} via Snapshot.`);
     }
-    const snapshots = data.votes;
+    const snapshots = data.votes as Snapshot[];
     return snapshots;
   } catch (error) {
     return null;

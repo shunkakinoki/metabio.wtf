@@ -1,6 +1,8 @@
 import { atom } from "recoil";
 
-export const snapshotAtom = atom<any[]>({
+import type { Snapshot } from "@/types/snapshot";
+
+export const snapshotAtom = atom<Snapshot[]>({
   default: [],
   key: "snapshot",
 });

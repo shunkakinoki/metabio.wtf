@@ -3,12 +3,12 @@ import { useRecoilValue, useRecoilState } from "recoil";
 
 import { addressAtom } from "@/atoms/address";
 import { poapAtom } from "@/atoms/poap";
+import type { Poap } from "@/types/poap";
 
 export const resolvePoaps = async (address: string): Promise<any[]> => {
   const query = `
   query lookup($address: String!) {
     accounts(where: { id: $address }) {
-      id
       tokens {
         id
         event {
@@ -29,7 +29,7 @@ export const resolvePoaps = async (address: string): Promise<any[]> => {
     if (!data.accounts[0].tokens) {
       throw new Error(`Could not resolve ${address} via Poap.`);
     }
-    const poaps = data.accounts[0].tokens;
+    const poaps = data.accounts[0].tokens as Poap[];
     return poaps;
   } catch (error) {
     return null;
