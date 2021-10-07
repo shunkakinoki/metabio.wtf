@@ -23,7 +23,6 @@ export const resolveSnapshots = async (address: string): Promise<any[]> => {
       body: JSON.stringify({ query, variables }),
     });
     const { data } = await result.json();
-    console.log(data.votes[0]);
     if (!data.votes[0]) {
       throw new Error(`Could not resolve ${address} via Snapshot.`);
     }
