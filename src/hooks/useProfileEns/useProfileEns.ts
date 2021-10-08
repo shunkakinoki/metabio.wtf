@@ -6,6 +6,7 @@ import useSWR from "swr";
 import { profileAddressAtom } from "@/atoms/profileAddress";
 import { ENS_SWR } from "@/const/swr";
 import { lookupEnsAddress } from "@/libs/ens";
+import { concatSwrPath, removeSwrPath } from "@/libs/utils";
 
 export const useProfileEns = () => {
   const profileAddress = useRecoilValue(profileAddressAtom);
@@ -14,11 +15,11 @@ export const useProfileEns = () => {
     if (!profileAddress) {
       return null;
     }
-    return ENS_SWR + profileAddress;
+    return concatSwrPath(ENS_SWR, profileAddress);
   }, [profileAddress]);
 
-  const { data, error, mutate } = useSWR<string>(key, address => {
-    return lookupEnsAddress(address.replace(ENS_SWR, ""));
+  const { data, error, mutate } = useSWR<string>(key, profileAddress => {
+    return lookupEnsAddress(removeSwrPath(ENS_SWR, profileAddress));
   });
 
   return {

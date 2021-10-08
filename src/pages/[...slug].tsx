@@ -20,6 +20,7 @@ import { fetchOpenseaAssets } from "@/libs/opensea";
 import { fetchPoaps } from "@/libs/poap";
 import { fetchSnapshots } from "@/libs/snapshot";
 import { fetchToken } from "@/libs/token";
+import { concatSwrPath } from "@/libs/utils";
 import type { OpenseaAsset } from "@/types/opensea";
 import type { Poap } from "@/types/poap";
 import type { Snapshot } from "@/types/snapshot";
@@ -101,11 +102,11 @@ export const PageId = ({
     <SWRConfig
       value={{
         fallback: {
-          [`${ENS_SWR + address}`]: ensName,
-          [`${TOKEN_SWR + address}`]: token,
-          [`${SNAPSHOT_SWR + address}`]: snapshots,
-          [`${POAP_SWR + address}`]: poaps,
-          [`${OPENSEA_SWR + address}`]: assets,
+          [concatSwrPath(ENS_SWR, address)]: ensName,
+          [concatSwrPath(TOKEN_SWR, address)]: token,
+          [concatSwrPath(SNAPSHOT_SWR, address)]: snapshots,
+          [concatSwrPath(POAP_SWR, address)]: poaps,
+          [concatSwrPath(OPENSEA_SWR, address)]: assets,
         },
       }}
     >

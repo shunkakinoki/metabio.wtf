@@ -6,6 +6,7 @@ import useSWR from "swr";
 import { profileAddressAtom } from "@/atoms/profileAddress";
 import { POAP_SWR } from "@/const/swr";
 import { fetchPoaps } from "@/libs/poap";
+import { concatSwrPath, removeSwrPath } from "@/libs/utils";
 import type { Poap } from "@/types/poap";
 
 export const usePoaps = () => {
@@ -15,13 +16,13 @@ export const usePoaps = () => {
     if (!profileAddress) {
       return null;
     }
-    return POAP_SWR + profileAddress.toLowerCase();
+    return concatSwrPath(POAP_SWR, profileAddress.toLowerCase());
   }, [profileAddress]);
 
   const { data, error } = useSWR<{ accounts: { tokens: Poap[] } }>(
     key,
     profileAddress => {
-      return fetchPoaps(profileAddress.replace(POAP_SWR, ""));
+      return fetchPoaps(removeSwrPath(POAP_SWR, profileAddress));
     },
   );
 

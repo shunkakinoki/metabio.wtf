@@ -5,6 +5,7 @@ import useSWR from "swr";
 import { profileAddressAtom } from "@/atoms/profileAddress";
 import { SNAPSHOT_SWR } from "@/const/swr";
 import { fetchSnapshots } from "@/libs/snapshot";
+import { concatSwrPath, removeSwrPath } from "@/libs/utils";
 import type { Snapshot } from "@/types/snapshot";
 
 export const useSnapshots = () => {
@@ -14,11 +15,11 @@ export const useSnapshots = () => {
     if (!profileAddress) {
       return null;
     }
-    return SNAPSHOT_SWR + profileAddress;
+    return concatSwrPath(SNAPSHOT_SWR, profileAddress);
   }, [profileAddress]);
 
   const { data, error } = useSWR<{ votes: Snapshot[] }>(key, profileAddress => {
-    return fetchSnapshots(profileAddress.replace(SNAPSHOT_SWR, ""));
+    return fetchSnapshots(removeSwrPath(SNAPSHOT_SWR, profileAddress));
   });
 
   return {

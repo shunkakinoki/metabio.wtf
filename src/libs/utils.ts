@@ -6,3 +6,11 @@ export const formatAddressShort = (address?: string): string => {
     address.length,
   )}`;
 };
+
+export const concatSwrPath = (swr: string, address: string) => {
+  return swr + address;
+};
+
+export const removeSwrPath = (swr: string, address: string) => {
+  return address.replace(swr, "");
+};
