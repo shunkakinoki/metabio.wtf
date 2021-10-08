@@ -1,6 +1,6 @@
 import { request } from "graphql-request";
+import { useMemo } from "react";
 import { useRecoilValue } from "recoil";
-
 import useSWR from "swr";
 
 import { addressAtom } from "@/atoms/address";
@@ -12,14 +12,15 @@ import type { Snapshot } from "@/types/snapshot";
 export const useSnapshots = () => {
   const address = useRecoilValue(addressAtom);
 
-  const { data, error } = useSWR(
-    address ? SNAPSHOT_SWR + address : null,
-    address => {
-      return request(SNAPSHOT_API_URL, SNAPSHOT_QUERY, {
-        address: address.replace(SNAPSHOT_SWR, ""),
-      });
-    },
-  );
+  const key = useMemo(() => {
+    return SNAPSHOT_SWR + address;
+  }, [address]);
+
+  const { data, error } = useSWR(address ? key : null, address => {
+    return request(SNAPSHOT_API_URL, SNAPSHOT_QUERY, {
+      address: address.replace(SNAPSHOT_SWR, ""),
+    });
+  });
 
   return {
     isLoading: !error && !data,

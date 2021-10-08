@@ -1,20 +1,29 @@
+import { useMemo } from "react";
 import { useRecoilValue } from "recoil";
 import useSWR from "swr";
 
 import { addressAtom } from "@/atoms/address";
-import { web3ProviderAtom } from "@/atoms/web3Provider";
+import { OPENSEA_API_URL } from "@/const/api";
+import { OPENSEA_SWR } from "@/const/swr";
 import { fetcher } from "@/libs/fetcher";
 import type { OpenseaAsset } from "@/types/opensea";
 
-export const useOpenSeaAssets = (offset = 0) => {
+export const useOpenSeaAssets = () => {
   const address = useRecoilValue(addressAtom);
-  const web3Provider = useRecoilValue(web3ProviderAtom);
 
-  const key = `https://api.opensea.io/api/v1/assets?owner=${address}&limit=50&offset=${offset}`;
+  const ASSETS = "/assets?&limit=3&owner=";
+
+  const key = useMemo(() => {
+    return OPENSEA_SWR + address;
+  }, [address]);
 
   const { data, error } = useSWR<{ assets: OpenseaAsset[] }>(
-    web3Provider && address ? key : null,
-    fetcher,
+    address ? key : null,
+    address => {
+      return fetcher(
+        OPENSEA_API_URL + ASSETS + address.replace(OPENSEA_SWR, ""),
+      );
+    },
   );
 
   return {
