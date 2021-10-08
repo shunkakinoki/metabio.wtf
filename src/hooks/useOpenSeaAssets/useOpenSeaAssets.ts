@@ -1,22 +1,13 @@
-import { useMemo } from "react";
-import { useRecoilValue } from "recoil";
 import useSWR from "swr";
 
-import { profileAddressAtom } from "@/atoms/profileAddress";
 import { OPENSEA_SWR } from "@/const/swr";
+import { useSwrPath } from "@/hooks/useSwrPath";
 import { fetchOpenseaAssets } from "@/libs/opensea";
-import { concatSwrPath, removeSwrPath } from "@/libs/utils";
+import { removeSwrPath } from "@/libs/utils";
 import type { OpenseaAsset } from "@/types/opensea";
 
 export const useOpenSeaAssets = () => {
-  const profileAddress = useRecoilValue(profileAddressAtom);
-
-  const key = useMemo(() => {
-    if (!profileAddress) {
-      return null;
-    }
-    return concatSwrPath(OPENSEA_SWR, profileAddress);
-  }, [profileAddress]);
+  const key = useSwrPath(OPENSEA_SWR);
 
   const { data, error } = useSWR<{ assets: OpenseaAsset[] }>(
     key,

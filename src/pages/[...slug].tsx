@@ -5,6 +5,7 @@ import type {
   GetStaticPaths,
   GetStaticPropsContext,
 } from "next";
+import { useEffect } from "react";
 import { SWRConfig } from "swr";
 
 import { GalleryScreen } from "@/components/GalleryScreen";
@@ -15,6 +16,7 @@ import {
   SNAPSHOT_SWR,
   TOKEN_SWR,
 } from "@/const/swr";
+import { useAddress } from "@/hooks/useAddress";
 import { resolveEnsName } from "@/libs/ens";
 import { fetchOpenseaAssets } from "@/libs/opensea";
 import { fetchPoaps } from "@/libs/poap";
@@ -91,13 +93,19 @@ export const getStaticProps: GetStaticProps<Props> = async ({
 };
 
 export const PageId = ({
-  address,
+  address: slugAddress,
   ensName,
   token,
   snapshots,
   poaps,
   assets,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
+  const { address, setAddress } = useAddress();
+
+  useEffect(() => {
+    setAddress(slugAddress);
+  });
+
   return (
     <SWRConfig
       value={{
@@ -110,7 +118,7 @@ export const PageId = ({
         },
       }}
     >
-      <GalleryScreen />
+      {address === slugAddress && <GalleryScreen />}
     </SWRConfig>
   );
 };

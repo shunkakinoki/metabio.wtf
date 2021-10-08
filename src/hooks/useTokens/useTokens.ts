@@ -1,22 +1,13 @@
-import { useMemo } from "react";
-import { useRecoilValue } from "recoil";
 import useSWR from "swr";
 
-import { profileAddressAtom } from "@/atoms/profileAddress";
 import { TOKEN_SWR } from "@/const/swr";
+import { useSwrPath } from "@/hooks/useSwrPath";
 import { fetchToken } from "@/libs/token";
-import { concatSwrPath, removeSwrPath } from "@/libs/utils";
+import { removeSwrPath } from "@/libs/utils";
 import type { Token, TokensEntity } from "@/types/token";
 
 export const useTokens = () => {
-  const profileAddress = useRecoilValue(profileAddressAtom);
-
-  const key = useMemo(() => {
-    if (!profileAddress) {
-      return null;
-    }
-    return concatSwrPath(TOKEN_SWR, profileAddress);
-  }, [profileAddress]);
+  const key = useSwrPath(TOKEN_SWR);
 
   const { data, error, mutate } = useSWR<Token>(key, profileAddress => {
     return fetchToken(removeSwrPath(TOKEN_SWR, profileAddress));

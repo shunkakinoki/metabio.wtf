@@ -1,23 +1,13 @@
-import { useMemo } from "react";
-import { useRecoilValue } from "recoil";
-
 import useSWR from "swr";
 
-import { profileAddressAtom } from "@/atoms/profileAddress";
 import { POAP_SWR } from "@/const/swr";
+import { useSwrPath } from "@/hooks/useSwrPath";
 import { fetchPoaps } from "@/libs/poap";
-import { concatSwrPath, removeSwrPath } from "@/libs/utils";
+import { removeSwrPath } from "@/libs/utils";
 import type { Poap } from "@/types/poap";
 
 export const usePoaps = () => {
-  const profileAddress = useRecoilValue(profileAddressAtom);
-
-  const key = useMemo(() => {
-    if (!profileAddress) {
-      return null;
-    }
-    return concatSwrPath(POAP_SWR, profileAddress.toLowerCase());
-  }, [profileAddress]);
+  const key = useSwrPath(POAP_SWR);
 
   const { data, error } = useSWR<{ accounts: { tokens: Poap[] } }>(
     key,

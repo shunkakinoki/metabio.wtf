@@ -1,0 +1,1 @@
+export { useSwrPath } from "./useSwrPath";
