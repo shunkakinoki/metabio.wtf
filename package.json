@@ -45,6 +45,8 @@
     "arweave": "^1.10.17",
     "autoprefixer": "^10.3.7",
     "ethers": "^5.4.7",
+    "graphql": "^15.6.1",
+    "graphql-request": "^3.5.0",
     "web3modal": "^1.9.4",
     "zod": "^3.9.8"
   },
