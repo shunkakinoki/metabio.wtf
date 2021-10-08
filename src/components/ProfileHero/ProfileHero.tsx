@@ -1,10 +1,10 @@
 import type { FC } from "react";
 
-import { useAddressTruncated } from "@/hooks/useAddressTruncated";
 import { useEns } from "@/hooks/useEns";
+import { useProfileAddressTruncated } from "@/hooks/useProfileAddressTruncated";
 
 export const ProfileHero: FC = () => {
-  const truncatedAddress = useAddressTruncated();
+  const truncatedAddress = useProfileAddressTruncated();
   const { ens } = useEns();
 
   return (
