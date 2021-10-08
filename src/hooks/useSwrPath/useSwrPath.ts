@@ -12,11 +12,14 @@ export const useSwrPath = (swr: string) => {
   const profileAddress = useRecoilValue(profileAddressAtom);
 
   const key = useMemo(() => {
-    if (!profileAddress) {
-      return null;
-    }
     if (asPath === "/profile") {
+      if (!profileAddress) {
+        return null;
+      }
       return concatSwrPath(swr, profileAddress);
+    }
+    if (!address) {
+      return null;
     }
     return concatSwrPath(swr, address);
   }, [address, profileAddress, asPath, swr]);
