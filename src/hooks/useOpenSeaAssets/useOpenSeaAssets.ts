@@ -12,14 +12,12 @@ export const useOpenSeaAssets = (offset = 0) => {
 
   const key = `https://api.opensea.io/api/v1/assets?owner=${address}&limit=50&offset=${offset}`;
 
-  const { data, error, mutate } = useSWR<{ assets: OpenseaAsset[] }>(
+  const { data, error } = useSWR<{ assets: OpenseaAsset[] }>(
     web3Provider && address ? key : null,
     fetcher,
   );
 
   return {
-    error,
-    mutate,
     isLoading: !error && !data,
     isError: !!error,
     assets: data?.assets,

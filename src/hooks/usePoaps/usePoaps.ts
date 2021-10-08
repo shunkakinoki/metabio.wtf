@@ -1,56 +1,26 @@
-import { useEffect } from "react";
-import { useRecoilValue, useRecoilState } from "recoil";
+import { request } from "graphql-request";
+import { useRecoilValue } from "recoil";
+
+import useSWR from "swr";
 
 import { addressAtom } from "@/atoms/address";
-import { poapAtom } from "@/atoms/poap";
+import { POAP_API_URL } from "@/const/api";
+import { POAP_QUERY } from "@/queries/poap";
 import type { Poap } from "@/types/poap";
-
-export const resolvePoaps = async (address: string): Promise<any[]> => {
-  const query = `
-  query lookup($address: String!) {
-    accounts(where: { id: $address }) {
-      tokens {
-        id
-        event {
-          id
-        }
-      }
-    }
-  }
-  `;
-
-  const variables = { address: address.toLowerCase() };
-  try {
-    const result = await fetch(
-      "https://api.thegraph.com/subgraphs/name/poap-xyz/poap-xdai",
-      { method: "POST", body: JSON.stringify({ query, variables }) },
-    );
-    const { data } = await result.json();
-    if (!data.accounts[0].tokens) {
-      throw new Error(`Could not resolve ${address} via Poap.`);
-    }
-    const poaps = data.accounts[0].tokens as Poap[];
-    return poaps;
-  } catch (error) {
-    return null;
-  }
-};
 
 export const usePoaps = () => {
   const address = useRecoilValue(addressAtom);
-  const [poaps, setPoaps] = useRecoilState(poapAtom);
 
-  useEffect(() => {
-    if (!address) {
-      return;
-    }
+  const { data, error } = useSWR(
+    address ? [POAP_QUERY, address?.toLowerCase()] : null,
+    (query, address) => {
+      return request(POAP_API_URL, query, { address });
+    },
+  );
 
-    const fetchData = async () => {
-      setPoaps(await resolvePoaps(address));
-    };
-
-    fetchData();
-  }, [address, setPoaps]);
-
-  return { poaps, setPoaps };
+  return {
+    isLoading: !error && !data,
+    isError: !!error,
+    poaps: data?.accounts[0].tokens as Poap[],
+  };
 };

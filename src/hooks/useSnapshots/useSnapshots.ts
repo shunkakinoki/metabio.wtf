@@ -11,16 +11,14 @@ import type { Snapshot } from "@/types/snapshot";
 export const useSnapshots = () => {
   const address = useRecoilValue(addressAtom);
 
-  const { data, mutate, error } = useSWR(
-    [SNAPSHOT_QUERY, address],
+  const { data, error } = useSWR(
+    address ? [SNAPSHOT_QUERY, address] : null,
     (query, address) => {
       return request(SNAPSHOT_API_URL, query, { address });
     },
   );
 
   return {
-    error,
-    mutate,
     isLoading: !error && !data,
     isError: !!error,
     snapshots: data?.votes as Snapshot[],
