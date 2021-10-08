@@ -3,25 +3,25 @@ import { useRecoilValue } from "recoil";
 
 import useSWR from "swr";
 
-import { addressAtom } from "@/atoms/address";
+import { profileAddressAtom } from "@/atoms/profileAddress";
 import { POAP_SWR } from "@/const/swr";
 import { fetchPoaps } from "@/libs/poap";
 import type { Poap } from "@/types/poap";
 
 export const usePoaps = () => {
-  const address = useRecoilValue(addressAtom);
+  const profileAddress = useRecoilValue(profileAddressAtom);
 
   const key = useMemo(() => {
-    if (!address) {
+    if (!profileAddress) {
       return null;
     }
-    return POAP_SWR + address.toLowerCase();
-  }, [address]);
+    return POAP_SWR + profileAddress.toLowerCase();
+  }, [profileAddress]);
 
   const { data, error } = useSWR<{ accounts: { tokens: Poap[] } }>(
     key,
-    address => {
-      return fetchPoaps(address.replace(POAP_SWR, ""));
+    profileAddress => {
+      return fetchPoaps(profileAddress.replace(POAP_SWR, ""));
     },
   );
 

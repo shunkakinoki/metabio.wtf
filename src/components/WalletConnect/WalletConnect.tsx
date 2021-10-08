@@ -3,8 +3,8 @@ import { providers } from "ethers";
 import { useCallback, useEffect } from "react";
 import type { ButtonHTMLAttributes, FC } from "react";
 
-import { useAddress } from "@/hooks/useAddress";
-import { useEns } from "@/hooks/useEns";
+import { useProfileAddress } from "@/hooks/useProfileAddress";
+import { useProfileEns } from "@/hooks/useProfileEns";
 import { useWeb3Modal } from "@/hooks/useWeb3Modal";
 import { useWeb3Provider } from "@/hooks/useWeb3Provider";
 
@@ -13,8 +13,8 @@ export const WalletConnect: FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({
   ...props
 }) => {
   const { web3Provider, setWeb3Provider } = useWeb3Provider();
-  const { address, setAddress } = useAddress();
-  const { setEns } = useEns();
+  const { profileAddress, setProfileAddress } = useProfileAddress();
+  const { setProfileEns } = useProfileEns();
   const web3Modal = useWeb3Modal();
 
   const connectWallet = useCallback(() => {
@@ -37,8 +37,8 @@ export const WalletConnect: FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({
   const disconnectWallet = () => {
     web3Modal.clearCachedProvider();
     setWeb3Provider(null);
-    setAddress("");
-    setEns("");
+    setProfileAddress("");
+    setProfileEns("");
   };
 
   return (
@@ -46,7 +46,7 @@ export const WalletConnect: FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({
       onClick={web3Provider ? disconnectWallet : connectWallet}
       {...props}
     >
-      {address ? "Disconnect" : children}
+      {profileAddress ? "Disconnect" : children}
     </button>
   );
 };

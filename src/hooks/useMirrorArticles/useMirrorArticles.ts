@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useRecoilValue, useRecoilState } from "recoil";
 
-import { addressAtom } from "@/atoms/address";
 import { mirrorArticlesAtom } from "@/atoms/mirror";
+import { profileAddressAtom } from "@/atoms/profileAddress";
 import { arweave } from "@/libs/arweave";
 
 const formatEntry = async (entry, transactionId) => {
@@ -23,13 +23,13 @@ const formatEntry = async (entry, transactionId) => {
 };
 
 export const resolveMirrorArticles = async (
-  address: string,
+  profileAddress: string,
 ): Promise<{
   [x: string]: any;
 }> => {
   const query = `
-	query FetchTransactions($addresses: [String!]!) {
-    transactions(first: 100, tags: [{ name: "App-Name", values: ["MirrorXYZ"] }, { name: "Contributor", values: $addresses }]) {
+	query FetchTransactions($profileAddresses: [String!]!) {
+    transactions(first: 100, tags: [{ name: "App-Name", values: ["MirrorXYZ"] }, { name: "Contributor", values: $profileAddresses }]) {
     edges {
       node {
         id
@@ -44,7 +44,7 @@ export const resolveMirrorArticles = async (
   `;
 
   const variables = {
-    addresses: [address],
+    profileAddresses: [profileAddress],
   };
   try {
     const result = await fetch("https://arweave.net/graphql", {
@@ -54,7 +54,7 @@ export const resolveMirrorArticles = async (
     });
     const { data } = await result.json();
     if (!data.transactions.edges) {
-      throw new Error(`Could not resolve ${address} via Mirror.`);
+      throw new Error(`Could not resolve ${profileAddress} via Mirror.`);
     }
     const {
       transactions: { edges },
@@ -103,21 +103,21 @@ export const resolveMirrorArticles = async (
 };
 
 export const useMirrorArticles = () => {
-  const address = useRecoilValue(addressAtom);
+  const profileAddress = useRecoilValue(profileAddressAtom);
   const [mirrorArticles, setMirrorArticles] =
     useRecoilState(mirrorArticlesAtom);
 
   useEffect(() => {
-    if (!address) {
+    if (!profileAddress) {
       return;
     }
 
     const fetchData = async () => {
-      setMirrorArticles(await resolveMirrorArticles(address));
+      setMirrorArticles(await resolveMirrorArticles(profileAddress));
     };
 
     fetchData();
-  }, [address, setMirrorArticles]);
+  }, [profileAddress, setMirrorArticles]);
 
   return { mirrorArticles, setMirrorArticles };
 };

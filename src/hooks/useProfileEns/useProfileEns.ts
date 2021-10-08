@@ -7,7 +7,7 @@ import { profileAddressAtom } from "@/atoms/profileAddress";
 import { ENS_SWR } from "@/const/swr";
 import { lookupEnsAddress } from "@/libs/ens";
 
-export const useEns = () => {
+export const useProfileEns = () => {
   const profileAddress = useRecoilValue(profileAddressAtom);
 
   const key = useMemo(() => {
@@ -17,14 +17,14 @@ export const useEns = () => {
     return ENS_SWR + profileAddress;
   }, [profileAddress]);
 
-  const { data, error, mutate } = useSWR<string>(key, profileAddress => {
-    return lookupEnsAddress(profileAddress.replace(ENS_SWR, ""));
+  const { data, error, mutate } = useSWR<string>(key, address => {
+    return lookupEnsAddress(address.replace(ENS_SWR, ""));
   });
 
   return {
     isLoading: !error && !data,
     isError: !!error,
-    ens: data,
-    setEns: mutate,
+    profileEns: data,
+    setProfileEns: mutate,
   };
 };

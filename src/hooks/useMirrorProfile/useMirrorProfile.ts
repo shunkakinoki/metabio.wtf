@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useRecoilValue, useRecoilState } from "recoil";
 
-import { addressAtom } from "@/atoms/address";
 import { mirrorProfileAtom } from "@/atoms/mirror";
+import { profileAddressAtom } from "@/atoms/profileAddress";
 
 export const resolveMirrorProfile = async (address: string): Promise<any[]> => {
   const query = `
@@ -37,20 +37,20 @@ export const resolveMirrorProfile = async (address: string): Promise<any[]> => {
 };
 
 export const useMirrorProfile = () => {
-  const address = useRecoilValue(addressAtom);
+  const profileAddress = useRecoilValue(profileAddressAtom);
   const [mirrorProfile, setMirrorProfile] = useRecoilState(mirrorProfileAtom);
 
   useEffect(() => {
-    if (!address) {
+    if (!profileAddress) {
       return;
     }
 
     const fetchData = async () => {
-      setMirrorProfile(await resolveMirrorProfile(address));
+      setMirrorProfile(await resolveMirrorProfile(profileAddress));
     };
 
     fetchData();
-  }, [address, setMirrorProfile]);
+  }, [profileAddress, setMirrorProfile]);
 
   return { mirrorProfile, setMirrorProfile };
 };

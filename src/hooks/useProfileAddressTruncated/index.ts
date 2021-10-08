@@ -1,0 +1,1 @@
+export { useProfileAddressTruncated } from "./useProfileAddressTruncated";

@@ -2,23 +2,23 @@ import { useMemo } from "react";
 import { useRecoilValue } from "recoil";
 import useSWR from "swr";
 
-import { addressAtom } from "@/atoms/address";
+import { profileAddressAtom } from "@/atoms/profileAddress";
 import { SNAPSHOT_SWR } from "@/const/swr";
 import { fetchSnapshots } from "@/libs/snapshot";
 import type { Snapshot } from "@/types/snapshot";
 
 export const useSnapshots = () => {
-  const address = useRecoilValue(addressAtom);
+  const profileAddress = useRecoilValue(profileAddressAtom);
 
   const key = useMemo(() => {
-    if (!address) {
+    if (!profileAddress) {
       return null;
     }
-    return SNAPSHOT_SWR + address;
-  }, [address]);
+    return SNAPSHOT_SWR + profileAddress;
+  }, [profileAddress]);
 
-  const { data, error } = useSWR<{ votes: Snapshot[] }>(key, address => {
-    return fetchSnapshots(address.replace(SNAPSHOT_SWR, ""));
+  const { data, error } = useSWR<{ votes: Snapshot[] }>(key, profileAddress => {
+    return fetchSnapshots(profileAddress.replace(SNAPSHOT_SWR, ""));
   });
 
   return {

@@ -2,23 +2,23 @@ import { useMemo } from "react";
 import { useRecoilValue } from "recoil";
 import useSWR from "swr";
 
-import { addressAtom } from "@/atoms/address";
+import { profileAddressAtom } from "@/atoms/profileAddress";
 import { TOKEN_SWR } from "@/const/swr";
 import { fetchToken } from "@/libs/token";
 import type { Token, TokensEntity } from "@/types/token";
 
 export const useTokens = () => {
-  const address = useRecoilValue(addressAtom);
+  const profileAddress = useRecoilValue(profileAddressAtom);
 
   const key = useMemo(() => {
-    if (!address) {
+    if (!profileAddress) {
       return null;
     }
-    return TOKEN_SWR + address;
-  }, [address]);
+    return TOKEN_SWR + profileAddress;
+  }, [profileAddress]);
 
-  const { data, error, mutate } = useSWR<Token>(key, address => {
-    return fetchToken(address.replace(TOKEN_SWR, ""));
+  const { data, error, mutate } = useSWR<Token>(key, profileAddress => {
+    return fetchToken(profileAddress.replace(TOKEN_SWR, ""));
   });
 
   return {

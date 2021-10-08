@@ -1,11 +1,11 @@
 import type { FC } from "react";
 
-import { useAddressTruncated } from "@/hooks/useAddressTruncated";
-import { useEns } from "@/hooks/useEns";
+import { useProfileAddressTruncated } from "@/hooks/useProfileAddressTruncated";
+import { useProfileEns } from "@/hooks/useProfileEns";
 
 export const ProfileHero: FC = () => {
-  const truncatedAddress = useAddressTruncated();
-  const { ens } = useEns();
+  const truncatedProfileAddress = useProfileAddressTruncated();
+  const { profileEns } = useProfileEns();
 
   return (
     <div className="px-4 sm:px-6 mx-auto max-w-3xl">
@@ -16,7 +16,7 @@ export const ProfileHero: FC = () => {
             data-aos="zoom-y-out"
             data-aos-delay="300"
           >
-            {ens ?? truncatedAddress}
+            {profileEns ?? truncatedProfileAddress}
           </h1>
         </div>
       </div>
