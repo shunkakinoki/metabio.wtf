@@ -89,6 +89,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
       poaps: poaps,
       assets: assets,
     },
+    revalidate: 300,
   };
 };
 
