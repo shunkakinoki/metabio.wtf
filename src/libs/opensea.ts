@@ -4,7 +4,7 @@ import type { OpenseaAsset } from "@/types/opensea";
 
 const ASSETS = "/assets?&limit=30&owner=";
 
-export const OPENSEA_API_URL = address => {
+export const OPENSEA_API_URL = (address: string) => {
   return OPENSEA_BASE_URL + ASSETS + address;
 };
 

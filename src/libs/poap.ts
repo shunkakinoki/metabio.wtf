@@ -5,7 +5,7 @@ import { POAP_QUERY } from "@/queries/poap";
 import type { Poap } from "@/types/poap";
 
 export const fetchPoaps = (
-  address,
+  address: string,
 ): Promise<{ accounts: { tokens: Poap[] } }> => {
   return request(POAP_BASE_URL, POAP_QUERY, {
     address: address,
