@@ -14,17 +14,15 @@ export const useOpenSeaAssets = () => {
   const ASSETS = "/assets?&limit=3&owner=";
 
   const key = useMemo(() => {
+    if (!address) {
+      return null;
+    }
     return OPENSEA_SWR + address;
   }, [address]);
 
-  const { data, error } = useSWR<{ assets: OpenseaAsset[] }>(
-    address ? key : null,
-    address => {
-      return fetcher(
-        OPENSEA_API_URL + ASSETS + address.replace(OPENSEA_SWR, ""),
-      );
-    },
-  );
+  const { data, error } = useSWR<{ assets: OpenseaAsset[] }>(key, address => {
+    return fetcher(OPENSEA_API_URL + ASSETS + address.replace(OPENSEA_SWR, ""));
+  });
 
   return {
     isLoading: !error && !data,

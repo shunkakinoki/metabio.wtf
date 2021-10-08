@@ -13,10 +13,13 @@ export const useSnapshots = () => {
   const address = useRecoilValue(addressAtom);
 
   const key = useMemo(() => {
+    if (!address) {
+      return null;
+    }
     return SNAPSHOT_SWR + address;
   }, [address]);
 
-  const { data, error } = useSWR(address ? key : null, address => {
+  const { data, error } = useSWR(key, address => {
     return request(SNAPSHOT_API_URL, SNAPSHOT_QUERY, {
       address: address.replace(SNAPSHOT_SWR, ""),
     });

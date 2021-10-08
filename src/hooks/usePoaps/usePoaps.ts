@@ -14,10 +14,13 @@ export const usePoaps = () => {
   const address = useRecoilValue(addressAtom);
 
   const key = useMemo(() => {
+    if (!address) {
+      return null;
+    }
     return POAP_SWR + address.toLowerCase();
   }, [address]);
 
-  const { data, error } = useSWR(address ? key : null, address => {
+  const { data, error } = useSWR(key, address => {
     return request(POAP_API_URL, POAP_QUERY, {
       address: address.replace(POAP_SWR, ""),
     });
