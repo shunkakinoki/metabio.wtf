@@ -1,25 +1,30 @@
-import { useEffect } from "react";
-import { useRecoilValue, useRecoilState } from "recoil";
+import { useMemo } from "react";
+import { useRecoilValue } from "recoil";
+
+import useSWR from "swr";
 
 import { addressAtom } from "@/atoms/address";
-import { ensAtom } from "@/atoms/ens";
+import { ENS_SWR } from "@/const/swr";
 import { lookupEnsAddress } from "@/libs/ens";
 
 export const useEns = () => {
   const address = useRecoilValue(addressAtom);
-  const [ens, setEns] = useRecoilState(ensAtom);
 
-  useEffect(() => {
+  const key = useMemo(() => {
     if (!address) {
-      return;
+      return null;
     }
+    return ENS_SWR + address;
+  }, [address]);
 
-    const fetchData = async () => {
-      setEns(await lookupEnsAddress(address));
-    };
+  const { data, error, mutate } = useSWR<string>(key, address => {
+    return lookupEnsAddress(address.replace(ENS_SWR, ""));
+  });
 
-    fetchData();
-  }, [address, setEns]);
-
-  return { ens, setEns };
+  return {
+    isLoading: !error && !data,
+    isError: !!error,
+    ens: data,
+    setEns: mutate,
+  };
 };

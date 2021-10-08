@@ -8,7 +8,7 @@ import type {
 import { SWRConfig } from "swr";
 
 import { GalleryScreen } from "@/components/GalleryScreen";
-import { TOKEN_SWR } from "@/const/swr";
+import { ENS_SWR, TOKEN_SWR } from "@/const/swr";
 import { resolveEnsName } from "@/libs/ens";
 import { fetchToken } from "@/libs/token";
 import type { Token } from "@/types/token";
@@ -73,6 +73,7 @@ export const PageId = ({
     <SWRConfig
       value={{
         fallback: {
+          [`${ENS_SWR + address}`]: ensName,
           [`${TOKEN_SWR + address}`]: token,
         },
       }}
