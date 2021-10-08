@@ -2,9 +2,9 @@ import { useRecoilState } from "recoil";
 
 import { profileAddressAtom } from "@/atoms/profileAddress";
 
-export const useProfileProfileAddress = () => {
-  const [profileaddress, setProfileAddress] =
+export const useProfileAddress = () => {
+  const [profileAddress, setProfileAddress] =
     useRecoilState(profileAddressAtom);
 
-  return { profileaddress, setProfileAddress };
+  return { profileAddress, setProfileAddress };
 };
