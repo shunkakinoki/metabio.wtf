@@ -6,7 +6,5 @@ export const useProfileAddress = () => {
   const [profileAddress, setProfileAddress] =
     useRecoilState(profileAddressAtom);
 
-  console.log(profileAddress);
-
   return { profileAddress, setProfileAddress };
 };
