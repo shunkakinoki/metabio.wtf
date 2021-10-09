@@ -11,6 +11,7 @@ import { SWRConfig } from "swr";
 import { GalleryScreen } from "@/components/GalleryScreen";
 import {
   ENS_SWR,
+  MIRROR_SWR,
   OPENSEA_SWR,
   POAP_SWR,
   SNAPSHOT_SWR,
@@ -18,6 +19,7 @@ import {
 } from "@/const/swr";
 import { useAddress } from "@/hooks/useAddress";
 import { resolveEnsName } from "@/libs/ens";
+import { fetchMirrorArticles } from "@/libs/mirror";
 import { fetchOpenseaAssets } from "@/libs/opensea";
 import { fetchPoaps } from "@/libs/poap";
 import { fetchSnapshots } from "@/libs/snapshot";
@@ -39,6 +41,9 @@ export interface Props {
     accounts: { tokens: Poap[] };
   };
   assets: { assets: OpenseaAsset[] };
+  mirrorArticles: {
+    [x: string]: any;
+  };
 }
 
 // eslint-disable-next-line @typescript-eslint/require-await
@@ -79,6 +84,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
   const snapshots = await fetchSnapshots(address);
   const poaps = await fetchPoaps(address);
   const assets = await fetchOpenseaAssets(address);
+  const mirrorArticles = await fetchMirrorArticles(address);
 
   return {
     props: {
@@ -88,6 +94,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
       snapshots: snapshots,
       poaps: poaps,
       assets: assets,
+      mirrorArticles: mirrorArticles,
     },
     revalidate: 300,
   };
@@ -100,6 +107,7 @@ export const PageId = ({
   snapshots,
   poaps,
   assets,
+  mirrorArticles,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   const { address, setAddress } = useAddress();
 
@@ -116,6 +124,7 @@ export const PageId = ({
           [concatSwrPath(SNAPSHOT_SWR, address)]: snapshots,
           [concatSwrPath(POAP_SWR, address)]: poaps,
           [concatSwrPath(OPENSEA_SWR, address)]: assets,
+          [concatSwrPath(MIRROR_SWR, address)]: mirrorArticles,
         },
       }}
     >
