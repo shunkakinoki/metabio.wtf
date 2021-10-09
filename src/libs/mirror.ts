@@ -1,4 +1,8 @@
+import { request } from "graphql-request";
+
+import { ARWEAVE_BASE_URL } from "@/const/api";
 import { arweave } from "@/libs/arweave";
+import { MIRROR_QUERY } from "@/queries/mirror";
 
 const formatEntry = async (entry, transactionId) => {
   return {
@@ -22,32 +26,11 @@ export const fetchMirrorArticles = async (
 ): Promise<{
   [x: string]: any;
 }> => {
-  const query = `
-	query FetchTransactions($profileAddresses: [String!]!) {
-    transactions(first: 100, tags: [{ name: "App-Name", values: ["MirrorXYZ"] }, { name: "Contributor", values: $profileAddresses }]) {
-    edges {
-      node {
-        id
-          tags {
-            name
-            value
-          }
-        }
-      }
-    }
-  }
-  `;
-
-  const variables = {
-    profileAddresses: [profileAddress],
-  };
   try {
-    const result = await fetch("https://arweave.net/graphql", {
-      headers: new Headers({ "content-type": "application/json" }),
-      method: "POST",
-      body: JSON.stringify({ query, variables }),
+    const data = await request(ARWEAVE_BASE_URL, MIRROR_QUERY, {
+      profileAddresses: [profileAddress],
     });
-    const { data } = await result.json();
+
     if (!data.transactions.edges) {
       throw new Error(`Could not resolve ${profileAddress} via Mirror.`);
     }
@@ -81,7 +64,7 @@ export const fetchMirrorArticles = async (
         return formatEntry(
           JSON.parse(
             //@ts-ignore
-            await arweave.transactions.getData(entry.path, {
+            await arweave.transactions.getData(entry.path as string, {
               decode: true,
               string: true,
             }),
