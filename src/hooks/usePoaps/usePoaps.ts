@@ -12,7 +12,7 @@ export const usePoaps = () => {
   const { data, error } = useSWR<{ accounts: { tokens: Poap[] } }>(
     key,
     profileAddress => {
-      return fetchPoaps(removeSwrPath(POAP_SWR, profileAddress));
+      return fetchPoaps(removeSwrPath(POAP_SWR, profileAddress.toLowerCase()));
     },
   );
 

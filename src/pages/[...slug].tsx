@@ -82,7 +82,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
 
   const token = await fetchToken(address);
   const snapshots = await fetchSnapshots(address);
-  const poaps = await fetchPoaps(address);
+  const poaps = await fetchPoaps(address.toLowerCase());
   const assets = await fetchOpenseaAssets(address);
   const mirrorArticles = await fetchMirrorArticles(address);
 
