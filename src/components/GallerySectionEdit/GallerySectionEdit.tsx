@@ -4,7 +4,7 @@ import { DndProvider } from "react-dnd";
 
 import { HTML5Backend } from "react-dnd-html5-backend";
 
-import { GalleryEditBin } from "@/components/GalleryEditBin";
+import { GallerySectionDrop } from "@/components/GallerySectionDrop";
 import { GallerySectionNFT } from "@/components/GallerySectionNFT";
 import { GallerySectionPoap } from "@/components/GallerySectionPoap";
 import { GallerySectionSnapshot } from "@/components/GallerySectionSnapshot";
@@ -15,8 +15,8 @@ export const GallerySectionEdit: FC = () => {
   return (
     <div className="flex flex-col bg-blueGray-100">
       <DndProvider backend={HTML5Backend}>
-        <GalleryEditBin allowedDropEffect="copy" />
         <ProfileHero />
+        <GallerySectionDrop />
         <GallerySectionNFT editable />
         <GallerySectionPoap editable />
         <GallerySectionSnapshot editable />
