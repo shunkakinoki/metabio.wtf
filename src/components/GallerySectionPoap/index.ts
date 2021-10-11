@@ -1,0 +1,1 @@
+export { GallerySectionPoap } from "./GallerySectionPoap";

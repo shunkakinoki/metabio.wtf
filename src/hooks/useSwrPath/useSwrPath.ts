@@ -12,7 +12,7 @@ export const useSwrPath = (swr: string) => {
   const profileAddress = useRecoilValue(profileAddressAtom);
 
   const key = useMemo(() => {
-    if (asPath === "/profile") {
+    if (asPath === "/profile" || asPath === "/profile/edit") {
       if (!profileAddress) {
         return null;
       }

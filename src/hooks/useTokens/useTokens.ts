@@ -18,7 +18,7 @@ export const useTokens = () => {
     mutate,
     isLoading: !error && !data,
     isError: !!error,
-    tokens: data?.tokens.filter(entry => {
+    tokens: data?.tokens?.filter(entry => {
       return entry.tokenInfo.holdersCount > 10;
     }) as TokensEntity[],
   };

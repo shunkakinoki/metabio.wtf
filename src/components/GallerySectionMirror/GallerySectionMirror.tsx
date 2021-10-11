@@ -1,12 +1,12 @@
 import { Gallery } from "@/components/Gallery";
-import { GalleryItem } from "@/components/Gallery/GalleryItem";
+import { GalleryItem } from "@/components/GalleryItem";
 import { useMirrorArticles } from "@/hooks/useMirrorArticles";
 
 const snapshotImage = (eventId: string) => {
   return `https://og.sentrei.com/api/image?fileType=png&layoutName=Sentrei&Theme=Dark&Title=${eventId}&Sub+Title=+`;
 };
 
-export const GalleryMirror = () => {
+export const GallerySectionMirror = () => {
   const { mirrorArticles } = useMirrorArticles();
 
   return (

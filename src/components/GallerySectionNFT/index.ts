@@ -1,0 +1,1 @@
+export { GallerySectionNFT } from "./GallerySectionNFT";
