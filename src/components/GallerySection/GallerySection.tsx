@@ -1,6 +1,5 @@
 import type { FC } from "react";
 
-import { GalleryMirror } from "@/components/GalleryMirror";
 import { GalleryNFT } from "@/components/GalleryNFT";
 import { GalleryPoap } from "@/components/GalleryPoap";
 import { GallerySnapshot } from "@/components/GallerySnapshot";
@@ -13,7 +12,6 @@ export const GallerySection: FC = () => {
       <ProfileHero />
       <GalleryNFT />
       <GalleryPoap />
-      <GalleryMirror />
       <GallerySnapshot />
       <GalleryToken />
     </div>
