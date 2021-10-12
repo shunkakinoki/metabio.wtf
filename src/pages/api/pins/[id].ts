@@ -17,7 +17,7 @@ export const pins = async (req: NextApiRequest, res: NextApiResponse) => {
     switch (req.method) {
       case "GET": {
         const [pins] = await Promise.all([
-          prisma.pins.findAll({
+          prisma.pins.findMany({
             orderBy: [
               {
                 id: "asc",
@@ -28,25 +28,8 @@ export const pins = async (req: NextApiRequest, res: NextApiResponse) => {
         ]);
 
         res.json({
-          pins: pins?.pins || 0,
+          pins: pins || 0,
         });
-        return;
-      }
-      case "POST": {
-        const [pins] = await Promise.all([
-          prisma.pins.upsert({
-            where: { walletId: id },
-            create: {
-              id: id,
-              pins: 1,
-            },
-          }),
-        ]);
-
-        res.json({
-          pins: pins?.pins || 0,
-        });
-
         return;
       }
     }

@@ -158,3 +158,5 @@ dist/tools/*
 !dist/tools/.gitkeep
 dist/videos/*
 !dist/videos/.gitkeep
+
+prisma/.env
