@@ -35,7 +35,7 @@ export const HeaderSearchBar = () => {
           type="text"
           name="address"
           id="address"
-          className="block pl-10 w-full sm:text-sm rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
+          className="block pl-10 w-full sm:text-sm text-gray-800 rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
           placeholder="Quick search for wallet address or ENS"
           onChange={onChange}
         />
