@@ -42,10 +42,10 @@ export const GalleryDustBin: FC<DustbinProps> = ({ index }) => {
     <div ref={drop}>
       <GalleryItem
         className={clsx(
-          "flex w-full h-full square",
+          "flex p-1 w-full h-full border-4 border-fuchsia-200 border-dotted square",
           canDrop
             ? isActive
-              ? "bg-fuchsia-300 opacity-30 duration-100 animate-pulse"
+              ? "bg-fuchsia-300 opacity-30"
               : "bg-red-300 opacity-80 animate-pulse"
             : "bg-yellow-100",
         )}
