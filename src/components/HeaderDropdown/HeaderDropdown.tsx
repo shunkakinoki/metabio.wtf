@@ -3,6 +3,7 @@ import { ChevronDownIcon } from "@heroicons/react/solid";
 import dynamic from "next/dynamic";
 import { Fragment } from "react";
 
+import { useCopy } from "@/hooks/useCopy";
 import { useProfileAddress } from "@/hooks/useProfileAddress";
 import { useProfileAddressTruncated } from "@/hooks/useProfileAddressTruncated";
 import { useProfileEns } from "@/hooks/useProfileEns";
@@ -22,8 +23,9 @@ const WalletConnect = dynamic(
 
 export const HeaderDropdown = () => {
   const { web3Provider, setWeb3Provider } = useWeb3Provider();
-  const { setProfileAddress } = useProfileAddress();
+  const { profileAddress, setProfileAddress } = useProfileAddress();
   const { profileEns, setProfileEns } = useProfileEns();
+  const { copyText } = useCopy();
   const profileAddressTruncated = useProfileAddressTruncated();
   const web3Modal = useWeb3Modal();
 
@@ -32,6 +34,10 @@ export const HeaderDropdown = () => {
     setWeb3Provider(null);
     setProfileAddress("");
     setProfileEns("");
+  };
+
+  const handleCopy = () => {
+    copyText(`https://www.metabio.wtf/${profileEns ?? profileAddress}`);
   };
 
   if (!web3Provider) {
@@ -122,6 +128,7 @@ export const HeaderDropdown = () => {
                     className={`${
                       active ? "bg-violet-500 text-white" : "text-gray-900"
                     } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
+                    onClick={handleCopy}
                   >
                     {active ? (
                       <DuplicateActiveIcon
