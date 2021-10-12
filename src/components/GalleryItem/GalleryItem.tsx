@@ -4,7 +4,7 @@ import type { FC } from "react";
 export type GalleryItemProps = {
   alt?: string;
   src: string;
-  className: string;
+  className?: string;
 };
 
 export const GalleryItem: FC<GalleryItemProps> = ({ src, alt, className }) => {
