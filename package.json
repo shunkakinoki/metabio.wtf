@@ -37,6 +37,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@prisma/client": "^3.2.1",
     "@sentrei/next": "^1.13.6",
     "@sentrei/postcss": "^1.4.5",
     "@sentrei/tailwindcss": "^1.5.1",
@@ -44,9 +45,11 @@
     "aos": "^2.3.4",
     "arweave": "^1.10.17",
     "autoprefixer": "^10.3.7",
+    "cors": "^2.8.5",
     "ethers": "^5.4.7",
     "graphql": "^15.6.1",
     "graphql-request": "^3.5.0",
+    "prisma": "^3.2.1",
     "react-dnd": "^14.0.4",
     "react-dnd-html5-backend": "^14.0.2",
     "web3modal": "^1.9.4",

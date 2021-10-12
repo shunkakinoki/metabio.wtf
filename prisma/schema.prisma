@@ -1,0 +1,25 @@
+datasource db {
+  provider          = "mysql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+  planetScaleMode   = true
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+  binaryTargets   = ["native", "rhel-openssl-1.0.x"]
+}
+
+model Wallet {
+  id        String   @id
+  createdAt DateTime @default(now())
+  Pins      Pins[]
+}
+
+model Pins {
+  id        Int      @id
+  walletId  String
+  createdAt DateTime @default(now())
+  wallet    Wallet   @relation(fields: [walletId], references: [id])
+}
