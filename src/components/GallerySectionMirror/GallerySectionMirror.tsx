@@ -1,8 +1,8 @@
 import type { FC } from "react";
 
-import { Gallery } from "@/components/Gallery";
 import { GalleryEditItem } from "@/components/GalleryEditItem";
 import { GalleryItem } from "@/components/GalleryItem";
+import { GallerySection } from "@/components/GallerySection";
 import { useMirrorArticles } from "@/hooks/useMirrorArticles";
 
 const mirrorImage = (eventId: string) => {
@@ -19,7 +19,7 @@ export const GallerySectionMirror: FC<GallerySectionMirrorProps> = ({
   const { mirrorArticles } = useMirrorArticles();
 
   return (
-    <Gallery>
+    <GallerySection>
       {mirrorArticles &&
         mirrorArticles.map((article, index) => {
           if (editable) {
@@ -37,6 +37,6 @@ export const GallerySectionMirror: FC<GallerySectionMirrorProps> = ({
             />
           );
         })}
-    </Gallery>
+    </GallerySection>
   );
 };

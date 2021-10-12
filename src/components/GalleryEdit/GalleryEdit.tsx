@@ -12,7 +12,7 @@ import { GallerySectionSnapshot } from "@/components/GallerySectionSnapshot";
 import { GallerySectionToken } from "@/components/GallerySectionToken";
 import { ProfileHero } from "@/components/ProfileHero";
 
-export const GallerySectionEdit: FC = () => {
+export const GalleryEdit: FC = () => {
   return (
     <div className="flex flex-col bg-blueGray-100">
       <DndProvider backend={HTML5Backend}>

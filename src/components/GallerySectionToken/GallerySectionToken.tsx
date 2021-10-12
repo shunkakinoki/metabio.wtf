@@ -1,8 +1,8 @@
 import type { FC } from "react";
 
-import { Gallery } from "@/components/Gallery";
 import { GalleryEditItem } from "@/components/GalleryEditItem";
 import { GalleryItem } from "@/components/GalleryItem";
+import { GallerySection } from "@/components/GallerySection";
 import { useTokens } from "@/hooks/useTokens";
 
 const tokenImage = (eventId: string) => {
@@ -19,7 +19,7 @@ export const GallerySectionToken: FC<GallerySectionTokenProps> = ({
   const { tokens } = useTokens();
 
   return (
-    <Gallery>
+    <GallerySection>
       {tokens &&
         tokens.map((token, index) => {
           if (editable) {
@@ -37,6 +37,6 @@ export const GallerySectionToken: FC<GallerySectionTokenProps> = ({
             />
           );
         })}
-    </Gallery>
+    </GallerySection>
   );
 };

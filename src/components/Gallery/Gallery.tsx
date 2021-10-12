@@ -1,11 +1,21 @@
 import type { FC } from "react";
 
-export const Gallery: FC = ({ children }) => {
+import { GallerySectionMirror } from "@/components/GallerySectionMirror";
+import { GallerySectionNFT } from "@/components/GallerySectionNFT";
+import { GallerySectionPoap } from "@/components/GallerySectionPoap";
+import { GallerySectionSnapshot } from "@/components/GallerySectionSnapshot";
+import { GallerySectionToken } from "@/components/GallerySectionToken";
+import { ProfileHero } from "@/components/ProfileHero";
+
+export const Gallery: FC = () => {
   return (
-    <div className="grid place-items-center">
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6 p-8 w-full max-w-5xl">
-        {children}
-      </div>
+    <div className="flex flex-col bg-blueGray-100">
+      <ProfileHero />
+      <GallerySectionNFT />
+      <GallerySectionPoap />
+      <GallerySectionSnapshot />
+      <GallerySectionMirror />
+      <GallerySectionToken />
     </div>
   );
 };

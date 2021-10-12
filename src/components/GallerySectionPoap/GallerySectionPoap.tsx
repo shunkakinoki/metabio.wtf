@@ -1,8 +1,8 @@
 import type { FC } from "react";
 
-import { Gallery } from "@/components/Gallery";
 import { GalleryEditItem } from "@/components/GalleryEditItem";
 import { GalleryItem } from "@/components/GalleryItem";
+import { GallerySection } from "@/components/GallerySection";
 import { usePoaps } from "@/hooks/usePoaps";
 
 const poapImage = (eventId: string) => {
@@ -19,7 +19,7 @@ export const GallerySectionPoap: FC<GallerySectionPoapProps> = ({
   const { poaps } = usePoaps();
 
   return (
-    <Gallery>
+    <GallerySection>
       {poaps &&
         poaps.map((poap, index) => {
           if (editable) {
@@ -27,6 +27,6 @@ export const GallerySectionPoap: FC<GallerySectionPoapProps> = ({
           }
           return <GalleryItem key={index} src={poapImage(poap.id)} />;
         })}
-    </Gallery>
+    </GallerySection>
   );
 };

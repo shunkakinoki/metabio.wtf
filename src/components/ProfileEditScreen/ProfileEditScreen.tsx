@@ -1,11 +1,11 @@
 import type { FC } from "react";
 
-import { GallerySectionEdit } from "@/components/GallerySectionEdit";
+import { GalleryEdit } from "@/components/GalleryEdit";
 
 export const ProfileEditScreen: FC = () => {
   return (
     <>
-      <GallerySectionEdit />
+      <GalleryEdit />
     </>
   );
 };

@@ -1,8 +1,8 @@
 import type { FC } from "react";
 
-import { Gallery } from "@/components/Gallery";
 import { GalleryEditItem } from "@/components/GalleryEditItem";
 import { GalleryItem } from "@/components/GalleryItem";
+import { GallerySection } from "@/components/GallerySection";
 import { useSnapshots } from "@/hooks/useSnapshots";
 
 const snapshotImage = (eventId: string) => {
@@ -19,7 +19,7 @@ export const GallerySectionSnapshot: FC<GallerySectionSnapshotProps> = ({
   const { snapshots } = useSnapshots();
 
   return (
-    <Gallery>
+    <GallerySection>
       {snapshots &&
         snapshots.map((snapshot, index) => {
           if (editable) {
@@ -34,6 +34,6 @@ export const GallerySectionSnapshot: FC<GallerySectionSnapshotProps> = ({
             <GalleryItem key={index} src={snapshotImage(snapshot.space.id)} />
           );
         })}
-    </Gallery>
+    </GallerySection>
   );
 };

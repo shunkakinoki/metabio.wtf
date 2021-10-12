@@ -1,8 +1,8 @@
 import type { FC } from "react";
 
-import { Gallery } from "@/components/Gallery";
 import { GalleryEditItem } from "@/components/GalleryEditItem";
 import { GalleryItem } from "@/components/GalleryItem";
+import { GallerySection } from "@/components/GallerySection";
 import { useOpenSeaAssets } from "@/hooks/useOpenSeaAssets";
 
 export type GallerySectionNFTProps = {
@@ -15,7 +15,7 @@ export const GallerySectionNFT: FC<GallerySectionNFTProps> = ({
   const { assets } = useOpenSeaAssets();
 
   return (
-    <Gallery>
+    <GallerySection>
       {assets &&
         assets.map((asset, index) => {
           if (editable) {
@@ -25,6 +25,6 @@ export const GallerySectionNFT: FC<GallerySectionNFTProps> = ({
           }
           return <GalleryItem key={index} src={asset.image_preview_url} />;
         })}
-    </Gallery>
+    </GallerySection>
   );
 };
