@@ -22,9 +22,7 @@ export const wallet = async (req: NextApiRequest, res: NextApiResponse) => {
             create: {
               id: id,
             },
-            update: {
-              id: id,
-            },
+            update: {},
           }),
         ]);
 
