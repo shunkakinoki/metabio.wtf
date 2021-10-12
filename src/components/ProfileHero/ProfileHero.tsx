@@ -4,7 +4,7 @@ import { useProfileAddressTruncated } from "@/hooks/useProfileAddressTruncated";
 import { useProfileEns } from "@/hooks/useProfileEns";
 
 export const ProfileHero: FC = () => {
-  const truncatedProfileAddress = useProfileAddressTruncated();
+  const profileAddressTruncated = useProfileAddressTruncated();
   const { profileEns } = useProfileEns();
 
   return (
@@ -16,7 +16,7 @@ export const ProfileHero: FC = () => {
             data-aos="zoom-y-out"
             data-aos-delay="300"
           >
-            {profileEns ?? truncatedProfileAddress}
+            {profileEns ?? profileAddressTruncated}
           </h1>
         </div>
       </div>
