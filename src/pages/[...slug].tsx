@@ -6,8 +6,10 @@ import type {
   GetStaticPropsContext,
 } from "next";
 import { useEffect } from "react";
+import type { ReactElement } from "react";
 import { SWRConfig } from "swr";
 
+import { AppLayout } from "@/components/AppLayout";
 import { GalleryScreen } from "@/components/GalleryScreen";
 import {
   ENS_SWR,
@@ -139,7 +141,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
   };
 };
 
-export const PageId = ({
+export const Slug = ({
   address: slugAddress,
   ensName,
   token,
@@ -172,4 +174,8 @@ export const PageId = ({
   );
 };
 
-export default PageId;
+export default Slug;
+
+Slug.getLayout = (page: ReactElement) => {
+  return <AppLayout>{page}</AppLayout>;
+};

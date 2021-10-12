@@ -1,3 +1,6 @@
+import type { ReactElement } from "react";
+
+import { AppLayout } from "@/components/AppLayout";
 import { ProfileEditScreen } from "@/components/ProfileEditScreen";
 
 export const ProfileEdit = (): JSX.Element => {
@@ -5,3 +8,7 @@ export const ProfileEdit = (): JSX.Element => {
 };
 
 export default ProfileEdit;
+
+ProfileEdit.getLayout = (page: ReactElement) => {
+  return <AppLayout>{page}</AppLayout>;
+};
