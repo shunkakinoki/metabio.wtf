@@ -19,6 +19,9 @@ model Wallet {
 
 model Pins {
   id        Int      @id
+  src       String?
+  value     String?
+  type      String
   walletId  String
   createdAt DateTime @default(now())
   wallet    Wallet   @relation(fields: [walletId], references: [id])
