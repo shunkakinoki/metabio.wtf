@@ -20,10 +20,16 @@ export const GallerySectionNFT: FC<GallerySectionNFTProps> = ({
         assets.map((asset, index) => {
           if (editable) {
             return (
-              <GalleryEditItem key={index} src={asset.image_preview_url} />
+              <GalleryEditItem
+                key={index}
+                type="nft"
+                src={asset.image_preview_url}
+              />
             );
           }
-          return <GalleryItem key={index} src={asset.image_preview_url} />;
+          return (
+            <GalleryItem key={index} type="nft" src={asset.image_preview_url} />
+          );
         })}
     </GallerySection>
   );

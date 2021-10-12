@@ -5,10 +5,6 @@ import { GalleryItem } from "@/components/GalleryItem";
 import { GallerySection } from "@/components/GallerySection";
 import { useMirrorArticles } from "@/hooks/useMirrorArticles";
 
-const mirrorImage = (eventId: string) => {
-  return `https://og.sentrei.com/api/image?fileType=png&layoutName=Sentrei&Theme=Dark&Title=${eventId}&Sub+Title=+`;
-};
-
 export type GallerySectionMirrorProps = {
   editable?: boolean;
 };
@@ -26,15 +22,14 @@ export const GallerySectionMirror: FC<GallerySectionMirrorProps> = ({
             return (
               <GalleryEditItem
                 key={index}
-                src={article?.cover_image ?? mirrorImage(article.title)}
+                type="mirror"
+                value={article?.title}
+                src={article?.cover_image}
               />
             );
           }
           return (
-            <GalleryItem
-              key={index}
-              src={article?.cover_image ?? mirrorImage(article.title)}
-            />
+            <GalleryItem key={index} type="mirror" src={article?.cover_image} />
           );
         })}
     </GallerySection>

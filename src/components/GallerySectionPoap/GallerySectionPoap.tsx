@@ -23,9 +23,17 @@ export const GallerySectionPoap: FC<GallerySectionPoapProps> = ({
       {poaps &&
         poaps.map((poap, index) => {
           if (editable) {
-            return <GalleryEditItem key={index} src={poapImage(poap.id)} />;
+            return (
+              <GalleryEditItem
+                key={index}
+                type="poap"
+                src={poapImage(poap.id)}
+              />
+            );
           }
-          return <GalleryItem key={index} src={poapImage(poap.id)} />;
+          return (
+            <GalleryItem key={index} type="poap" src={poapImage(poap.id)} />
+          );
         })}
     </GallerySection>
   );
