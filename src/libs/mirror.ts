@@ -7,7 +7,6 @@ import { MIRROR_QUERY } from "@/queries/mirror";
 const formatEntry = async (entry, transactionId) => {
   return {
     title: entry.content.title,
-    publication: entry.content.publication,
     body: entry.content.body,
     timestamp: entry.content.timestamp,
     digest: entry.originalDigest,

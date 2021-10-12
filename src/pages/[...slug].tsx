@@ -11,6 +11,7 @@ import { SWRConfig } from "swr";
 import { GalleryScreen } from "@/components/GalleryScreen";
 import {
   ENS_SWR,
+  MIRROR_SWR,
   OPENSEA_SWR,
   POAP_SWR,
   SNAPSHOT_SWR,
@@ -18,6 +19,7 @@ import {
 } from "@/const/swr";
 import { useAddress } from "@/hooks/useAddress";
 import { resolveEnsName } from "@/libs/ens";
+import { fetchMirrorArticles } from "@/libs/mirror";
 import { fetchOpenseaAssets } from "@/libs/opensea";
 import { fetchPoaps } from "@/libs/poap";
 import { fetchSnapshots } from "@/libs/snapshot";
@@ -37,6 +39,9 @@ export interface Props {
   };
   poaps: {
     accounts: { tokens: Poap[] };
+  };
+  mirrorArticles: {
+    [x: string]: any;
   };
   assets: { assets: OpenseaAsset[] };
 }
@@ -75,10 +80,50 @@ export const getStaticProps: GetStaticProps<Props> = async ({
     };
   }
 
-  const token = await fetchToken(address);
-  const snapshots = await fetchSnapshots(address);
-  const poaps = await fetchPoaps(address.toLowerCase());
-  const assets = await fetchOpenseaAssets(address);
+  let token: Token;
+  try {
+    token = await fetchToken(address);
+  } catch (err) {
+    console.log(err);
+  }
+
+  let snapshots: {
+    votes: Snapshot[];
+  };
+  try {
+    snapshots = await fetchSnapshots(address);
+  } catch (err) {
+    console.log(err);
+  }
+
+  let poaps: {
+    accounts: {
+      tokens: Poap[];
+    };
+  };
+  try {
+    poaps = await fetchPoaps(address.toLowerCase());
+  } catch (err) {
+    console.log(err);
+  }
+
+  let assets: {
+    assets: OpenseaAsset[];
+  };
+  try {
+    assets = await fetchOpenseaAssets(address);
+  } catch (err) {
+    console.log(err);
+  }
+
+  let mirrorArticles: {
+    [x: string]: any;
+  };
+  try {
+    mirrorArticles = await fetchMirrorArticles(address);
+  } catch (err) {
+    console.log(err);
+  }
 
   return {
     props: {
@@ -86,6 +131,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
       ensName: slug,
       token: token,
       snapshots: snapshots,
+      mirrorArticles: mirrorArticles ?? null,
       poaps: poaps,
       assets: assets,
     },
@@ -97,6 +143,7 @@ export const PageId = ({
   address: slugAddress,
   ensName,
   token,
+  mirrorArticles,
   snapshots,
   poaps,
   assets,
@@ -112,6 +159,7 @@ export const PageId = ({
       value={{
         fallback: {
           [concatSwrPath(ENS_SWR, address)]: ensName,
+          [concatSwrPath(MIRROR_SWR, address)]: mirrorArticles,
           [concatSwrPath(TOKEN_SWR, address)]: token,
           [concatSwrPath(SNAPSHOT_SWR, address)]: snapshots,
           [concatSwrPath(POAP_SWR, address)]: poaps,

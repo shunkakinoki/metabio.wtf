@@ -1,5 +1,6 @@
 import type { FC } from "react";
 
+import { GallerySectionMirror } from "@/components/GallerySectionMirror";
 import { GallerySectionNFT } from "@/components/GallerySectionNFT";
 import { GallerySectionPoap } from "@/components/GallerySectionPoap";
 import { GallerySectionSnapshot } from "@/components/GallerySectionSnapshot";
@@ -13,6 +14,7 @@ export const GallerySection: FC = () => {
       <GallerySectionNFT />
       <GallerySectionPoap />
       <GallerySectionSnapshot />
+      <GallerySectionMirror />
       <GallerySectionToken />
     </div>
   );

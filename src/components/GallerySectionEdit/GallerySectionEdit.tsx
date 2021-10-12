@@ -5,6 +5,7 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 
 import { GallerySectionDrop } from "@/components/GallerySectionDrop";
+import { GallerySectionMirror } from "@/components/GallerySectionMirror";
 import { GallerySectionNFT } from "@/components/GallerySectionNFT";
 import { GallerySectionPoap } from "@/components/GallerySectionPoap";
 import { GallerySectionSnapshot } from "@/components/GallerySectionSnapshot";
@@ -18,6 +19,7 @@ export const GallerySectionEdit: FC = () => {
         <ProfileHero />
         <GallerySectionDrop />
         <GallerySectionNFT editable />
+        <GallerySectionMirror editable />
         <GallerySectionPoap editable />
         <GallerySectionSnapshot editable />
         <GallerySectionToken editable />
