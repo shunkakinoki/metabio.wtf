@@ -14,6 +14,7 @@
   "license": "MIT",
   "author": "Sentrei, Inc.",
   "scripts": {
+    "build": "next build",
     "dev": "next dev",
     "env:pull": "doppler secrets download --no-file --format env > .env.local",
     "eslint:cmd": "eslint --config .eslintrc.js --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",

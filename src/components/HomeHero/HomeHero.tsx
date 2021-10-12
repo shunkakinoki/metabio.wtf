@@ -1,4 +1,15 @@
-import { WalletConnect } from "@/components/WalletConnect";
+import dynamic from "next/dynamic";
+
+const WalletConnect = dynamic(
+  () => {
+    return import("@/components/WalletConnect").then(mod => {
+      return mod.WalletConnect;
+    });
+  },
+  {
+    ssr: false,
+  },
+);
 
 export const HomeHero = () => {
   return (
