@@ -5,6 +5,8 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Fragment } from "react";
 
+import { HeaderSearchBar } from "@/components/HeaderSearchBar";
+
 const WalletConnect = dynamic(
   () => {
     return import("@/components/WalletConnect").then(mod => {
@@ -54,11 +56,9 @@ export const Header = () => {
                 <MenuIcon className="w-6 h-6" aria-hidden="true" />
               </Popover.Button>
             </div>
-            <Link passHref href="/profile">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Profile
-              </a>
-            </Link>
+            <div className="flex-grow">
+              <HeaderSearchBar />
+            </div>
             <div className="hidden md:flex md:flex-1 justify-end items-center lg:w-0">
               <HeaderDropdown />
             </div>
