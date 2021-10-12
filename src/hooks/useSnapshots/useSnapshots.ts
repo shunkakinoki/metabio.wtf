@@ -16,6 +16,13 @@ export const useSnapshots = () => {
   return {
     isLoading: !error && !data,
     isError: !!error,
-    snapshots: data?.votes as Snapshot[],
+    snapshots: data?.votes.filter((vote, index, self) => {
+      return (
+        index ===
+        self.findIndex(t => {
+          return t.space.id === vote.space.id;
+        })
+      );
+    }) as Snapshot[],
   };
 };
