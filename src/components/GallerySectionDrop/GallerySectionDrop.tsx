@@ -1,15 +1,15 @@
 import { Gallery } from "@/components/Gallery";
-import { GalleryEditBin } from "@/components/GalleryEditBin";
+import { GalleryDustBin } from "@/components/GalleryDustBin";
 
 export const GallerySectionDrop = () => {
   return (
     <Gallery>
-      <GalleryEditBin allowedDropEffect="copy" />
-      <GalleryEditBin allowedDropEffect="copy" />
-      <GalleryEditBin allowedDropEffect="copy" />
-      <GalleryEditBin allowedDropEffect="copy" />
-      <GalleryEditBin allowedDropEffect="copy" />
-      <GalleryEditBin allowedDropEffect="copy" />
+      <GalleryDustBin index={0} />
+      <GalleryDustBin index={1} />
+      <GalleryDustBin index={2} />
+      <GalleryDustBin index={3} />
+      <GalleryDustBin index={4} />
+      <GalleryDustBin index={5} />
     </Gallery>
   );
 };

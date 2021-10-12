@@ -1,0 +1,1 @@
+export { GalleryDustBin } from "./GalleryDustBin";
