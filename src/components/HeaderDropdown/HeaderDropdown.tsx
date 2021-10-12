@@ -84,7 +84,7 @@ export const HeaderDropdown = () => {
                         aria-hidden="true"
                       />
                     )}
-                    View
+                    View Profile
                   </a>
                 );
               }}
@@ -110,7 +110,7 @@ export const HeaderDropdown = () => {
                         aria-hidden="true"
                       />
                     )}
-                    Edit
+                    Edit Profile
                   </a>
                 );
               }}

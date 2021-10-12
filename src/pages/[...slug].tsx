@@ -70,10 +70,17 @@ export const getStaticProps: GetStaticProps<Props> = async ({
 
   const slug = slugs[0];
   let address: string;
+  let ensName: string;
 
   if (slug.endsWith(".eth")) {
     address = await resolveEnsName(slug);
-  } else address = slug;
+    ensName = slug;
+  } else if (utils.isAddress(slug)) {
+    address = slug;
+  } else {
+    address = await resolveEnsName(slug + ".eth");
+    ensName = slug + ".eth";
+  }
 
   if (!utils.isAddress(address)) {
     return {
@@ -130,7 +137,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
   return {
     props: {
       address: address,
-      ensName: slug,
+      ensName: ensName ?? null,
       token: token,
       snapshots: snapshots,
       mirrorArticles: mirrorArticles ?? null,
