@@ -28,26 +28,26 @@ const CustomApp = ({
     });
 
   return (
-    <SWRConfig
-      value={{
-        onError: (err, key, config) => {
-          console.error(err, key, config);
-        },
-        onErrorRetry: (err, key, config, revalidate, revalidateOps) => {
-          console.error(err, key, config, revalidate, revalidateOps);
-        },
-        onSuccess: (data, key, config) => {
-          console.log(data, key, config);
-        },
-      }}
-    >
-      <RecoilRoot>
+    <RecoilRoot>
+      <SWRConfig
+        value={{
+          onError: (err, key, config) => {
+            console.error(err, key, config);
+          },
+          onErrorRetry: (err, key, config, revalidate, revalidateOps) => {
+            console.error(err, key, config, revalidate, revalidateOps);
+          },
+          onSuccess: (data, key, config) => {
+            console.log(data, key, config);
+          },
+        }}
+      >
         <Seo />
         <ThemeProvider attribute="class" defaultTheme="system">
           {getLayout(<Component {...pageProps} />)}
         </ThemeProvider>
-      </RecoilRoot>
-    </SWRConfig>
+      </SWRConfig>
+    </RecoilRoot>
   );
 };
 

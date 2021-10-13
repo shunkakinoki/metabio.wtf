@@ -9,15 +9,42 @@ import {
 } from "@heroicons/react/outline";
 
 const features = [
-  { name: "NFTs", icon: CakeIcon },
-  { name: "POAPs", icon: LocationMarkerIcon },
-  { name: "Social Tokens", icon: CurrencyRupeeIcon },
-  { name: "DAOs", icon: UserGroupIcon },
-  { name: "Mirror Publications", icon: PencilIcon },
-  { name: "+ More Soon", icon: PlusCircleIcon },
+  {
+    name: "NFTs",
+    icon: CakeIcon,
+    description: "Showcase your proudly earned NFTS here.",
+  },
+  {
+    name: "POAPs",
+    icon: LocationMarkerIcon,
+    description:
+      "Show off proof of events that you have attended online and IRL.",
+  },
+  {
+    name: "Social Tokens",
+    icon: CurrencyRupeeIcon,
+    description: "What creators and professionals do you believe in. ",
+  },
+  {
+    name: "DAOs",
+    icon: UserGroupIcon,
+    description:
+      "We track what communities you are part of and if you have voted in any proposals for said DAOs.",
+  },
+  {
+    name: "Mirror Publications",
+    icon: PencilIcon,
+    description:
+      "If writing is your passion, we have all your Mirror writings one place.",
+  },
+  {
+    name: "+ More Soon",
+    icon: PlusCircleIcon,
+    description: "And many nore coming...",
+  },
 ];
 
-export const HeroFeature = () => {
+export const HomeFeature = () => {
   return (
     <section className="py-24 sm:py-32 lg:py-48">
       <div className="px-4 sm:px-6 lg:px-8 mx-auto max-w-md sm:max-w-3xl lg:max-w-7xl text-center">
@@ -49,8 +76,7 @@ export const HeroFeature = () => {
                         {feature.name}
                       </h3>
                       <p className="mt-5 text-base text-gray-500">
-                        Ac tincidunt sapien vehicula erat auctor pellentesque
-                        rhoncus. Et magna sit morbi lobortis.
+                        {feature.description}
                       </p>
                     </div>
                   </div>

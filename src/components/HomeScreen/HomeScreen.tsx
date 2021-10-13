@@ -1,13 +1,13 @@
 import type { FC } from "react";
 
-import { HeroFeature } from "@/components/HeroFeature";
+import { HomeFeature } from "@/components/HomeFeature";
 import { HomeHero } from "@/components/HomeHero";
 
 export const HomeScreen: FC = () => {
   return (
     <>
       <HomeHero />
-      <HeroFeature />
+      <HomeFeature />
     </>
   );
 };
