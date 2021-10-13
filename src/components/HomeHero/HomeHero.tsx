@@ -13,7 +13,7 @@ const WalletConnect = dynamic(
 
 export const HomeHero = () => {
   return (
-    <section className="relative pt-6 pb-16 sm:pb-24">
+    <section className="pt-6 pb-16 sm:pb-24">
       <div className="px-4 mx-auto mt-16 sm:mt-24 max-w-5xl">
         <div className="text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-trueGray-700">
@@ -46,7 +46,7 @@ export const HomeHero = () => {
             Show everyone what you’ve done and what you own.
           </p>
         </div>
-        <div className="sm:flex sm:justify-center mx-auto mt-5 md:mt-8 max-w-md">
+        <div className="sm:flex sm:justify-center mx-auto mt-8 md:mt-16 max-w-md">
           <div
             data-aos="zoom-y-out"
             data-aos-delay="800"
