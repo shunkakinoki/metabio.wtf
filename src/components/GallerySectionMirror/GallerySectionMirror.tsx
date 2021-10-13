@@ -29,7 +29,12 @@ export const GallerySectionMirror: FC<GallerySectionMirrorProps> = ({
             );
           }
           return (
-            <GalleryItem key={index} type="mirror" src={article?.cover_image} />
+            <GalleryItem
+              key={index}
+              type="mirror"
+              src={article?.cover_image}
+              value={article?.title}
+            />
           );
         })}
     </GallerySection>
