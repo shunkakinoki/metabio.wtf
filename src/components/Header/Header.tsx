@@ -56,7 +56,7 @@ export const Header = () => {
                 <MenuIcon className="w-6 h-6" aria-hidden="true" />
               </Popover.Button>
             </div>
-            <div className="flex-grow">
+            <div className="hidden md:flex-grow">
               <HeaderSearchBar />
             </div>
             <div className="hidden md:flex md:flex-1 justify-end items-center lg:w-0">
