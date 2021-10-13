@@ -7,6 +7,7 @@ import type { ReactElement, ReactNode } from "react";
 import { RecoilRoot } from "recoil";
 import { SWRConfig } from "swr";
 
+import { Seo } from "@/components/Seo";
 import "@/styles/index.css";
 import "aos/dist/aos.css";
 
@@ -51,6 +52,7 @@ const CustomApp = ({
       }}
     >
       <RecoilRoot>
+        <Seo />
         <ThemeProvider attribute="class" defaultTheme="system">
           {getLayout(<Component {...pageProps} />)}
         </ThemeProvider>

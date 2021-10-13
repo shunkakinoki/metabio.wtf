@@ -13,7 +13,7 @@ const WalletConnect = dynamic(
 
 export const HomeHero = () => {
   return (
-    <section className="pt-6 pb-16 sm:pb-24">
+    <section className="pt-20 pb-24 sm:pb-24">
       <div className="px-4 mx-auto mt-16 sm:mt-24 max-w-5xl">
         <div className="text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-trueGray-700">
