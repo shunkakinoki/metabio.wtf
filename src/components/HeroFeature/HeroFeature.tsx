@@ -20,11 +20,7 @@ const features = [
 export const HeroFeature = () => {
   return (
     <section className="py-24 sm:py-32 lg:py-48">
-      <div
-        data-aos="zoom-y-out"
-        data-aos-delay="450"
-        className="px-4 sm:px-6 lg:px-8 mx-auto max-w-md sm:max-w-3xl lg:max-w-7xl text-center"
-      >
+      <div className="px-4 sm:px-6 lg:px-8 mx-auto max-w-md sm:max-w-3xl lg:max-w-7xl text-center">
         <h2
           data-aos="zoom-y-out"
           data-aos-delay="450"
