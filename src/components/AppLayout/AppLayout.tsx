@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 
 export const AppLayout: FC = ({ children }) => {
   return (
-    <div className="flex flex-col bg-blueGray-100">
+    <div className="flex flex-col bg-blueGray-50">
       <Header />
       {children}
     </div>
