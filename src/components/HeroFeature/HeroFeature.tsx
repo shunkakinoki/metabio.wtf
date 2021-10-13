@@ -50,7 +50,7 @@ export const HeroFeature = () => {
                   key={feature.name}
                   className="pt-6"
                   data-aos="zoom-y-out"
-                  data-aos-delay={`${index * 150 + 300}`}
+                  data-aos-delay={`${index * 150 + 150}`}
                 >
                   <div className="flow-root px-6 pb-8 bg-gray-50 rounded-lg">
                     <div className="-mt-6">
