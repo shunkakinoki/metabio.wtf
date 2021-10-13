@@ -1,15 +1,12 @@
-import AOS from "aos";
 import type { NextPage } from "next";
 import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
-import { useEffect } from "react";
 import type { ReactElement, ReactNode } from "react";
 import { RecoilRoot } from "recoil";
 import { SWRConfig } from "swr";
 
 import { Seo } from "@/components/Seo";
 import "@/styles/index.css";
-import "aos/dist/aos.css";
 
 type NextPageWithLayout = NextPage & {
   // eslint-disable-next-line no-unused-vars
@@ -29,13 +26,6 @@ const CustomApp = ({
     (page => {
       return page;
     });
-
-  useEffect(() => {
-    // here you can add your aos options
-    AOS.init({
-      offset: 300,
-    });
-  }, []);
 
   return (
     <SWRConfig

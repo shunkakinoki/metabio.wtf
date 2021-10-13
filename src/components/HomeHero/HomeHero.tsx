@@ -17,41 +17,22 @@ export const HomeHero = () => {
       <div className="px-4 mx-auto mt-16 sm:mt-24 max-w-5xl">
         <div className="text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-trueGray-700">
-            <span
-              className="block xl:inline"
-              data-aos="zoom-y-out"
-              data-aos-delay="300"
-            >
+            <span className="block xl:inline">
               The only bio you need in the
             </span>{" "}
-            <span data-aos="zoom-y-out" data-aos-delay="450">
-              <span className="block xl:inline text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-400">
-                metaverse
-              </span>{" "}
-              <span
-                data-aos="zoom-y-out"
-                data-aos-delay="450"
-                role="img"
-                aria-label="happy"
-              >
-                🥳
-              </span>
+            <span className="block xl:inline text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-400">
+              metaverse
+            </span>{" "}
+            <span role="img" aria-label="happy">
+              🥳
             </span>
           </h1>
-          <p
-            data-aos="zoom-y-out"
-            data-aos-delay="600"
-            className="mx-auto mt-3 md:mt-5 max-w-md md:max-w-3xl text-base sm:text-lg md:text-xl text-gray-500"
-          >
+          <p className="mx-auto mt-3 md:mt-5 max-w-md md:max-w-3xl text-base sm:text-lg md:text-xl text-gray-500">
             Show everyone what you’ve done and what you own.
           </p>
         </div>
         <div className="sm:flex sm:justify-center mx-auto mt-8 md:mt-16 max-w-md">
-          <div
-            data-aos="zoom-y-out"
-            data-aos-delay="800"
-            className="rounded-md shadow"
-          >
+          <div className="rounded-md shadow">
             <WalletConnect
               href="/profile"
               connectedChildren="Enter profile"
