@@ -1,7 +1,9 @@
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import dynamic from "next/dynamic";
-import { Fragment } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { Fragment, useCallback, useEffect } from "react";
 
 import { useCopy } from "@/hooks/useCopy";
 import { useProfileAddress } from "@/hooks/useProfileAddress";
@@ -26,19 +28,30 @@ export const HeaderDropdown = () => {
   const { profileAddress, setProfileAddress } = useProfileAddress();
   const { profileEns, setProfileEns } = useProfileEns();
   const { copyText } = useCopy();
+  const router = useRouter();
+  const { asPath } = useRouter();
   const profileAddressTruncated = useProfileAddressTruncated();
   const web3Modal = useWeb3Modal();
 
-  const disconnectWallet = () => {
+  useEffect(() => {
+    if (asPath === "/profile" || asPath === "/profile/edit") {
+      if (!web3Provider && !profileAddress) {
+        router.push("/");
+      }
+    }
+  }, [asPath, profileAddress, router, web3Provider]);
+
+  const disconnectWallet = useCallback(() => {
     web3Modal.clearCachedProvider();
     setWeb3Provider(null);
     setProfileAddress("");
     setProfileEns("");
-  };
+    router.push("/");
+  }, [router, setProfileAddress, setProfileEns, setWeb3Provider, web3Modal]);
 
-  const handleCopy = () => {
+  const handleCopy = useCallback(() => {
     copyText(`https://www.metabio.wtf/${profileEns ?? profileAddress}`);
-  };
+  }, [copyText, profileAddress, profileEns]);
 
   if (!web3Provider) {
     return (
@@ -72,52 +85,56 @@ export const HeaderDropdown = () => {
             <Menu.Item>
               {({ active }) => {
                 return (
-                  // eslint-disable-next-line @next/next/no-html-link-for-pages
-                  <a
-                    href="/profile"
+                  <span
                     className={`${
                       active ? "bg-violet-500 text-white" : "text-gray-900"
                     } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                   >
-                    {active ? (
-                      <ViewActiveIcon
-                        className="mr-2 w-5 h-5"
-                        aria-hidden="true"
-                      />
-                    ) : (
-                      <ViewInactiveIcon
-                        className="mr-2 w-5 h-5"
-                        aria-hidden="true"
-                      />
-                    )}
-                    View Profile
-                  </a>
+                    <Link passHref href="/profile">
+                      <a>
+                        {active ? (
+                          <ViewActiveIcon
+                            className="inline mr-2 w-5 h-5"
+                            aria-hidden="true"
+                          />
+                        ) : (
+                          <ViewInactiveIcon
+                            className="inline mr-2 w-5 h-5"
+                            aria-hidden="true"
+                          />
+                        )}
+                        View Profile
+                      </a>
+                    </Link>
+                  </span>
                 );
               }}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => {
                 return (
-                  // eslint-disable-next-line @next/next/no-html-link-for-pages
-                  <a
-                    href="/profile/edit"
+                  <span
                     className={`${
                       active ? "bg-violet-500 text-white" : "text-gray-900"
                     } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                   >
-                    {active ? (
-                      <EditActiveIcon
-                        className="mr-2 w-5 h-5"
-                        aria-hidden="true"
-                      />
-                    ) : (
-                      <EditInactiveIcon
-                        className="mr-2 w-5 h-5"
-                        aria-hidden="true"
-                      />
-                    )}
-                    Edit Profile
-                  </a>
+                    <Link passHref href="/profile/edit">
+                      <a>
+                        {active ? (
+                          <EditActiveIcon
+                            className="inline mr-2 w-5 h-5"
+                            aria-hidden="true"
+                          />
+                        ) : (
+                          <EditInactiveIcon
+                            className="inline mr-2 w-5 h-5"
+                            aria-hidden="true"
+                          />
+                        )}
+                        Edit Profile
+                      </a>
+                    </Link>
+                  </span>
                 );
               }}
             </Menu.Item>
