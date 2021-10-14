@@ -15,7 +15,7 @@ export const GallerySectionToken: FC<GallerySectionTokenProps> = ({
   const { tokens } = useTokens();
 
   return (
-    <GallerySection title="Social Tokens">
+    <GallerySection type="token">
       {tokens &&
         tokens.map((token, index) => {
           if (editable) {

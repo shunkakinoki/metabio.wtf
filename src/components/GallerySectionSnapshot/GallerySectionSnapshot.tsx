@@ -15,7 +15,7 @@ export const GallerySectionSnapshot: FC<GallerySectionSnapshotProps> = ({
   const { snapshots } = useSnapshots();
 
   return (
-    <GallerySection title="DAO">
+    <GallerySection type="dao">
       {snapshots &&
         snapshots.map((snapshot, index) => {
           if (editable) {
