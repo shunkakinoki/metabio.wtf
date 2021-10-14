@@ -16,6 +16,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
+    "env:copy": "cp .env.local ./prisma/.env",
     "env:pull": "doppler secrets download --no-file --format env > .env.local",
     "eslint:cmd": "eslint --config .eslintrc.js --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
     "eslint:fix": "yarn run eslint:cmd . --fix",
@@ -32,6 +33,7 @@
     "prettier:cmd": "prettier --ignore-unknown",
     "prettier:fix": "yarn run prettier:cmd --write .",
     "prettier:lint": "yarn run prettier:cmd --check .",
+    "prisma:studio": "prisma studio",
     "postpublish": "pinst --enable",
     "release": "semantic-release",
     "release:check": "semantic-release --dry-run",

@@ -44,7 +44,7 @@ const sections: Section = {
 export const GallerySectionLayout: FC = ({ children }) => {
   return (
     <div className="grid">
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6 py-3">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6 py-3">
         {children}
       </div>
     </div>
@@ -57,7 +57,7 @@ export const GallerySection: FC<GallerySectionProps> = ({
   defaultOpen = false,
 }) => {
   return (
-    <div className="py-2 sm:py-3 md:py-4 px-3 mx-auto w-full max-w-5xl">
+    <div className="py-2 sm:py-3 md:py-4 px-2 sm:px-3 md:px-4 mx-auto w-full max-w-5xl">
       <Disclosure defaultOpen={defaultOpen}>
         {({ open }) => {
           return (
@@ -91,7 +91,7 @@ export const GallerySection: FC<GallerySectionProps> = ({
                   } w-5 h-5 text-coolGray-800`}
                 />
               </Disclosure.Button>
-              <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
+              <Disclosure.Panel className="pt-4 pb-2 text-sm text-gray-500">
                 <GallerySectionLayout>{children}</GallerySectionLayout>
               </Disclosure.Panel>
             </>
