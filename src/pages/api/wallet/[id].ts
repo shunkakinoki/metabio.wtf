@@ -23,7 +23,7 @@ export const wallet = async (req: NextApiRequest, res: NextApiResponse) => {
         ]);
 
         res.json({
-          wallet: wallet,
+          data: wallet,
         });
         return;
       }
@@ -39,7 +39,7 @@ export const wallet = async (req: NextApiRequest, res: NextApiResponse) => {
         ]);
 
         res.json({
-          wallet: wallet,
+          data: wallet,
         });
         return;
       }

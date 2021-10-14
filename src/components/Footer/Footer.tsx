@@ -23,7 +23,7 @@ const navigation = {
 export const Footer = () => {
   return (
     <footer>
-      <div className="overflow-hidden py-12 md:py-20 px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
+      <div className="overflow-hidden py-12 px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
         <nav
           className="flex flex-wrap justify-center -my-2 -mx-5"
           aria-label="Footer"

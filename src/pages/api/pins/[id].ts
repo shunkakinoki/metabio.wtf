@@ -28,7 +28,7 @@ export const pins = async (req: NextApiRequest, res: NextApiResponse) => {
         ]);
 
         res.json({
-          pins: pins || 0,
+          data: pins,
         });
         return;
       }

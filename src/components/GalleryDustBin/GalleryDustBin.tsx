@@ -16,6 +16,8 @@ export interface DustbinProps {
 }
 
 export const GalleryDustBin: FC<DustbinProps> = ({ index }) => {
+  const [itemProps, setItemProps] = useState(null);
+
   const [{ canDrop, isOver }, drop] = useDrop(() => {
     return {
       accept: ItemTypes.BOX,
@@ -37,8 +39,6 @@ export const GalleryDustBin: FC<DustbinProps> = ({ index }) => {
   const isActive = useMemo(() => {
     return canDrop && isOver;
   }, [canDrop, isOver]);
-
-  const [itemProps, setItemProps] = useState(null);
 
   return (
     <div ref={drop}>
