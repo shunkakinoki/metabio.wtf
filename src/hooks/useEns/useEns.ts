@@ -3,22 +3,22 @@ import { useRecoilValue } from "recoil";
 
 import useSWR from "swr";
 
-import { profileAddressAtom } from "@/atoms/profileAddress";
+import { addressAtom } from "@/atoms/address";
 import { ENS_SWR } from "@/const/swr";
 import { lookupEnsAddress } from "@/libs/ens";
 
 export const useEns = () => {
-  const profileAddress = useRecoilValue(profileAddressAtom);
+  const address = useRecoilValue(addressAtom);
 
   const key = useMemo(() => {
-    if (!profileAddress) {
+    if (!address) {
       return null;
     }
-    return ENS_SWR + profileAddress;
-  }, [profileAddress]);
+    return ENS_SWR + address;
+  }, [address]);
 
-  const { data, error, mutate } = useSWR<string>(key, profileAddress => {
-    return lookupEnsAddress(profileAddress.replace(ENS_SWR, ""));
+  const { data, error, mutate } = useSWR<string>(key, address => {
+    return lookupEnsAddress(address.replace(ENS_SWR, ""));
   });
 
   return {
