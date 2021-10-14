@@ -15,7 +15,7 @@ export const GallerySectionNFT: FC<GallerySectionNFTProps> = ({
   const { assets } = useOpenSeaAssets();
 
   return (
-    <GallerySection>
+    <GallerySection title="NFTs">
       {assets &&
         assets.map((asset, index) => {
           if (editable) {

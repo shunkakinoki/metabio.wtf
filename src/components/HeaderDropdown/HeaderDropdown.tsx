@@ -91,7 +91,7 @@ export const HeaderDropdown = () => {
                     } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                   >
                     <Link passHref href="/profile">
-                      <a>
+                      <a className="w-full">
                         {active ? (
                           <ViewActiveIcon
                             className="inline mr-2 w-5 h-5"
@@ -119,7 +119,7 @@ export const HeaderDropdown = () => {
                     } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                   >
                     <Link passHref href="/profile/edit">
-                      <a>
+                      <a className="w-full">
                         {active ? (
                           <EditActiveIcon
                             className="inline mr-2 w-5 h-5"

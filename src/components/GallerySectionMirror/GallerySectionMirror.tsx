@@ -15,7 +15,7 @@ export const GallerySectionMirror: FC<GallerySectionMirrorProps> = ({
   const { mirrorArticles } = useMirrorArticles();
 
   return (
-    <GallerySection>
+    <GallerySection title="Mirror">
       {mirrorArticles &&
         mirrorArticles.map((article, index) => {
           if (editable) {

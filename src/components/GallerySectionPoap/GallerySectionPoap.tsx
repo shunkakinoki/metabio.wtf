@@ -19,7 +19,7 @@ export const GallerySectionPoap: FC<GallerySectionPoapProps> = ({
   const { poaps } = usePoaps();
 
   return (
-    <GallerySection>
+    <GallerySection title="POAP">
       {poaps &&
         poaps.map((poap, index) => {
           if (editable) {
