@@ -1,16 +1,21 @@
+import type { FC } from "react";
 import { FaGithub, FaDiscord, FaTwitter } from "react-icons/fa";
 
 import {
   DISCORD_SOCIAL_LINK,
   TWITTER_SOCIAL_LINK,
   GITHUB_SOCIAL_LINK,
+  NOTION_MANIFESTO_LINK,
+  TWITTER_SHUN_LINK,
+  TWITTER_JUAN_LINK,
 } from "@/const/social";
+import packageJson from "@/packageJson";
 
 const navigation = {
   main: [
     {
       name: "Manifesto",
-      href: "https://www.notion.so/metafam/Metabio-8746a5dff6ec4746adda5119dd1ec3ec",
+      href: NOTION_MANIFESTO_LINK,
     },
   ],
   social: [
@@ -36,6 +41,23 @@ const navigation = {
       },
     },
   ],
+};
+
+export type FooterLinkProps = {
+  href: string;
+};
+
+export const FooterLink: FC<FooterLinkProps> = ({ children, href }) => {
+  return (
+    <a
+      className="hover:text-warmGray-600 dark:hover:text-warmGray-300 hover:underline"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {children}
+    </a>
+  );
 };
 
 export const Footer = () => {
@@ -78,7 +100,14 @@ export const Footer = () => {
           })}
         </div>
         <p className="mt-8 text-base text-center text-gray-400">
+          <FooterLink href={GITHUB_SOCIAL_LINK}>
+            v{packageJson.version}.
+          </FooterLink>{" "}
           &copy; 2021 Metabio. All rights reserved.
+        </p>
+        <p className="mt-1 text-base text-center text-gray-400">
+          by <FooterLink href={TWITTER_SHUN_LINK}>@shunkakinoki</FooterLink>{" "}
+          <FooterLink href={TWITTER_JUAN_LINK}>@Juan_Barrero97</FooterLink>{" "}
         </p>
       </div>
     </footer>
