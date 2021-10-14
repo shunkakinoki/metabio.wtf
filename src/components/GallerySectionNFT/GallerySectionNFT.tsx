@@ -1,5 +1,6 @@
 import type { FC } from "react";
 
+import { Empty } from "@/components/Empty";
 import { GalleryEditItem } from "@/components/GalleryEditItem";
 import { GalleryItem } from "@/components/GalleryItem";
 import { GallerySection } from "@/components/GallerySection";
@@ -16,6 +17,7 @@ export const GallerySectionNFT: FC<GallerySectionNFTProps> = ({
 
   return (
     <GallerySection type="nft">
+      {!assets?.length && <Empty />}
       {assets &&
         assets.map((asset, index) => {
           if (editable) {

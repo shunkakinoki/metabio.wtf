@@ -1,5 +1,6 @@
 import type { FC } from "react";
 
+import { Empty } from "@/components/Empty";
 import { GalleryEditItem } from "@/components/GalleryEditItem";
 import { GalleryItem } from "@/components/GalleryItem";
 import { GallerySection } from "@/components/GallerySection";
@@ -20,6 +21,7 @@ export const GallerySectionPoap: FC<GallerySectionPoapProps> = ({
 
   return (
     <GallerySection type="poap">
+      {!poaps?.length && <Empty />}
       {poaps &&
         poaps.map((poap, index) => {
           if (editable) {

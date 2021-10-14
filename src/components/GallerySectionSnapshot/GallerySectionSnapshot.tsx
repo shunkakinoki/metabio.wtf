@@ -1,5 +1,6 @@
 import type { FC } from "react";
 
+import { Empty } from "@/components/Empty";
 import { GalleryEditItem } from "@/components/GalleryEditItem";
 import { GalleryItem } from "@/components/GalleryItem";
 import { GallerySection } from "@/components/GallerySection";
@@ -16,6 +17,7 @@ export const GallerySectionSnapshot: FC<GallerySectionSnapshotProps> = ({
 
   return (
     <GallerySection type="dao">
+      {!snapshots?.length && <Empty />}
       {snapshots &&
         snapshots.map((snapshot, index) => {
           if (editable) {
