@@ -73,12 +73,20 @@ export const getStaticProps: GetStaticProps<Props> = async ({
   let ensName: string;
 
   if (slug.endsWith(".eth")) {
-    address = await resolveEnsName(slug);
+    try {
+      address = await resolveEnsName(slug);
+    } catch (err) {
+      console.log(err);
+    }
     ensName = slug;
   } else if (utils.isAddress(slug)) {
     address = slug;
   } else {
-    address = await resolveEnsName(slug + ".eth");
+    try {
+      address = await resolveEnsName(slug + ".eth");
+    } catch (err) {
+      console.log(err);
+    }
     ensName = slug + ".eth";
   }
 
@@ -161,7 +169,7 @@ export const Slug = ({
 
   useEffect(() => {
     setAddress(slugAddress);
-  });
+  }, [setAddress, slugAddress]);
 
   return (
     <SWRConfig
@@ -176,7 +184,7 @@ export const Slug = ({
         },
       }}
     >
-      {address === slugAddress && <GalleryScreen />}
+      {address === slugAddress && <GalleryScreen />}{" "}
     </SWRConfig>
   );
 };
