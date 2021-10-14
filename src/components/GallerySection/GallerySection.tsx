@@ -10,6 +10,7 @@ export type GallerySectionKeys = GalleryKeys | "pin";
 type Section = Record<GallerySectionKeys, { name: string; emoji: string }>;
 
 export type GallerySectionProps = {
+  defaultOpen?: boolean;
   type: GallerySectionKeys;
 };
 
@@ -50,10 +51,14 @@ export const GallerySectionLayout: FC = ({ children }) => {
   );
 };
 
-export const GallerySection: FC<GallerySectionProps> = ({ children, type }) => {
+export const GallerySection: FC<GallerySectionProps> = ({
+  children,
+  type,
+  defaultOpen = false,
+}) => {
   return (
     <div className="py-4 mx-auto w-full max-w-5xl">
-      <Disclosure>
+      <Disclosure defaultOpen={defaultOpen}>
         {({ open }) => {
           return (
             <>

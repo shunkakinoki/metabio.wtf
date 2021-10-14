@@ -3,6 +3,8 @@ import type { FC } from "react";
 import { useMemo, useState } from "react";
 import { useDrop } from "react-dnd";
 
+import styles from "./GalleryDustBin.module.css";
+
 import { GalleryItem } from "@/components/GalleryItem";
 
 export const ItemTypes = {
@@ -42,11 +44,12 @@ export const GalleryDustBin: FC<DustbinProps> = ({ index }) => {
     <div ref={drop}>
       <GalleryItem
         className={clsx(
-          "flex p-1 w-full h-full border-4 border-fuchsia-200 border-dotted square",
+          "flex p-1 w-full h-full border-4 border-indigo-300 border-dotted square",
+          canDrop && !isActive && styles["animate-shake"],
           canDrop
             ? isActive
-              ? "bg-fuchsia-300 opacity-30"
-              : "bg-red-300 opacity-80 animate-pulse"
+              ? "bg-sky-300 opacity-30"
+              : "bg-indigo-400 opacity-80 animate-pulse"
             : "bg-yellow-100",
         )}
         {...itemProps}

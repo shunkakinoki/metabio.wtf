@@ -1,0 +1,18 @@
+.animate-shake {
+  animation: 0.3s shake infinite alternate;
+}
+
+@keyframes shake {
+  0% {
+    transform: skewX(-1deg);
+  }
+  30% {
+    transform: skewX(1deg);
+  }
+  60% {
+    transform: skewX(-1deg);
+  }
+  95% {
+    transform: skewX(1deg);
+  }
+}

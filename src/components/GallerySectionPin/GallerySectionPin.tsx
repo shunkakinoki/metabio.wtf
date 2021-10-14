@@ -9,5 +9,5 @@ export type GallerySectionMirrorProps = {
 export const GallerySectionPin: FC<GallerySectionMirrorProps> = ({
   editable = false,
 }) => {
-  return <GallerySection type="pin" />;
+  return <GallerySection defaultOpen type="pin" />;
 };
