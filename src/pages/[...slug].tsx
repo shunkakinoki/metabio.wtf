@@ -20,7 +20,6 @@ import {
   TOKEN_SWR,
 } from "@/const/swr";
 import { useAddress } from "@/hooks/useAddress";
-import { useEns } from "@/hooks/useEns";
 import { resolveEnsName } from "@/libs/ens";
 import { fetchMirrorArticles } from "@/libs/mirror";
 import { fetchOpenseaAssets } from "@/libs/opensea";
@@ -159,11 +158,9 @@ export const Slug = ({
   assets,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   const { address, setAddress } = useAddress();
-  const { setEns } = useEns();
 
   useEffect(() => {
     setAddress(slugAddress);
-    setEns(ensName);
   });
 
   return (
