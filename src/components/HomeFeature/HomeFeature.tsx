@@ -1,4 +1,3 @@
-/* This example requires Tailwind CSS v2.0+ */
 import {
   CakeIcon,
   CurrencyRupeeIcon,
@@ -40,7 +39,7 @@ const features = [
   {
     name: "+ More Soon",
     icon: PlusCircleIcon,
-    description: "And many nore coming...",
+    description: "And many more coming...",
   },
 ];
 
@@ -52,7 +51,7 @@ export const HomeFeature = () => {
           The metaverse gateway
         </h2>
         <p className="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
-          1 Click to share it all
+          1 click to share it all
         </p>
         <p className="mx-auto mt-5 max-w-prose text-xl text-gray-500">
           We aggregate all your wallet interactions, on-chain and off-chain.

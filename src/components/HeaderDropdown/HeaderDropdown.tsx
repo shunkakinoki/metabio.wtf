@@ -66,7 +66,7 @@ export const HeaderDropdown = () => {
         <Menu.Button className="inline-flex justify-center items-center py-2 px-4 ml-4 text-base font-medium text-white whitespace-nowrap bg-indigo-600 hover:bg-indigo-700 rounded-md border border-transparent shadow-sm">
           {profileEns ?? profileAddressTruncated}
           <ChevronDownIcon
-            className="-mr-1 ml-2 w-5 h-5 text-violet-200 hover:text-violet-100"
+            className="-mr-1 ml-2 w-5 h-5 text-indigo-200 hover:text-indigo-100"
             aria-hidden="true"
           />
         </Menu.Button>
@@ -87,7 +87,7 @@ export const HeaderDropdown = () => {
                 return (
                   <span
                     className={`${
-                      active ? "bg-violet-500 text-white" : "text-gray-900"
+                      active ? "bg-indigo-500 text-white" : "text-gray-900"
                     } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                   >
                     <Link passHref href="/profile">
@@ -115,7 +115,7 @@ export const HeaderDropdown = () => {
                 return (
                   <span
                     className={`${
-                      active ? "bg-violet-500 text-white" : "text-gray-900"
+                      active ? "bg-indigo-500 text-white" : "text-gray-900"
                     } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                   >
                     <Link passHref href="/profile/edit">
@@ -143,7 +143,7 @@ export const HeaderDropdown = () => {
                 return (
                   <button
                     className={`${
-                      active ? "bg-violet-500 text-white" : "text-gray-900"
+                      active ? "bg-indigo-500 text-white" : "text-gray-900"
                     } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                     onClick={handleCopy}
                   >
@@ -170,7 +170,7 @@ export const HeaderDropdown = () => {
                 return (
                   <button
                     className={`${
-                      active ? "bg-violet-500 text-white" : "text-gray-900"
+                      active ? "bg-indigo-500 text-white" : "text-gray-900"
                     } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                     onClick={disconnectWallet}
                   >
