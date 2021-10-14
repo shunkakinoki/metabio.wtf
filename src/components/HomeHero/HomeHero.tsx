@@ -28,7 +28,7 @@ export const HomeHero = () => {
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-md md:max-w-3xl text-base sm:text-lg md:text-xl text-gray-500">
-            Show everyone what you’ve most proud of.
+            Show everyone what you’re most proud of.
           </p>
         </div>
         <div className="flex justify-center mx-auto mt-8 md:mt-16 max-w-lg">
