@@ -16,7 +16,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "env:copy": "mv .env.local ./prisma/.env",
+    "env:copy": "cp .env.local ./prisma/.env",
     "env:pull": "doppler secrets download --no-file --format env > .env.local",
     "eslint:cmd": "eslint --config .eslintrc.js --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
     "eslint:fix": "yarn run eslint:cmd . --fix",
