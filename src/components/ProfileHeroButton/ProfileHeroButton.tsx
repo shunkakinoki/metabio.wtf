@@ -2,6 +2,7 @@ import { ClipboardCopyIcon, CheckCircleIcon } from "@heroicons/react/solid";
 
 import { useCallback } from "react";
 
+import { METABIO_BASE } from "@/const/social";
 import { useCopy } from "@/hooks/useCopy";
 
 export type ProfileHeroButtonProps = {
@@ -11,7 +12,7 @@ export const ProfileHeroButton = ({ value }) => {
   const { isCopied, copyText } = useCopy();
 
   const handleCopy = useCallback(() => {
-    return copyText(`https://www.megabio.wtf/${value}`);
+    return copyText(`${METABIO_BASE}/${value}`);
   }, [copyText, value]);
 
   return (
