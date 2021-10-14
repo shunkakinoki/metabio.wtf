@@ -2,22 +2,22 @@ import copy from "copy-to-clipboard";
 import { useRef, useState } from "react";
 
 export const useCopy = () => {
-  const [showCopied, setShowCopied] = useState(false);
+  const [isCopied, setCopied] = useState(false);
   const timeoutRef = useRef(null);
 
   const copyText = (text: string): void => {
     copy(text);
-    setShowCopied(true);
+    setCopied(true);
 
     if (timeoutRef.current != null) {
       clearTimeout(timeoutRef.current);
     }
 
     timeoutRef.current = setTimeout(() => {
-      setShowCopied(false);
+      setCopied(false);
       timeoutRef.current = null;
     }, 1500);
   };
 
-  return { showCopied, copyText };
+  return { isCopied, copyText };
 };
