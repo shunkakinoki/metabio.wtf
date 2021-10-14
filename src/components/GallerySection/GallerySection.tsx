@@ -91,7 +91,7 @@ export const GallerySection: FC<GallerySectionProps> = ({
                   } w-5 h-5 text-coolGray-800`}
                 />
               </Disclosure.Button>
-              <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
+              <Disclosure.Panel className="pt-4 pb-2 text-sm text-gray-500">
                 <GallerySectionLayout>{children}</GallerySectionLayout>
               </Disclosure.Panel>
             </>
