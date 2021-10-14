@@ -29,7 +29,7 @@ export const ProfileHero: FC = () => {
         <h1 className="mb-4 text-5xl md:text-7xl font-extrabold leading-relaxed text-center text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600">
           {address}
         </h1>
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center mt-12">
           <ProfileHeroButton value={address} />
         </div>
       </div>

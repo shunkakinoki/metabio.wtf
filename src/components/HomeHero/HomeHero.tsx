@@ -36,7 +36,7 @@ export const HomeHero = () => {
             <WalletConnect
               href="/profile"
               connectedChildren="Enter profile"
-              className="py-4 px-8 text-xl text-blueGray-100 bg-gradient-to-r from-pink-300 hover:from-pink-200 via-purple-300 hover:via-purple-200 to-indigo-400 hover:to-indigo-300 rounded-lg border-2 border-trueGray-400 duration-200 hover:scale-110"
+              className="py-4 px-8 text-xl text-blueGray-100 bg-indigo-600 hover:bg-indigo-700 bg-gradient-to-r rounded-lg border-2 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 duration-200 hover:scale-110 focus:outline-none"
             >
               Connect wallet
             </WalletConnect>
