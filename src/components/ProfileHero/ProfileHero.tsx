@@ -24,11 +24,11 @@ export const ProfileHero: FC = () => {
   }, [addressTruncated, asPath, ens, profileAddressTruncated, profileEns]);
 
   return (
-    <div className="py-12 px-4 sm:px-6 mx-auto max-w-3xl">
-      <h1 className="pb-3 mb-4 text-5xl md:text-7xl font-extrabold leading-relaxed text-center text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600">
+    <div className="px-4 sm:px-6 pt-12 pb-20 mx-auto max-w-xl md:max-w-3xl">
+      <h1 className="pb-6 text-6xl md:text-7xl font-extrabold leading-relaxed text-center text-transparent overflow-ellipsis bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600">
         {address}
       </h1>
-      <div className="flex justify-center mt-12">
+      <div className="flex justify-center pb-6">
         <ProfileHeroButton value={address} />
       </div>
     </div>

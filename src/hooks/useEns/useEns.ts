@@ -6,6 +6,7 @@ import useSWR from "swr";
 import { addressAtom } from "@/atoms/address";
 import { ENS_SWR } from "@/const/swr";
 import { lookupEnsAddress } from "@/libs/ens";
+import { removeSwrPath } from "@/libs/utils";
 
 export const useEns = () => {
   const address = useRecoilValue(addressAtom);
@@ -18,7 +19,7 @@ export const useEns = () => {
   }, [address]);
 
   const { data, error, mutate } = useSWR<string>(key, address => {
-    return lookupEnsAddress(address.replace(ENS_SWR, ""));
+    return lookupEnsAddress(removeSwrPath(ENS_SWR, address));
   });
 
   return {

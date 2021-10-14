@@ -44,7 +44,7 @@ const sections: Section = {
 export const GallerySectionLayout: FC = ({ children }) => {
   return (
     <div className="grid">
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6 p-8 ">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6 py-3">
         {children}
       </div>
     </div>
@@ -57,7 +57,7 @@ export const GallerySection: FC<GallerySectionProps> = ({
   defaultOpen = false,
 }) => {
   return (
-    <div className="py-4 mx-auto w-full max-w-5xl">
+    <div className="py-2 sm:py-3 md:py-4 px-3 mx-auto w-full max-w-5xl">
       <Disclosure defaultOpen={defaultOpen}>
         {({ open }) => {
           return (

@@ -11,6 +11,6 @@ export const concatSwrPath = (swr: string, address: string) => {
   return swr + address;
 };
 
-export const removeSwrPath = (swr: string, address: string) => {
-  return address.replace(swr, "");
+export const removeSwrPath = (swr: string, path: string) => {
+  return path.replace(swr, "");
 };
