@@ -14,9 +14,9 @@ const WalletConnect = dynamic(
 export const HomeHero = () => {
   return (
     <section className="flex justify-center items-center h-full">
-      <div className="px-4 pt-12 sm:pt-20 md:pt-24 mx-auto max-w-5xl">
+      <div className="px-4 pt-20 sm:pt-28 md:pt-36 mx-auto max-w-5xl">
         <div className="text-center">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-trueGray-700">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-trueGray-700">
             <span className="block xl:inline">
               The only bio you need in the
             </span>{" "}
