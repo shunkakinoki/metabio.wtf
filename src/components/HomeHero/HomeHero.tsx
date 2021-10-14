@@ -13,10 +13,10 @@ const WalletConnect = dynamic(
 
 export const HomeHero = () => {
   return (
-    <section className="pt-20 pb-24 sm:pb-24">
-      <div className="px-4 mx-auto mt-16 sm:mt-24 max-w-5xl">
+    <section className="flex justify-center items-center h-[75vh]">
+      <div className="px-4 mx-auto max-w-5xl">
         <div className="text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-trueGray-700">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-trueGray-700">
             <span className="block xl:inline">
               The only bio you need in the
             </span>{" "}
@@ -27,11 +27,11 @@ export const HomeHero = () => {
               🥳
             </span>
           </h1>
-          <p className="mx-auto mt-3 md:mt-5 max-w-md md:max-w-3xl text-base sm:text-lg md:text-xl text-gray-500">
-            Show everyone what you’ve done and what you own.
+          <p className="mx-auto mt-6 md:mt-9 max-w-md md:max-w-3xl text-base sm:text-lg md:text-xl text-gray-500">
+            Show everyone what you’ve most proud of.
           </p>
         </div>
-        <div className="sm:flex sm:justify-center mx-auto mt-8 md:mt-16 max-w-md">
+        <div className="flex justify-center mx-auto mt-8 md:mt-16 max-w-lg">
           <div className="rounded-md shadow">
             <WalletConnect
               href="/profile"

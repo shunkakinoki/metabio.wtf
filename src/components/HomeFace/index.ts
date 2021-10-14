@@ -1,1 +1,0 @@
-export { HomeFace } from "./HomeFace";
