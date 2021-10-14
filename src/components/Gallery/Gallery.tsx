@@ -1,5 +1,6 @@
 import type { FC } from "react";
 
+import { GalleryLayout } from "@/components/GalleryLayout";
 import { GallerySectionMirror } from "@/components/GallerySectionMirror";
 import { GallerySectionNFT } from "@/components/GallerySectionNFT";
 import { GallerySectionPoap } from "@/components/GallerySectionPoap";
@@ -9,13 +10,13 @@ import { ProfileHero } from "@/components/ProfileHero";
 
 export const Gallery: FC = () => {
   return (
-    <div className="flex flex-col bg-blueGray-100">
+    <GalleryLayout>
       <ProfileHero />
       <GallerySectionNFT />
       <GallerySectionPoap />
       <GallerySectionSnapshot />
       <GallerySectionMirror />
       <GallerySectionToken />
-    </div>
+    </GalleryLayout>
   );
 };

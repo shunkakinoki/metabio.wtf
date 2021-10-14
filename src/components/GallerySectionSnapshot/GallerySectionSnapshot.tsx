@@ -22,17 +22,13 @@ export const GallerySectionSnapshot: FC<GallerySectionSnapshotProps> = ({
             return (
               <GalleryEditItem
                 key={index}
-                type="snapshot"
+                type="dao"
                 value={snapshot.space.id}
               />
             );
           }
           return (
-            <GalleryItem
-              key={index}
-              type="snapshot"
-              value={snapshot.space.id}
-            />
+            <GalleryItem key={index} type="dao" value={snapshot.space.id} />
           );
         })}
     </GallerySection>

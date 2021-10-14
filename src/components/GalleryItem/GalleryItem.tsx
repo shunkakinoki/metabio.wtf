@@ -1,11 +1,13 @@
 import clsx from "clsx";
 import type { FC } from "react";
 
+import type { GalleryKeys } from "@/types/gallery";
+
 export type GalleryItemProps = {
   alt?: string;
   src?: string;
   className?: string;
-  type: "nft" | "mirror" | "poap" | "snapshot" | "token";
+  type: GalleryKeys;
   value?: string;
 };
 
@@ -18,7 +20,7 @@ export const GalleryItemLayout: FC<GalleryItemLayoutProps> = ({
   return (
     <div
       className={clsx(
-        "flex flex-wrap w-full h-full select-none square",
+        "flex overflow-hidden flex-wrap w-full h-full rounded-xl shadow-xl duration-300 hover:scale-110 select-none square",
         className,
       )}
     >
@@ -49,7 +51,7 @@ export const GalleryItem: FC<GalleryItemProps> = ({
     );
   }
 
-  if (type === "snapshot") {
+  if (type === "dao") {
     return (
       <GalleryItemLayout
         className={clsx(
@@ -76,9 +78,9 @@ export const GalleryItem: FC<GalleryItemProps> = ({
   }
 
   return (
-    <GalleryItemLayout className={clsx(className, "bg-blue-600")}>
+    <GalleryItemLayout className={clsx(className, "bg-transparent")}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img className="pointer-events-none" src={src} alt={alt} />
+      <img className="w-full pointer-events-none" src={src} alt={alt} />
     </GalleryItemLayout>
   );
 };

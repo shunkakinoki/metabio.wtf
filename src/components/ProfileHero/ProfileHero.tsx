@@ -9,12 +9,10 @@ export const ProfileHero: FC = () => {
 
   return (
     <div className="px-4 sm:px-6 mx-auto max-w-3xl">
-      <div className="pt-32 md:pt-40 pb-12 md:pb-20">
-        <div className="pb-12 md:pb-16 text-center">
-          <h1 className="mb-4 text-5xl md:text-7xl font-extrabold leading-relaxed text-blueGray-700">
-            {profileEns ?? profileAddressTruncated}
-          </h1>
-        </div>
+      <div className="pt-20 pb-12 md:pb-20">
+        <h1 className="mb-4 text-5xl md:text-7xl font-extrabold leading-relaxed text-center text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600">
+          {profileEns ?? profileAddressTruncated}
+        </h1>
       </div>
     </div>
   );

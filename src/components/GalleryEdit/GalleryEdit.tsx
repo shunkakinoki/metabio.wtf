@@ -4,6 +4,7 @@ import { DndProvider } from "react-dnd";
 
 import { HTML5Backend } from "react-dnd-html5-backend";
 
+import { GalleryLayout } from "@/components/GalleryLayout";
 import { GallerySectionDrop } from "@/components/GallerySectionDrop";
 import { GallerySectionMirror } from "@/components/GallerySectionMirror";
 import { GallerySectionNFT } from "@/components/GallerySectionNFT";
@@ -14,7 +15,7 @@ import { ProfileHero } from "@/components/ProfileHero";
 
 export const GalleryEdit: FC = () => {
   return (
-    <div className="flex flex-col bg-blueGray-100">
+    <GalleryLayout>
       <DndProvider backend={HTML5Backend}>
         <ProfileHero />
         <GallerySectionDrop />
@@ -24,6 +25,6 @@ export const GalleryEdit: FC = () => {
         <GallerySectionSnapshot editable />
         <GallerySectionToken editable />
       </DndProvider>
-    </div>
+    </GalleryLayout>
   );
 };

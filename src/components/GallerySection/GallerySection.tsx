@@ -3,7 +3,7 @@ import { ChevronUpIcon } from "@heroicons/react/solid";
 import clsx from "clsx";
 import type { FC } from "react";
 
-type GalleryKeys = "nft" | "poap" | "token" | "dao" | "mirror";
+import type { GalleryKeys } from "@/types/gallery";
 
 type Section = Record<GalleryKeys, { name: string; emoji: string }>;
 
@@ -34,6 +34,16 @@ const sections: Section = {
   },
 };
 
+export const GallerySectionLayout: FC = ({ children }) => {
+  return (
+    <div className="grid">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6 p-8 ">
+        {children}
+      </div>
+    </div>
+  );
+};
+
 export const GallerySection: FC<GallerySectionProps> = ({ children, type }) => {
   return (
     <div className="py-4 mx-auto w-full max-w-5xl">
@@ -56,7 +66,7 @@ export const GallerySection: FC<GallerySectionProps> = ({ children, type }) => {
                     "bg-gradient-to-r from-gray-300 to-yellow-100",
                 )}
               >
-                <h1 className="flex items-center text-lg md:text-3xl font-extrabold leading-relaxed text-blueGray-700">
+                <h1 className="flex items-center text-lg md:text-3xl font-extrabold leading-relaxed text-blueGray-800">
                   {sections[type].name}&ensp;
                   <span role="img" aria-label="sheep">
                     {sections[type].emoji}
@@ -69,11 +79,7 @@ export const GallerySection: FC<GallerySectionProps> = ({ children, type }) => {
                 />
               </Disclosure.Button>
               <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                <div className="grid">
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6 p-8 ">
-                    {children}
-                  </div>
-                </div>
+                <GallerySectionLayout>{children}</GallerySectionLayout>
               </Disclosure.Panel>
             </>
           );
