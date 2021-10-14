@@ -1,0 +1,1 @@
+export { GallerySectionPin } from "./GallerySectionPin";

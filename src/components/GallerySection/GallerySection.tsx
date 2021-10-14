@@ -5,10 +5,12 @@ import type { FC } from "react";
 
 import type { GalleryKeys } from "@/types/gallery";
 
-type Section = Record<GalleryKeys, { name: string; emoji: string }>;
+export type GallerySectionKeys = GalleryKeys | "pin";
+
+type Section = Record<GallerySectionKeys, { name: string; emoji: string }>;
 
 export type GallerySectionProps = {
-  type: GalleryKeys;
+  type: GallerySectionKeys;
 };
 
 const sections: Section = {
@@ -19,6 +21,10 @@ const sections: Section = {
   poap: {
     name: "POAPs",
     emoji: "📍",
+  },
+  pin: {
+    name: "Pinned",
+    emoji: "🏆",
   },
   token: {
     name: "Social Tokens",
@@ -54,6 +60,8 @@ export const GallerySection: FC<GallerySectionProps> = ({ children, type }) => {
               <Disclosure.Button
                 className={clsx(
                   "flex justify-between items-center py-2 px-4 w-full text-sm font-medium text-left text-purple-900 hover:bg-purple-200 rounded-lg focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 duration-300 hover:scale-105 focus:outline-none",
+                  type === "pin" &&
+                    "bg-gradient-to-r from-yellow-200 via-pink-200 to-pink-400",
                   type === "nft" &&
                     "bg-gradient-to-r from-red-200 via-red-300 to-yellow-200",
                   type === "poap" &&
