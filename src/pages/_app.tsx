@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
+import Script from "next/script";
 import type { ReactElement, ReactNode } from "react";
 import { RecoilRoot } from "recoil";
 import { SWRConfig } from "swr";
@@ -29,6 +30,11 @@ const CustomApp = ({
 
   return (
     <RecoilRoot>
+      <Script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon={`{"token": "${process.env.NEXT_PUBLIC_CLOUDFLARE_API_KEY}"}`}
+      />
       <SWRConfig
         value={{
           onError: (err, key, config) => {
