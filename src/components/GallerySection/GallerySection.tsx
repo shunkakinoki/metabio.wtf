@@ -75,7 +75,7 @@ export const GallerySection: FC<GallerySectionProps> = ({ children, type }) => {
                 <ChevronUpIcon
                   className={`${
                     open ? "transform rotate-180" : ""
-                  } w-5 h-5 text-teal-500`}
+                  } w-5 h-5 text-coolGray-800`}
                 />
               </Disclosure.Button>
               <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
