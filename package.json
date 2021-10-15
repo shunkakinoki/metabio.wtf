@@ -14,7 +14,7 @@
   "license": "MIT",
   "author": "Sentrei, Inc.",
   "scripts": {
-    "build": "next build",
+    "build": "yarn run prisma:generate && next build",
     "dev": "next dev",
     "env:copy": "cp .env.local ./prisma/.env",
     "env:pull": "doppler secrets download --no-file --format env > .env.local",
@@ -33,6 +33,7 @@
     "prettier:cmd": "prettier --ignore-unknown",
     "prettier:fix": "yarn run prettier:cmd --write .",
     "prettier:lint": "yarn run prettier:cmd --check .",
+    "prisma:generate": "prisma generate",
     "prisma:studio": "prisma studio",
     "postpublish": "pinst --enable",
     "release": "semantic-release",
