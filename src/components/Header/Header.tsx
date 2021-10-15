@@ -33,11 +33,11 @@ import { NOTION_MANIFESTO_LINK } from "@/const/social";
 
 export const Header = () => {
   return (
-    <div className="relative bg-gray-50">
-      <Popover className="relative bg-white shadow">
+    <div className="bg-gray-50">
+      <Popover className="bg-white shadow">
         <div className="px-4 sm:px-6 mx-auto max-w-7xl">
           <div className="flex justify-between md:justify-start items-center py-6 md:space-x-10">
-            <div className="flex lg:flex-1 justify-start lg:w-0">
+            <div className="flex justify-start">
               <Link passHref href="/">
                 <a>
                   <span className="sr-only">Metabio</span>
@@ -56,10 +56,10 @@ export const Header = () => {
                 <MenuIcon className="w-6 h-6" aria-hidden="true" />
               </Popover.Button>
             </div>
-            <div className="hidden md:flex-grow">
+            <div className="hidden md:flex md:flex-grow">
               <HeaderSearchBar />
             </div>
-            <div className="hidden md:flex md:flex-1 justify-end items-center lg:w-0">
+            <div className="hidden md:flex md:flex-shrink justify-end items-center">
               <HeaderDropdown />
             </div>
           </div>

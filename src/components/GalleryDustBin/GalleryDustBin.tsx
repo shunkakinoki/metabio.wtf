@@ -3,9 +3,13 @@ import type { FC } from "react";
 import { useMemo, useState } from "react";
 import { useDrop } from "react-dnd";
 
+import { useRecoilValue } from "recoil";
+
 import styles from "./GalleryDustBin.module.css";
 
+import { profileAddressAtom } from "@/atoms/profileAddress";
 import { GalleryItem } from "@/components/GalleryItem";
+import { createPin } from "@/libs/pin";
 
 export const ItemTypes = {
   BOX: "box",
@@ -16,6 +20,7 @@ export interface DustbinProps {
 }
 
 export const GalleryDustBin: FC<DustbinProps> = ({ index }) => {
+  const profileAddress = useRecoilValue(profileAddressAtom);
   const [itemProps, setItemProps] = useState(null);
 
   const [{ canDrop, isOver }, drop] = useDrop(() => {
@@ -23,6 +28,22 @@ export const GalleryDustBin: FC<DustbinProps> = ({ index }) => {
       accept: ItemTypes.BOX,
       drop: (_item, monitor) => {
         setItemProps(monitor.getItem());
+        const item = monitor.getItem();
+
+        console.log("Item:");
+        console.log(JSON.stringify(item));
+
+        if (!profileAddress) {
+          console.log("No profileAddress attached. Returning.");
+          return;
+        }
+        //@ts-ignore
+        if (!item.type) {
+          console.log("No type specified. Returning");
+          return;
+        }
+        //@ts-ignore
+        createPin(profileAddress, { type: item.type, index: index });
         return {
           name: index,
         };

@@ -14,15 +14,18 @@ generator client {
 model Wallet {
   id        String   @id
   createdAt DateTime @default(now())
-  Pins      Pins[]
+  pins      Pin[]
 }
 
-model Pins {
-  id        Int      @id
+model Pin {
+  id        String   @id @default(uuid())
+  index     Int      @unique
   src       String?
   value     String?
   type      String
-  walletId  String
+  walletId  String   @unique
   createdAt DateTime @default(now())
   wallet    Wallet   @relation(fields: [walletId], references: [id])
+
+  @@unique([index, walletId])
 }
