@@ -42,13 +42,13 @@ export const HeaderSearchBar = () => {
           type="text"
           name="address"
           id="address"
-          className="block pl-10 w-full sm:text-sm text-gray-800 rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
+          className="block pl-10 w-full sm:text-sm text-gray-800 rounded-md border-b border-transparent focus:border-indigo-500 focus:ring-indigo-500"
           placeholder="Quick search for wallet address or ENS"
           onChange={onChange}
         />
         {error && (
           <div className="flex absolute inset-y-0 right-0 items-center pr-3 pointer-events-none">
-            <p className="text-sm text-red-500" id="email-error">
+            <p className="text-sm text-red-500" id="error">
               {error}
             </p>
           </div>

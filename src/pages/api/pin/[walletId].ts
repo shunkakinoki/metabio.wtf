@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import prisma from "@/libs/prisma";
 import { runMiddleware } from "@/libs/runMiddleware";
 import { galleryKeys } from "@/types/gallery";
+import type { Pin } from "@/types/pin";
 
 const cors = Cors({
   methods: ["GET", "POST"],
@@ -35,7 +36,7 @@ export const pin = async (req: NextApiRequest, res: NextApiResponse) => {
         return;
       }
       case "POST": {
-        const { index, type } = req.body as { index: number; type: string };
+        const { index, type, src, value } = req.body as Pin;
         const uuid = uuidv4();
 
         if (!(index >= 0 && index < 6)) {
@@ -64,12 +65,16 @@ export const pin = async (req: NextApiRequest, res: NextApiResponse) => {
               index: index,
               walletId: walletId,
               type: type,
+              src: src,
+              value: value,
             },
             update: {
               id: uuid,
               index: index,
               walletId: walletId,
               type: type,
+              src: src,
+              value: value,
             },
           }),
         ]);

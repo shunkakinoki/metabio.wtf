@@ -10,6 +10,7 @@ import styles from "./GalleryDustBin.module.css";
 import { profileAddressAtom } from "@/atoms/profileAddress";
 import { GalleryItem } from "@/components/GalleryItem";
 import { createPin } from "@/libs/pin";
+import type { Pin } from "@/types/pin";
 
 export const ItemTypes = {
   BOX: "box",
@@ -28,22 +29,27 @@ export const GalleryDustBin: FC<DustbinProps> = ({ index }) => {
       accept: ItemTypes.BOX,
       drop: (_item, monitor) => {
         setItemProps(monitor.getItem());
-        const item = monitor.getItem();
+        const item = monitor.getItem() as Pin;
 
-        console.log("Item:");
-        console.log(JSON.stringify(item));
+        console.log(`Item: ${JSON.stringify(item)}`);
 
         if (!profileAddress) {
           console.log("No profileAddress attached. Returning.");
           return;
         }
-        //@ts-ignore
+
         if (!item.type) {
           console.log("No type specified. Returning");
           return;
         }
-        //@ts-ignore
-        createPin(profileAddress, { type: item.type, index: index });
+
+        createPin(profileAddress, {
+          type: item.type,
+          index: index,
+          src: item?.src,
+          value: item?.value,
+        });
+
         return {
           name: index,
         };
