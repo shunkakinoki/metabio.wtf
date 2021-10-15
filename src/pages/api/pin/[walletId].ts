@@ -10,7 +10,7 @@ const cors = Cors({
   methods: ["GET", "POST"],
 });
 
-export const pins = async (req: NextApiRequest, res: NextApiResponse) => {
+export const pin = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     await runMiddleware(req, res, cors);
 
@@ -92,4 +92,4 @@ export const pins = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 };
 
-export default pins;
+export default pin;
