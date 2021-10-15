@@ -58,7 +58,7 @@ export const pins = async (req: NextApiRequest, res: NextApiResponse) => {
 
         const [pin] = await Promise.all([
           prisma.pin.upsert({
-            where: { walletId: walletId },
+            where: { index_walletId: { index: index, walletId: walletId } },
             create: {
               id: uuid,
               index: index,
@@ -73,8 +73,6 @@ export const pins = async (req: NextApiRequest, res: NextApiResponse) => {
             },
           }),
         ]);
-
-        console.log(pin);
 
         res.json({
           data: pin,

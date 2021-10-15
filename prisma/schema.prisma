@@ -19,11 +19,11 @@ model Wallet {
 
 model Pin {
   id        String   @id @default(uuid())
-  index     Int      @unique
+  index     Int
   src       String?
   value     String?
   type      String
-  walletId  String   @unique
+  walletId  String
   createdAt DateTime @default(now())
   wallet    Wallet   @relation(fields: [walletId], references: [id])
 
