@@ -8,6 +8,13 @@ export const WALLET_PINS_URL = (address: string) => {
 export const fetchWallet = (address: string) => {
   return fetcher(WALLET_PINS_URL(address), {
     headers: new Headers({ "content-type": "application/json" }),
+    method: "GET",
+  });
+};
+
+export const createWallet = (address: string) => {
+  return fetcher(WALLET_PINS_URL(address), {
+    headers: new Headers({ "content-type": "application/json" }),
     method: "POST",
   });
 };

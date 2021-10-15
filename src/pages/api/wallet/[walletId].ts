@@ -12,13 +12,13 @@ export const wallet = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     await runMiddleware(req, res, cors);
 
-    const id = req.query.id as string;
+    const walletId = req.query.walletId as string;
 
     switch (req.method) {
       case "GET": {
         const [wallet] = await Promise.all([
           prisma.wallet.findUnique({
-            where: { id },
+            where: { id: walletId },
           }),
         ]);
 
@@ -30,9 +30,9 @@ export const wallet = async (req: NextApiRequest, res: NextApiResponse) => {
       case "POST": {
         const [wallet] = await Promise.all([
           prisma.wallet.upsert({
-            where: { id: id },
+            where: { id: walletId },
             create: {
-              id: id,
+              id: walletId,
             },
             update: {},
           }),

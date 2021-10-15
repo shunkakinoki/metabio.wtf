@@ -3,7 +3,7 @@ import { GallerySectionLayout } from "@/components/GallerySection";
 
 export const GallerySectionDrop = () => {
   return (
-    <div className="py-3 mx-auto w-full max-w-5xl">
+    <div className="py-3 px-2 md:px-3 mx-auto w-full max-w-5xl">
       <GallerySectionLayout>
         <GalleryDustBin index={0} />
         <GalleryDustBin index={1} />
