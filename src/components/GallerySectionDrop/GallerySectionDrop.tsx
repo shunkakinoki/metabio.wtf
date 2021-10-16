@@ -8,7 +8,7 @@ export const GallerySectionDrop = () => {
   return (
     <div className="py-3 px-2 md:px-3 mx-auto w-full max-w-5xl">
       <GallerySectionLayout>
-        {[0, 1, 2, 3, 4, 5].map(index => {
+        {[1, 2, 3, 4, 5, 6].map(index => {
           return (
             <GalleryDustBin
               key={index}
