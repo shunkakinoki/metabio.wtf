@@ -9,9 +9,10 @@ export const GallerySectionDrop = () => {
     <div className="py-3 px-2 md:px-3 mx-auto w-full max-w-5xl">
       <GallerySectionLayout>
         {[0, 1, 2, 3, 4, 5].map(index => {
-          const pin = pins.filter(pin => {
-            return pin.index === index;
-          })?.[0];
+          const pin =
+            pins?.filter(pin => {
+              return pin.index === index;
+            })?.[0] ?? null;
           return (
             <GalleryDustBin
               key={index}
