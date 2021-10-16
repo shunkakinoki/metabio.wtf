@@ -21,7 +21,7 @@ export const GalleryEditItem: FC<GalleryItemProps> = ({ ...props }) => {
   return (
     <div
       ref={drag}
-      className={`p-3 border-4 border-cyan-500 border-dotted opacity-${opacity}`}
+      className={`p-3 border-4 cursor-pointer  border-cyan-500 border-dotted opacity-${opacity}`}
     >
       <GalleryItem {...props} />
     </div>

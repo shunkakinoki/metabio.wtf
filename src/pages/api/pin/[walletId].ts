@@ -23,7 +23,7 @@ export const pin = async (req: NextApiRequest, res: NextApiResponse) => {
           prisma.pin.findMany({
             orderBy: [
               {
-                id: "asc",
+                index: "asc",
               },
             ],
             where: { walletId: walletId },
@@ -73,8 +73,8 @@ export const pin = async (req: NextApiRequest, res: NextApiResponse) => {
               index: index,
               walletId: walletId,
               type: type,
-              src: src,
-              value: value,
+              src: src ?? null,
+              value: value ?? null,
             },
           }),
         ]);

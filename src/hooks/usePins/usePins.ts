@@ -17,7 +17,7 @@ export const usePins = () => {
     isLoading: !error && !data,
     isError: !!error,
     pins: data?.data?.filter(pin => {
-      return pin.index;
+      return pin.type;
     }) as Pin[],
   };
 };
