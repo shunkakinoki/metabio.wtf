@@ -17,8 +17,8 @@ export const resolveEnsName = async (
 ): Promise<string | null> => {
   try {
     const provider = new ethers.providers.CloudflareProvider();
-    const ens = await provider.resolveName(ensName);
-    return ens;
+    const address = await provider.resolveName(ensName);
+    return address;
   } catch (error) {
     return null;
   }

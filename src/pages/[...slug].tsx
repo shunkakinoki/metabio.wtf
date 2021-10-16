@@ -21,7 +21,7 @@ import {
   TOKEN_SWR,
 } from "@/const/swr";
 import { useAddress } from "@/hooks/useAddress";
-import { resolveEnsName } from "@/libs/ens";
+import { resolveEnsName, lookupEnsAddress } from "@/libs/ens";
 import { fetchMirrorArticles } from "@/libs/mirror";
 import { fetchOpenseaAssets } from "@/libs/opensea";
 import { fetchPins } from "@/libs/pin";
@@ -85,6 +85,11 @@ export const getStaticProps: GetStaticProps<Props> = async ({
     ensName = slug;
   } else if (utils.isAddress(slug)) {
     address = slug;
+    try {
+      ensName = await lookupEnsAddress(slug);
+    } catch (err) {
+      console.log(err);
+    }
   } else {
     try {
       address = await resolveEnsName(slug + ".eth");

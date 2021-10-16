@@ -18,9 +18,17 @@ export const useEns = () => {
     return concatSwrPath(ENS_SWR, address);
   }, [address]);
 
-  const { data, error, mutate } = useSWR<string>(key, address => {
-    return lookupEnsAddress(removeSwrPath(ENS_SWR, address));
-  });
+  const { data, error, mutate } = useSWR<string>(
+    key,
+    address => {
+      return lookupEnsAddress(removeSwrPath(ENS_SWR, address));
+    },
+    {
+      revalidateIfStale: false,
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false,
+    },
+  );
 
   return {
     isLoading: !error && !data,

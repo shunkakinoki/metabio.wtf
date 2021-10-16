@@ -10,9 +10,17 @@ export const useProfileEns = () => {
   const profileAddress = useRecoilValue(profileAddressAtom);
   const key = concatSwrPath(ENS_SWR, profileAddress);
 
-  const { data, error, mutate } = useSWR<string>(key, profileAddress => {
-    return lookupEnsAddress(removeSwrPath(ENS_SWR, profileAddress));
-  });
+  const { data, error, mutate } = useSWR<string>(
+    key,
+    profileAddress => {
+      return lookupEnsAddress(removeSwrPath(ENS_SWR, profileAddress));
+    },
+    {
+      revalidateIfStale: false,
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false,
+    },
+  );
 
   return {
     isLoading: !error && !data,
