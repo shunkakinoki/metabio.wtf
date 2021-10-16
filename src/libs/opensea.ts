@@ -14,6 +14,10 @@ export const fetchOpenseaAssets = (
   return fetcher(OPENSEA_API_URL(address), {
     headers: new Headers({
       "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Methods": "GET,HEAD,OPTIONS,POST,PUT",
+      "Access-Control-Allow-Headers":
+        "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers",
       "content-type": "application/json",
       "X-API-KEY": process.env.NEXT_PUBLIC_OPENSEA_API_KEY,
     }),

@@ -8,18 +8,17 @@ export const GallerySectionDrop = () => {
   return (
     <div className="py-3 px-2 md:px-3 mx-auto w-full max-w-5xl">
       <GallerySectionLayout>
-        {pins &&
-          pins.map((pin, index) => {
-            return (
-              <GalleryDustBin
-                key={index}
-                index={index}
-                src={pin?.src}
-                value={pin?.value}
-                type={pin.type}
-              />
-            );
-          })}
+        {[0, 1, 2, 3, 4, 5].map(index => {
+          return (
+            <GalleryDustBin
+              key={index}
+              index={index}
+              src={pins?.[index]?.src ?? null}
+              value={pins?.[index]?.value ?? null}
+              type={pins?.[index]?.type ?? null}
+            />
+          );
+        })}
       </GallerySectionLayout>
     </div>
   );
