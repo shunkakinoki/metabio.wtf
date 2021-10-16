@@ -9,6 +9,7 @@ import styles from "./GalleryDustBin.module.css";
 
 import { profileAddressAtom } from "@/atoms/profileAddress";
 import { GalleryItem } from "@/components/GalleryItem";
+import type { GalleryItemProps } from "@/components/GalleryItem";
 import { createPin } from "@/libs/pin";
 import type { Pin } from "@/types/pin";
 
@@ -16,11 +17,16 @@ export const ItemTypes = {
   BOX: "box",
 };
 
-export interface DustbinProps {
+export type DustbinProps = GalleryItemProps & {
   index: number;
-}
+};
 
-export const GalleryDustBin: FC<DustbinProps> = ({ index }) => {
+export const GalleryDustBin: FC<DustbinProps> = ({
+  index,
+  src,
+  value,
+  type,
+}) => {
   const profileAddress = useRecoilValue(profileAddressAtom);
   const [itemProps, setItemProps] = useState(null);
 
@@ -70,6 +76,10 @@ export const GalleryDustBin: FC<DustbinProps> = ({ index }) => {
   return (
     <div ref={drop}>
       <GalleryItem
+        index={index}
+        value={value}
+        src={src}
+        type={type}
         className={clsx(
           "flex p-1 w-full h-full border-4 border-indigo-300 border-dotted square",
           canDrop && !isActive && styles["animate-shake"],
