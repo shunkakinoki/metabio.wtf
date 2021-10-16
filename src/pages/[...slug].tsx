@@ -15,6 +15,7 @@ import {
   ENS_SWR,
   MIRROR_SWR,
   OPENSEA_SWR,
+  PIN_SWR,
   POAP_SWR,
   SNAPSHOT_SWR,
   TOKEN_SWR,
@@ -23,11 +24,13 @@ import { useAddress } from "@/hooks/useAddress";
 import { resolveEnsName } from "@/libs/ens";
 import { fetchMirrorArticles } from "@/libs/mirror";
 import { fetchOpenseaAssets } from "@/libs/opensea";
+import { fetchPins } from "@/libs/pin";
 import { fetchPoaps } from "@/libs/poap";
 import { fetchSnapshots } from "@/libs/snapshot";
 import { fetchToken } from "@/libs/token";
 import { concatSwrPath } from "@/libs/utils";
 import type { OpenseaAsset } from "@/types/opensea";
+import type { Pin } from "@/types/pin";
 import type { Poap } from "@/types/poap";
 import type { Snapshot } from "@/types/snapshot";
 import type { Token } from "@/types/token";
@@ -46,6 +49,7 @@ export interface Props {
     [x: string]: any;
   };
   assets: { assets: OpenseaAsset[] };
+  pins: { data: Pin[] };
 }
 
 // eslint-disable-next-line @typescript-eslint/require-await
@@ -97,6 +101,15 @@ export const getStaticProps: GetStaticProps<Props> = async ({
     };
   }
 
+  let pins: {
+    data: Pin[];
+  };
+  try {
+    pins = await fetchPins(address);
+  } catch (err) {
+    console.log(err);
+  }
+
   let token: Token;
   try {
     token = await fetchToken(address);
@@ -146,11 +159,12 @@ export const getStaticProps: GetStaticProps<Props> = async ({
     props: {
       address: address,
       ensName: ensName ?? null,
-      token: token,
-      snapshots: snapshots,
+      pins: pins ?? null,
+      token: token ?? null,
+      snapshots: snapshots ?? null,
       mirrorArticles: mirrorArticles ?? null,
-      poaps: poaps,
-      assets: assets,
+      poaps: poaps ?? null,
+      assets: assets ?? null,
     },
     revalidate: 300,
   };
@@ -164,6 +178,7 @@ export const Slug = ({
   snapshots,
   poaps,
   assets,
+  pins,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   const { address, setAddress } = useAddress();
 
@@ -175,6 +190,7 @@ export const Slug = ({
     <SWRConfig
       value={{
         fallback: {
+          [concatSwrPath(PIN_SWR, address)]: pins,
           [concatSwrPath(ENS_SWR, address)]: ensName,
           [concatSwrPath(MIRROR_SWR, address)]: mirrorArticles,
           [concatSwrPath(TOKEN_SWR, address)]: token,

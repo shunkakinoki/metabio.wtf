@@ -11,5 +11,11 @@ export const OPENSEA_API_URL = (address: string) => {
 export const fetchOpenseaAssets = (
   address: string,
 ): Promise<{ assets: OpenseaAsset[] }> => {
-  return fetcher(OPENSEA_API_URL(address));
+  return fetcher(OPENSEA_API_URL(address), {
+    headers: new Headers({
+      "Access-Control-Allow-Origin": "*",
+      "content-type": "application/json",
+      "X-API-KEY": process.env.NEXT_PUBLIC_OPENSEA_API_KEY,
+    }),
+  });
 };

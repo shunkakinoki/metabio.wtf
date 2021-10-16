@@ -9,7 +9,7 @@ export const API_PINS_URL = (address: string) => {
   return `${API_PINS_PATH}/${address}`;
 };
 
-export const fetchPins = (address: string) => {
+export const fetchPins = (address: string): Promise<{ data: Pin[] }> => {
   return fetcher(API_PINS_URL(address), {
     headers: new Headers({ "content-type": "application/json" }),
     method: "GET",

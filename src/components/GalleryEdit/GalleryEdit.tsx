@@ -20,9 +20,9 @@ export const GalleryEdit: FC = () => {
         <ProfileHero />
         <GallerySectionDrop />
         <GallerySectionNFT editable />
-        <GallerySectionMirror editable />
         <GallerySectionPoap editable />
         <GallerySectionSnapshot editable />
+        <GallerySectionMirror editable />
         <GallerySectionToken editable />
       </DndProvider>
     </GalleryLayout>

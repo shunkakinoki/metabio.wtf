@@ -1,13 +1,29 @@
 import type { FC } from "react";
 
+import { GalleryItem } from "@/components/GalleryItem";
 import { GallerySection } from "@/components/GallerySection";
+import { usePins } from "@/hooks/usePins";
 
-export type GallerySectionMirrorProps = {
-  editable?: boolean;
-};
+export const GallerySectionPin: FC = () => {
+  const { pins } = usePins();
 
-export const GallerySectionPin: FC<GallerySectionMirrorProps> = ({
-  editable = false,
-}) => {
-  return <GallerySection defaultOpen type="pin" />;
+  if (!pins?.length) {
+    return null;
+  }
+
+  return (
+    <GallerySection defaultOpen type="pin">
+      {pins &&
+        pins.map((pin, index) => {
+          return (
+            <GalleryItem
+              key={index}
+              type="pin"
+              value={pin?.value}
+              src={pin?.src}
+            />
+          );
+        })}
+    </GallerySection>
+  );
 };
