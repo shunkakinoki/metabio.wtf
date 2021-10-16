@@ -11,8 +11,6 @@ export const GallerySectionPin: FC = () => {
     return null;
   }
 
-  console.log(pins);
-
   return (
     <GallerySection defaultOpen type="pin">
       {pins &&
