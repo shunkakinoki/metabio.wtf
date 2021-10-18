@@ -34,7 +34,7 @@ export const HeaderSearchBar = () => {
       className="justify-center mx-auto w-full max-w-3xl"
       onSubmit={handleSubmit}
     >
-      <div className="relative mt-1 rounded-md shadow-lg">
+      <div className="relative mt-1 md:rounded-md border md:border-0 md:shadow-lg">
         <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
           <SearchIcon className="w-5 h-5 text-gray-400" aria-hidden="true" />
         </div>
