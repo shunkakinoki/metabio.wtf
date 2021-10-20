@@ -16,7 +16,7 @@ export const Seo: FC = () => {
           site_name: "metabio.wtf",
           type: "website",
           url: "https://www.metabio.wtf",
-          images: [{ url: "https://www.metabio.wtf/ogp.jpg" }],
+          images: [{ url: "https://www.metabio.wtf/ogp.png" }],
         }}
         twitter={{
           cardType: "summary_large_image",
