@@ -66,6 +66,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
   const slugs = params?.slug as string[];
 
   if (slugs.length !== 1) {
+    console.log(slugs);
     return {
       notFound: true,
       revalidate: 300,
