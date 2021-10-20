@@ -1,7 +1,7 @@
 export const METABIO_BASE = "https://www.metabio.wtf";
 
 export const NOTION_MANIFESTO_LINK =
-  "https://metafam.notion.site/Metabio-8746a5dff6ec4746adda5119dd1ec3ec";
+  "https://metabio.notion.site/Metabio-fece2644a662403db71fbfe73b501d0d";
 
 export const DISCORD_SOCIAL_LINK = "https://discord.gg/Sm7Fsasdqx";
 export const TWITTER_SOCIAL_LINK = "https://twitter.com/metabio_";
