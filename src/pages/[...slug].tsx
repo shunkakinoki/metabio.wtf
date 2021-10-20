@@ -161,16 +161,14 @@ export const getStaticProps: GetStaticProps<Props> = async ({
   }
 
   const props = {
-    props: {
-      address: address,
-      ensName: ensName ?? null,
-      pins: pins ?? null,
-      token: token ?? null,
-      snapshots: snapshots ?? null,
-      mirrorArticles: mirrorArticles ?? null,
-      poaps: poaps ?? null,
-      assets: assets ?? null,
-    },
+    address: address,
+    ensName: ensName ?? null,
+    pins: pins ?? null,
+    token: token ?? null,
+    snapshots: snapshots ?? null,
+    mirrorArticles: mirrorArticles ?? null,
+    poaps: poaps ?? null,
+    assets: assets ?? null,
   };
   console.log(JSON.stringify(props));
 
