@@ -1,17 +1,11 @@
 import { Popover, Transition } from "@headlessui/react";
-import {
-  XIcon,
-  PlayIcon,
-  UserIcon,
-  PencilIcon,
-} from "@heroicons/react/outline";
+import { XIcon, UserIcon, PencilIcon } from "@heroicons/react/outline";
 
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Fragment } from "react";
 
 import { HeaderSearchBar } from "@/components/HeaderSearchBar";
-import { NOTION_MANIFESTO_LINK } from "@/const/social";
 import { useWeb3Provider } from "@/hooks/useWeb3Provider";
 
 const WalletConnect = dynamic(
@@ -53,10 +47,10 @@ export const HeaderMobileMenu = () => {
                 </Popover.Button>
               </div>
             </div>
-            <div className="mt-3">
+            <div className="mt-6">
               <HeaderSearchBar />
             </div>
-            <div className="mt-6">
+            <div className="mt-8">
               <nav className="grid gap-y-8">
                 {web3Provider && (
                   <>
@@ -84,20 +78,6 @@ export const HeaderMobileMenu = () => {
                     </Link>
                   </>
                 )}
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={NOTION_MANIFESTO_LINK}
-                  className="flex items-center p-3 -m-3 hover:bg-gray-50 rounded-md"
-                >
-                  <PlayIcon
-                    className="flex-shrink-0 w-6 h-6 text-indigo-600"
-                    aria-hidden="true"
-                  />
-                  <span className="ml-3 text-base font-medium text-gray-900">
-                    Manifefsto
-                  </span>
-                </a>
               </nav>
             </div>
           </div>

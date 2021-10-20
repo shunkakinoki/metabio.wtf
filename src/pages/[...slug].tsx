@@ -160,7 +160,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
     console.log(err);
   }
 
-  return {
+  const props = {
     props: {
       address: address,
       ensName: ensName ?? null,
@@ -171,6 +171,11 @@ export const getStaticProps: GetStaticProps<Props> = async ({
       poaps: poaps ?? null,
       assets: assets ?? null,
     },
+  };
+  console.log(JSON.stringify(props));
+
+  return {
+    props: props,
     revalidate: 300,
   };
 };

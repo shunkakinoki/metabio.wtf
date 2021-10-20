@@ -28,7 +28,7 @@ const sections: Section = {
     emoji: "🏆",
   },
   token: {
-    name: "Social Tokens",
+    name: "Tokens",
     emoji: "🤑",
   },
   dao: {

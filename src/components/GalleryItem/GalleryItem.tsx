@@ -46,7 +46,9 @@ export const GalleryItem: FC<GalleryItemProps> = ({
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         {src && <img className="pointer-events-none" src={src} alt={alt} />}
-        <h1 className="text-3xl font-bold text-center text-white">{value}</h1>
+        <h1 className="text-xl md:text-3xl font-bold text-center text-white">
+          {value}
+        </h1>
       </GalleryItemLayout>
     );
   }
@@ -59,7 +61,9 @@ export const GalleryItem: FC<GalleryItemProps> = ({
           "justify-center items-center bg-gradient-to-r from-green-300 via-blue-500 to-purple-600",
         )}
       >
-        <h1 className="text-3xl font-bold text-center text-white">{value}</h1>
+        <h1 className="text-xl md:text-3xl font-bold text-center text-white">
+          {value}
+        </h1>
       </GalleryItemLayout>
     );
   }
@@ -72,7 +76,9 @@ export const GalleryItem: FC<GalleryItemProps> = ({
           "justify-center items-center bg-gradient-to-tl from-pink-300 via-purple-300 to-indigo-400",
         )}
       >
-        <h1 className="text-3xl font-bold text-center text-white">${value}</h1>
+        <h1 className="text-xl md:text-3xl font-bold text-center text-white">
+          ${value}
+        </h1>
       </GalleryItemLayout>
     );
   }
